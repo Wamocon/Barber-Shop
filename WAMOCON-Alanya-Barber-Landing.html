@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WAMOCON · Alanya Berberler İçin Dijital Çözümler</title>
+<meta name="description" content="Alanya'daki berber ve kuaförler için web sitesi, online randevu ve yapay zekâ asistan — 7 günde yayında. WAMOCON: ISTQB sertifikalı, 40 yıl tecrübe.">
+<style>
+/* ============================================================
+   WAMOCON — Alanya Barber Landing Page
+   Single-file, fully offline, multilingual (TR/EN/RU/DE)
+   Brand red verified: #F40E0E (red-wave-1.svg stroke + logo)
+   ============================================================ */
+:root{
+  --red:#F40E0E;            /* WAMOCON red — verified */
+  --red-600:#D10A0A;
+  --red-700:#A50808;
+  --red-soft:rgba(244,14,14,.08);
+  --ink:#0E1116;            /* near-black text */
+  --charcoal:#14171C;       /* dark surfaces */
+  --charcoal-2:#1B1F26;
+  --charcoal-3:#262C36;
+  --muted:#5A6472;
+  --muted-2:#8A93A2;
+  --line:#E6E8EC;
+  --surface:#F5F6F8;
+  --surface-2:#EEF0F3;
+  --white:#FFFFFF;
+  --gold:#D4A843;           /* subtle premium hairline accent */
+  --maxw:1180px;
+  --radius:18px;
+  --radius-lg:26px;
+  --shadow-sm:0 2px 10px rgba(14,17,22,.06);
+  --shadow:0 12px 40px rgba(14,17,22,.10);
+  --shadow-lg:0 30px 80px rgba(14,17,22,.18);
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",Arial,"Apple Color Emoji","Segoe UI Emoji",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font);
+  color:var(--ink);
+  background:var(--white);
+  line-height:1.6;
+  font-size:17px;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+ul{list-style:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+section{position:relative}
+h1,h2,h3{line-height:1.12;letter-spacing:-.02em;font-weight:800}
+h1{font-size:clamp(2.1rem,5.2vw,4rem)}
+h2{font-size:clamp(1.7rem,3.8vw,2.8rem)}
+h3{font-size:clamp(1.15rem,2.2vw,1.5rem)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--red);display:inline-block}
+.lead{font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--muted);max-width:60ch}
+.center{text-align:center}
+.center .lead{margin-left:auto;margin-right:auto}
+.center .eyebrow::before{display:none}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-weight:700;font-size:1rem;padding:15px 26px;border-radius:60px;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .2s;
+  white-space:nowrap;position:relative;will-change:transform}
+.btn-primary{background:var(--red);color:#fff;box-shadow:0 10px 26px rgba(244,14,14,.32)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(244,14,14,.42);background:var(--red-600)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.btn .wa{width:20px;height:20px;flex:none}
+.btn-lg{padding:18px 34px;font-size:1.08rem}
+.btn-block{display:flex;width:100%}
+/* pulsing ring on primary CTAs */
+.btn-pulse::after{content:"";position:absolute;inset:0;border-radius:60px;border:2px solid var(--red);opacity:0;animation:pulse 2.6s var(--ease) infinite}
+@keyframes pulse{0%{opacity:.6;transform:scale(1)}80%,100%{opacity:0;transform:scale(1.18)}}
+
+/* ---------- Header ---------- */
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.86);
+  backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line);
+  transition:box-shadow .3s}
+header.scrolled{box-shadow:var(--shadow-sm)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:18px}
+/* WAMOCON vector wordmark (faithful identity, exact red, crisp & offline) */
+.brand{display:flex;flex-direction:column;line-height:1;flex:none}
+.brand .wm{font-weight:800;font-size:1.42rem;letter-spacing:.16em;color:var(--ink)}
+.brand .wm b{color:var(--ink)}
+.brand .tag{font-size:.58rem;font-weight:700;letter-spacing:.22em;color:var(--red);text-transform:uppercase;margin-top:3px}
+.nav-links{display:flex;gap:26px;align-items:center;margin-left:auto}
+.nav-links a{font-size:.94rem;font-weight:600;color:var(--muted);transition:color .2s;position:relative}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--red);transition:width .25s var(--ease)}
+.nav-links a:hover::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:14px}
+/* language toggle */
+.lang{display:flex;align-items:center;gap:2px;background:var(--surface);border-radius:40px;padding:4px}
+.lang button{font-size:.78rem;font-weight:800;color:var(--muted);padding:6px 10px;border-radius:30px;transition:.2s;letter-spacing:.04em}
+.lang button.active{background:var(--ink);color:#fff}
+.nav-wa{display:inline-flex}
+.burger{display:none;flex-direction:column;gap:5px;padding:10px;margin:-10px}
+.burger span{width:24px;height:2.5px;background:var(--ink);border-radius:2px;transition:.3s}
+
+/* ---------- Red wave divider ---------- */
+.wave{display:block;width:100%;height:auto;line-height:0}
+.wave svg{display:block;width:100%;height:auto}
+
+/* ---------- HERO ---------- */
+.hero{padding:64px 0 40px;position:relative;overflow:hidden;background:
+  radial-gradient(900px 500px at 78% 8%, rgba(244,14,14,.07), transparent 60%),
+  linear-gradient(180deg,#fff, #fff 60%, var(--surface))}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:46px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);
+  border-radius:40px;padding:7px 15px 7px 9px;font-size:.8rem;font-weight:700;color:var(--ink);box-shadow:var(--shadow-sm);margin-bottom:20px}
+.hero-badge .dot{width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px rgba(244,14,14,.16);flex:none}
+.hero h1{margin-bottom:8px}
+.hero h1 .accent{color:var(--red)}
+.hero .sub{font-size:clamp(1.05rem,1.7vw,1.28rem);color:var(--muted);margin:18px 0 28px;max-width:54ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+.hero-trust{font-size:.86rem;color:var(--muted);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.hero-trust .seal{display:inline-flex;align-items:center;gap:7px;font-weight:700;color:var(--ink)}
+.hero-trust .istqb{background:var(--ink);color:#fff;font-size:.64rem;font-weight:800;letter-spacing:.08em;padding:4px 8px;border-radius:6px}
+
+/* hero visual — layered depth mock device */
+.hero-visual{position:relative;perspective:1400px}
+.device{position:relative;border-radius:30px;background:#fff;box-shadow:var(--shadow-lg);
+  border:1px solid var(--line);overflow:hidden;transform:rotateY(-14deg) rotateX(5deg) translateZ(0);
+  transition:transform .6s var(--ease);transform-style:preserve-3d}
+.hero-visual:hover .device{transform:rotateY(-7deg) rotateX(2deg)}
+.device-bar{height:42px;background:var(--charcoal);display:flex;align-items:center;padding:0 16px;gap:7px}
+.device-bar i{width:11px;height:11px;border-radius:50%;background:#3a4150;display:block}
+.device-bar i:first-child{background:var(--red)}
+.device-screen{padding:0;background:linear-gradient(180deg,#fff,#fafbfc)}
+.dvc-hero{background:linear-gradient(135deg,var(--charcoal),#2a1012);color:#fff;padding:26px 22px;position:relative;overflow:hidden}
+.dvc-hero::after{content:"";position:absolute;right:-30px;top:-30px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,var(--red),transparent 70%);opacity:.5}
+.dvc-hero h4{font-size:1.15rem;font-weight:800;margin-bottom:6px;position:relative}
+.dvc-hero p{font-size:.78rem;opacity:.8;margin-bottom:14px}
+.dvc-hero .mini{display:inline-block;background:var(--red);color:#fff;font-size:.72rem;font-weight:700;padding:8px 14px;border-radius:30px}
+.dvc-body{padding:16px 18px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.dvc-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px;font-size:.7rem;color:var(--muted)}
+.dvc-card b{display:block;color:var(--ink);font-size:.82rem;margin-bottom:3px}
+.dvc-card .star{color:var(--gold);font-size:.72rem}
+/* floating chips */
+.chip-float{position:absolute;background:#fff;border-radius:14px;box-shadow:var(--shadow);padding:11px 14px;
+  font-size:.78rem;font-weight:700;display:flex;align-items:center;gap:9px;z-index:3;animation:floaty 4s ease-in-out infinite}
+.chip-float .ic{width:30px;height:30px;border-radius:9px;background:var(--red-soft);color:var(--red);display:grid;place-items:center;font-size:1rem;flex:none}
+.chip-1{top:8%;left:-26px;animation-delay:.2s}
+.chip-2{bottom:14%;right:-22px;animation-delay:1.4s}
+.chip-2 .ic{background:rgba(46,125,50,.12);color:#2E7D32}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+/* ---------- Stat counters ---------- */
+.stats{background:var(--charcoal);color:#fff;padding:34px 0;position:relative;overflow:hidden}
+.stats::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 280px at 85% 120%,rgba(244,14,14,.22),transparent 60%)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+.stat{text-align:center}
+.stat .num{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:800;letter-spacing:-.03em;line-height:1}
+.stat .num .u{color:var(--red)}
+.stat .lbl{font-size:.84rem;color:#aeb6c2;margin-top:8px;font-weight:600}
+
+/* ---------- Generic section spacing ---------- */
+.sec{padding:84px 0}
+.sec-head{margin-bottom:46px;max-width:64ch}
+.sec-head.center{margin-left:auto;margin-right:auto}
+
+/* ---------- Trust / credibility ---------- */
+.cred{background:var(--surface)}
+.cred-card{background:var(--charcoal);color:#fff;border-radius:var(--radius-lg);padding:46px;position:relative;overflow:hidden}
+.cred-card::after{content:"";position:absolute;right:-60px;bottom:-60px;width:280px;height:280px;border-radius:50%;
+  background:radial-gradient(circle,rgba(244,14,14,.35),transparent 70%)}
+.cred-top{display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:center;position:relative}
+.cred-top .lead{color:#c4cbd6}
+.cred-top h2{color:#fff}
+.skyline{width:100%;height:auto;opacity:.95}
+.clients{margin-top:30px;position:relative}
+.clients .cl-label{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:#8a93a2;font-weight:700;margin-bottom:16px}
+.client-row{display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center}
+.client-row .c{font-weight:800;font-size:clamp(.95rem,1.6vw,1.18rem);color:#e8ebf0;letter-spacing:.01em;opacity:.92;
+  transition:.25s;white-space:nowrap}
+.client-row .c:hover{color:#fff;opacity:1}
+.cred-note{font-size:.76rem;color:#7e8898;margin-top:18px;position:relative}
+.cred-badges{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;position:relative}
+.cred-badges .b{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  border-radius:14px;padding:12px 16px}
+.cred-badges .b .bn{font-size:1.5rem;font-weight:800;color:#fff;line-height:1}
+.cred-badges .b .bt{font-size:.74rem;color:#aeb6c2;font-weight:600}
+.cred-badges .b .istqb{background:var(--red);color:#fff;font-size:.72rem;font-weight:800;padding:8px 10px;border-radius:8px;letter-spacing:.06em}
+
+/* ---------- Problem / pain ---------- */
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pain{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:.3s var(--ease);position:relative;overflow:hidden}
+.pain:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:transparent}
+.pain::before{content:"";position:absolute;left:0;top:0;height:100%;width:4px;background:var(--red);transform:scaleY(0);transform-origin:top;transition:.35s var(--ease)}
+.pain:hover::before{transform:scaleY(1)}
+.pain .pi{width:48px;height:48px;border-radius:13px;background:var(--red-soft);color:var(--red);display:grid;place-items:center;font-size:1.4rem;margin-bottom:16px}
+.pain p{font-size:1rem;color:var(--ink);font-weight:600;line-height:1.45}
+
+/* ---------- Before / After ---------- */
+.ba{background:var(--charcoal);color:#fff;overflow:hidden}
+.ba .sec-head h2,.ba .sec-head .lead{color:#fff}
+.ba .sec-head .lead{color:#c4cbd6}
+.ba-toggle{display:inline-flex;background:var(--charcoal-3);border-radius:50px;padding:5px;margin-bottom:30px}
+.ba-toggle button{padding:11px 26px;border-radius:40px;font-weight:700;color:#aeb6c2;transition:.25s;font-size:.95rem}
+.ba-toggle button.active.before{background:#3a4150;color:#fff}
+.ba-toggle button.active.after{background:var(--red);color:#fff}
+.ba-panels{position:relative}
+.ba-panel{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.ba-item{display:flex;align-items:center;gap:14px;background:var(--charcoal-2);border:1px solid var(--charcoal-3);
+  border-radius:14px;padding:18px 20px;font-weight:600;font-size:1rem;transition:.4s var(--ease)}
+.ba-item .ic{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;font-size:1.05rem;flex:none}
+.ba-item.bad .ic{background:rgba(255,255,255,.08);color:#8a93a2}
+.ba-item.good{border-color:rgba(244,14,14,.4)}
+.ba-item.good .ic{background:var(--red);color:#fff}
+
+/* ---------- Packages ---------- */
+.pkg-anchor{display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:#fff;border-radius:40px;
+  padding:9px 18px;font-weight:700;font-size:.86rem;margin-bottom:14px}
+.pkg-anchor .g{color:var(--gold)}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.pkg{background:#fff;border:1.5px solid var(--line);border-radius:var(--radius-lg);padding:32px 28px;display:flex;flex-direction:column;
+  transition:.35s var(--ease);position:relative}
+.pkg:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.pkg.feat{border-color:var(--red);box-shadow:0 24px 60px rgba(244,14,14,.16);transform:scale(1.03)}
+.pkg.feat:hover{transform:scale(1.03) translateY(-6px)}
+.pkg .tag-pop{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;
+  font-size:.72rem;font-weight:800;letter-spacing:.08em;padding:7px 16px;border-radius:30px;text-transform:uppercase;box-shadow:0 8px 18px rgba(244,14,14,.35)}
+.pkg .pk-name{font-size:1.1rem;font-weight:800;color:var(--ink)}
+.pkg .pk-for{font-size:.82rem;color:var(--muted);margin-top:3px;min-height:20px}
+.pkg .pk-price{margin:18px 0 6px;display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
+.pkg .pk-from{font-size:.78rem;color:var(--muted);font-weight:700}
+.pkg .pk-tl{font-size:2.1rem;font-weight:800;color:var(--ink);letter-spacing:-.02em}
+.pkg .pk-eur{font-size:.88rem;color:var(--muted);font-weight:700}
+.pkg .pk-feats{margin:20px 0 26px;display:flex;flex-direction:column;gap:11px;flex:1}
+.pkg .pk-feats li{display:flex;gap:11px;align-items:flex-start;font-size:.92rem;color:var(--ink);line-height:1.4}
+.pkg .pk-feats li .ck{width:21px;height:21px;border-radius:50%;background:var(--red-soft);color:var(--red);display:grid;place-items:center;
+  font-size:.7rem;flex:none;margin-top:1px;font-weight:900}
+.pkg.feat .pk-feats li .ck{background:var(--red);color:#fff}
+.pkg-note{text-align:center;font-size:.82rem;color:var(--muted);margin-top:22px}
+
+/* ---------- Demos ---------- */
+.demos{background:var(--surface)}
+.demo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.demo{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+.demo-head{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px}
+.demo-head .dt{font-weight:800;font-size:.95rem}
+.demo-head .badge{font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--red);
+  background:var(--red-soft);padding:4px 9px;border-radius:20px}
+.demo-body{padding:20px;flex:1}
+/* booking demo */
+.bk-days{display:flex;gap:7px;margin-bottom:14px}
+.bk-day{flex:1;text-align:center;border:1px solid var(--line);border-radius:10px;padding:8px 4px;font-size:.74rem;font-weight:700;color:var(--muted);transition:.2s}
+.bk-day.sel{background:var(--ink);color:#fff;border-color:var(--ink)}
+.bk-slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}
+.bk-slot{border:1px solid var(--line);border-radius:9px;padding:9px 4px;text-align:center;font-size:.82rem;font-weight:700;color:var(--ink);transition:.2s;cursor:pointer}
+.bk-slot.taken{color:var(--muted-2);text-decoration:line-through;background:var(--surface-2);cursor:not-allowed}
+.bk-slot.sel{background:var(--red);color:#fff;border-color:var(--red)}
+.bk-confirm{background:#2E7D32;color:#fff;border-radius:11px;padding:13px;text-align:center;font-weight:700;font-size:.9rem;
+  display:flex;align-items:center;justify-content:center;gap:9px;opacity:0;transform:translateY(8px);transition:.4s var(--ease)}
+.bk-confirm.show{opacity:1;transform:translateY(0)}
+/* chat demo */
+.chat{display:flex;flex-direction:column;gap:10px;min-height:200px}
+.bubble{max-width:82%;padding:11px 15px;border-radius:16px;font-size:.86rem;line-height:1.4;opacity:0;transform:translateY(10px);animation:bubbleIn .5s var(--ease) forwards}
+.bubble.them{background:var(--surface-2);color:var(--ink);border-bottom-left-radius:5px;align-self:flex-start}
+.bubble.me{background:var(--red);color:#fff;border-bottom-right-radius:5px;align-self:flex-end}
+.bubble.typing{align-self:flex-start;background:var(--surface-2);width:54px;display:flex;gap:5px;justify-content:center;padding:14px}
+.bubble.typing i{width:7px;height:7px;border-radius:50%;background:var(--muted-2);animation:typing 1.2s infinite}
+.bubble.typing i:nth-child(2){animation-delay:.2s}.bubble.typing i:nth-child(3){animation-delay:.4s}
+@keyframes typing{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-5px);opacity:1}}
+@keyframes bubbleIn{to{opacity:1;transform:translateY(0)}}
+/* google mock */
+.serp{font-size:.82rem}
+.serp .url{color:#2E7D32;font-size:.74rem;display:flex;align-items:center;gap:6px}
+.serp .ttl{color:#1a0dab;font-size:1.02rem;font-weight:600;margin:3px 0 4px}
+.serp .stars{color:var(--gold);font-size:.82rem;letter-spacing:1px}
+.serp .rev{color:var(--muted);font-size:.74rem}
+.serp .desc{color:#4d5156;margin:7px 0 12px;font-size:.8rem}
+.serp .map{height:96px;border-radius:11px;background:
+  linear-gradient(135deg,#dfe7df,#cfe0d6);border:1px solid var(--line);position:relative;overflow:hidden;margin-bottom:12px}
+.serp .map .pin{position:absolute;left:50%;top:46%;transform:translate(-50%,-100%);color:var(--red);font-size:1.5rem}
+.serp .map .road{position:absolute;background:#fff;opacity:.7}
+.serp .map .r1{left:0;right:0;top:55%;height:5px}
+.serp .map .r2{top:0;bottom:0;left:38%;width:5px}
+.serp .gbtn{display:inline-flex;gap:8px}
+.serp .gbtn span{font-size:.74rem;font-weight:700;color:#1a73e8;border:1px solid #dadce0;border-radius:8px;padding:7px 12px}
+.serp .gbtn span.solid{background:#1a73e8;color:#fff;border-color:#1a73e8}
+
+/* ---------- Charts / opportunity ---------- */
+.opp{background:var(--white)}
+.opp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.opp-card{background:var(--surface);border-radius:var(--radius-lg);padding:30px;text-align:center;border:1px solid var(--line)}
+.donut{width:150px;height:150px;margin:0 auto 8px;position:relative}
+.donut svg{transform:rotate(-90deg);width:100%;height:100%}
+.donut .track{fill:none;stroke:var(--surface-2);stroke-width:14}
+.donut .fill{fill:none;stroke:var(--red);stroke-width:14;stroke-linecap:round;
+  stroke-dasharray:377;stroke-dashoffset:377;transition:stroke-dashoffset 1.6s var(--ease)}
+.donut .pct{position:absolute;inset:0;display:grid;place-items:center;font-size:1.9rem;font-weight:800;color:var(--ink)}
+.opp-card h3{margin:6px 0 8px}
+.opp-card p{font-size:.9rem;color:var(--muted)}
+.bars{display:flex;align-items:flex-end;justify-content:center;gap:14px;height:150px;margin-bottom:10px}
+.bar{width:46px;background:linear-gradient(180deg,var(--red),var(--red-700));border-radius:8px 8px 0 0;height:0;
+  transition:height 1.4s var(--ease);position:relative;display:flex;align-items:flex-start;justify-content:center}
+.bar.muted{background:linear-gradient(180deg,#c9 ,#aab);background:linear-gradient(180deg,#aeb6c2,#7e8898)}
+.bar .bv{position:absolute;top:-24px;font-size:.78rem;font-weight:800;color:var(--ink)}
+.bar-x{display:flex;justify-content:center;gap:14px;font-size:.74rem;color:var(--muted);font-weight:600}
+.bar-x span{width:46px;text-align:center}
+.big-num{font-size:clamp(2.4rem,6vw,3.6rem);font-weight:800;color:var(--red);letter-spacing:-.03em;line-height:1}
+.opp-src{font-size:.72rem;color:var(--muted-2);text-align:center;margin-top:26px}
+
+/* ---------- Method / why ---------- */
+.method{background:var(--surface)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:30px 26px;position:relative;transition:.35s var(--ease)}
+.step:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.step .n{font-size:3rem;font-weight:800;color:var(--red-soft);line-height:.8;margin-bottom:10px;
+  -webkit-text-stroke:2px var(--red);color:transparent}
+.step h3{margin-bottom:8px}
+.step p{font-size:.92rem;color:var(--muted)}
+.step .arrow{position:absolute;right:-26px;top:50%;transform:translateY(-50%);color:var(--line);font-size:1.6rem;z-index:2}
+.method-foot{text-align:center;margin-top:34px;font-size:1.1rem;font-weight:700;color:var(--ink)}
+.method-foot .hl{color:var(--red)}
+
+/* ---------- Trust list ---------- */
+.tl-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.tl{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px 18px;text-align:center;transition:.3s}
+.tl:hover{border-color:var(--red);transform:translateY(-4px);box-shadow:var(--shadow-sm)}
+.tl .ti{font-size:1.7rem;margin-bottom:10px}
+.tl p{font-size:.84rem;font-weight:600;color:var(--ink);line-height:1.35}
+
+/* ---------- FAQ ---------- */
+.faq-wrap{max-width:780px;margin:0 auto}
+.faq{border-bottom:1px solid var(--line)}
+.faq button{width:100%;text-align:start;padding:22px 4px;display:flex;align-items:center;justify-content:space-between;gap:18px;
+  font-size:1.06rem;font-weight:700;color:var(--ink)}
+.faq .q{flex:1}
+.faq .pm{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;flex:none;
+  transition:.3s var(--ease);font-size:1.1rem;color:var(--red)}
+.faq.open .pm{transform:rotate(45deg);background:var(--red);color:#fff;border-color:var(--red)}
+.faq .a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
+.faq .a p{padding:0 4px 22px;color:var(--muted);font-size:.98rem}
+
+/* ---------- Final CTA ---------- */
+.final{background:var(--charcoal);color:#fff;text-align:center;overflow:hidden;position:relative}
+.final::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(600px 320px at 50% -10%,rgba(244,14,14,.4),transparent 60%)}
+.final-in{position:relative;max-width:720px;margin:0 auto}
+.final .urgency{display:inline-flex;align-items:center;gap:9px;background:rgba(244,14,14,.16);border:1px solid rgba(244,14,14,.4);
+  color:#ff8a8a;font-weight:700;font-size:.86rem;padding:9px 18px;border-radius:40px;margin-bottom:22px}
+.final .urgency .dot{width:8px;height:8px;border-radius:50%;background:var(--red);animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.3}}
+.final h2{color:#fff;margin-bottom:14px}
+.final p{color:#c4cbd6;font-size:1.1rem;margin-bottom:30px}
+.final .micro{font-size:.82rem;color:#8a93a2;margin-top:16px}
+
+/* ---------- Footer ---------- */
+footer{background:#0A0C0F;color:#aeb6c2;padding:54px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:34px}
+footer .brand .wm{color:#fff}
+footer .f-about{font-size:.88rem;color:#8a93a2;margin-top:16px;max-width:38ch}
+footer h5{color:#fff;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;font-weight:800}
+footer .f-link{display:block;font-size:.92rem;color:#aeb6c2;margin-bottom:10px;transition:.2s}
+footer .f-link:hover{color:#fff}
+footer .f-wa{display:inline-flex;align-items:center;gap:9px;color:#fff;font-weight:700;font-size:.95rem}
+.foot-bot{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;font-size:.78rem;color:#6b7480;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.foot-bot a{color:var(--red);font-weight:700}
+
+/* ---------- Floating WhatsApp ---------- */
+.fab{position:fixed;right:20px;bottom:20px;z-index:70;width:60px;height:60px;border-radius:50%;background:#25D366;
+  display:grid;place-items:center;box-shadow:0 12px 30px rgba(37,211,102,.5);transition:.3s var(--ease);animation:floaty 3.5s ease-in-out infinite}
+.fab:hover{transform:scale(1.1)}
+.fab svg{width:32px;height:32px}
+.fab .fab-ring{position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:pulse 2.4s var(--ease) infinite}
+
+/* ---------- Reveal animation ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+/* ---------- Mobile menu panel ---------- */
+.mobile-menu{position:fixed;inset:0 0 0 auto;width:min(82vw,330px);background:#fff;z-index:80;transform:translateX(100%);
+  transition:transform .35s var(--ease);box-shadow:var(--shadow-lg);padding:80px 26px 26px;display:flex;flex-direction:column;gap:6px}
+.mobile-menu.open{transform:none}
+.mobile-menu a{padding:14px 6px;font-weight:700;font-size:1.05rem;border-bottom:1px solid var(--line)}
+.mobile-menu .mm-close{position:absolute;top:20px;right:20px;font-size:1.8rem;line-height:1;color:var(--ink)}
+.overlay{position:fixed;inset:0;background:rgba(14,17,22,.5);z-index:75;opacity:0;visibility:hidden;transition:.3s}
+.overlay.show{opacity:1;visibility:visible}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1024px){
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .hero-visual{max-width:460px;margin:0 auto;order:2}
+  .cred-top{grid-template-columns:1fr;gap:24px}
+  .pain-grid,.demo-grid,.opp-grid,.steps,.pkg-grid{grid-template-columns:repeat(2,1fr)}
+  .pkg.feat{transform:none}.pkg.feat:hover{transform:translateY(-6px)}
+  .tl-grid{grid-template-columns:repeat(3,1fr)}
+  .step .arrow{display:none}
+}
+@media(max-width:760px){
+  body{font-size:16px}
+  .nav-links{display:none}
+  .nav-wa span{display:none}
+  .nav-wa{padding:12px;width:46px;height:46px}
+  .burger{display:flex}
+  .sec{padding:60px 0}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:26px 16px}
+  .pain-grid,.demo-grid,.opp-grid,.steps,.pkg-grid,.ba-panel{grid-template-columns:1fr}
+  .tl-grid{grid-template-columns:repeat(2,1fr)}
+  .cred-card{padding:30px 22px}
+  .foot-grid{grid-template-columns:1fr;gap:28px}
+  .pkg.feat{transform:none}
+  .hero-cta .btn{flex:1}
+  .chip-1{left:-8px}.chip-2{right:-6px}
+  .lang{padding:3px}
+  .lang button{padding:5px 7px;font-size:.72rem}
+}
+@media(max-width:380px){
+  .stats-grid{gap:20px 12px}
+  .tl-grid{grid-template-columns:1fr}
+  .chip-float{font-size:.7rem;padding:9px 11px}
+}
+
+/* ---------- Reduced motion ---------- */
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+  .reveal{opacity:1;transform:none}
+  .device{transform:none}
+  .donut .fill{transition:none}
+}
+/* focus visibility */
+a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:6px}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="WAMOCON">
+      <span class="wm">WAMOCON</span>
+      <span class="tag">IT-Testmanagement</span>
+    </a>
+    <nav class="nav-links" aria-label="primary">
+      <a href="#problem" data-i18n="nav_problem">Sorun</a>
+      <a href="#packages" data-i18n="nav_packages">Paketler</a>
+      <a href="#demo" data-i18n="nav_demo">Demo</a>
+      <a href="#why" data-i18n="nav_why">Neden Biz</a>
+      <a href="#faq" data-i18n="nav_faq">SSS</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="language">
+        <button data-lang="tr">TR</button>
+        <button data-lang="en">EN</button>
+        <button data-lang="ru">RU</button>
+        <button data-lang="de">DE</button>
+      </div>
+      <a class="btn btn-primary nav-wa" id="navWa" href="#" target="_blank" rel="noopener">
+        <svg class="wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.477-.915zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        <span data-i18n="cta_wa_short">WhatsApp</span>
+      </a>
+      <button class="burger" id="burger" aria-label="menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div class="overlay" id="overlay"></div>
+<nav class="mobile-menu" id="mobileMenu" aria-label="mobile">
+  <button class="mm-close" id="mmClose" aria-label="close">×</button>
+  <a href="#problem" data-i18n="nav_problem">Sorun</a>
+  <a href="#packages" data-i18n="nav_packages">Paketler</a>
+  <a href="#demo" data-i18n="nav_demo">Demo</a>
+  <a href="#why" data-i18n="nav_why">Neden Biz</a>
+  <a href="#faq" data-i18n="nav_faq">SSS</a>
+  <a class="btn btn-primary" id="mmWa" href="#" target="_blank" rel="noopener" style="margin-top:14px;justify-content:center" data-i18n="cta_wa">WhatsApp'tan Yaz</a>
+</nav>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="hero-badge reveal"><span class="dot"></span><span data-i18n="hero_badge">WAMOCON × Alanya Berberler</span></span>
+      <h1 class="reveal d1"><span data-i18n="hero_h1a">Daha Fazla Müşteri,</span> <span class="accent" data-i18n="hero_h1b">Daha Az Bekleme</span></h1>
+      <p class="sub reveal d2" data-i18n="hero_sub">Alanya'daki berber ve kuaförler için web sitesi, online randevu ve yapay zekâ asistan — 7 günde yayında.</p>
+      <div class="hero-cta reveal d3">
+        <a class="btn btn-primary btn-lg btn-pulse" id="heroWa" href="#" target="_blank" rel="noopener">
+          <svg class="wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.477-.915zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          <span data-i18n="hero_cta1">Ücretsiz Danışmanlık Al</span>
+        </a>
+        <a class="btn btn-ghost btn-lg" href="#packages" data-i18n="hero_cta2">Paketleri Gör</a>
+      </div>
+      <div class="hero-trust reveal d4">
+        <span class="seal"><span class="istqb">ISTQB®</span></span>
+        <span class="seal" data-i18n="hero_trust_a">40 yıl tecrübe</span>·
+        <span class="seal" data-i18n="hero_trust_b">Deutsche Bank & Mercedes'in güvendiği firma</span>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal d2">
+      <div class="chip-float chip-1"><span class="ic">📅</span><span data-i18n="hero_chip1">7/24 online randevu</span></div>
+      <div class="chip-float chip-2"><span class="ic">✓</span><span data-i18n="hero_chip2">7 günde yayında</span></div>
+      <div class="device">
+        <div class="device-bar"><i></i><i></i><i></i></div>
+        <div class="device-screen">
+          <div class="dvc-hero">
+            <h4 data-i18n="hero_dvc_title">Berber Demo</h4>
+            <p data-i18n="hero_dvc_sub">Modern · Çok dilli · Mobil uyumlu</p>
+            <span class="mini" data-i18n="hero_dvc_btn">Randevu Al →</span>
+          </div>
+          <div class="dvc-body">
+            <div class="dvc-card"><b data-i18n="hero_dvc_c1t">Saç Kesimi</b><span class="star">★★★★★</span> 5.0</div>
+            <div class="dvc-card"><b data-i18n="hero_dvc_c2t">Sakal & Tıraş</b><span class="star">★★★★★</span> 4.9</div>
+            <div class="dvc-card"><b data-i18n="hero_dvc_c3t">Çalışma Saati</b>08:30–21:00</div>
+            <div class="dvc-card"><b data-i18n="hero_dvc_c4t">Dil</b>TR · EN · RU · DE</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- red wave divider -->
+<div class="wave" aria-hidden="true">
+  <svg viewBox="0 0 4584 460" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M35.5 300C35.5 300 613 -120 1107 -113C1427 -108 1564 192 1883 162C2435 109 2261 -260 2779 -60C3258 122 3632 250 4083 11C4308 -110 4546 -200 4546 -200" stroke="#F40E0E" stroke-width="70" fill="none" opacity="0.9"/></svg>
+</div>
+
+<!-- ============ STAT COUNTERS ============ -->
+<section class="stats" id="statsSec">
+  <div class="wrap stats-grid">
+    <div class="stat"><div class="num"><span class="count" data-to="50">0</span><span class="u">+</span></div><div class="lbl" data-i18n="stat1">Berber analiz edildi</div></div>
+    <div class="stat"><div class="num"><span class="u">%</span><span class="count" data-to="90">0</span></div><div class="lbl" data-i18n="stat2">Web sitesi yok</div></div>
+    <div class="stat"><div class="num"><span class="count" data-to="4.5" data-dec="1">0</span><span class="u" data-i18n="stat3_u">M+</span></div><div class="lbl" data-i18n="stat3">Yıllık turist</div></div>
+    <div class="stat"><div class="num"><span class="count" data-to="7">0</span></div><div class="lbl" data-i18n="stat4">Günde yayında</div></div>
+  </div>
+</section>
+
+<!-- ============ CREDIBILITY / TRUST ============ -->
+<section class="sec cred" id="trust">
+  <div class="wrap">
+    <div class="cred-card reveal">
+      <div class="cred-top">
+        <div>
+          <span class="eyebrow" style="color:#ff8a8a" data-i18n="cred_kicker">Bu çözümün arkasında kim var?</span>
+          <h2 data-i18n="cred_title">Almanya'nın kalite standardı, şimdi Alanya'da</h2>
+          <p class="lead" data-i18n="cred_body">WAMOCON — Frankfurt merkezli, ISTQB sertifikalı IT test, otomasyon ve kalite yönetimi firması. 40 yıldır Avrupa'nın en büyük markaları bize güveniyor. Aynı kalite, şimdi berberinizin dijital dünyası için.</p>
+          <div class="cred-badges">
+            <div class="b"><span class="istqb">ISTQB®</span><span class="bt" data-i18n="cred_b1">Sertifikalı iş ortağı</span></div>
+            <div class="b"><span class="bn">40</span><span class="bt" data-i18n="cred_b2">yıl tecrübe</span></div>
+            <div class="b"><span class="bn">100+</span><span class="bt" data-i18n="cred_b3">memnun kurumsal müşteri</span></div>
+          </div>
+        </div>
+        <div>
+          <!-- Frankfurt skyline silhouette (inline SVG, offline) -->
+          <svg class="skyline" viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg" aria-label="Frankfurt">
+            <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#262C36"/><stop offset="1" stop-color="#14171C"/></linearGradient></defs>
+            <rect width="520" height="200" fill="url(#sky)" rx="14"/>
+            <g fill="#3a4150">
+              <rect x="20" y="120" width="26" height="70"/><rect x="50" y="100" width="22" height="90"/>
+              <rect x="78" y="135" width="20" height="55"/><rect x="120" y="70" width="30" height="120"/>
+              <rect x="155" y="95" width="24" height="95"/>
+              <rect x="200" y="40" width="34" height="150"/><polygon points="200,40 217,14 234,40" fill="#3a4150"/>
+              <rect x="214" y="6" width="6" height="20" fill="#F40E0E"/>
+              <rect x="245" y="80" width="26" height="110"/><rect x="278" y="58" width="30" height="132"/>
+              <rect x="316" y="30" width="30" height="160"/><rect x="328" y="14" width="6" height="18" fill="#3a4150"/>
+              <rect x="354" y="92" width="24" height="98"/><rect x="384" y="110" width="22" height="80"/>
+              <rect x="414" y="74" width="28" height="116"/><rect x="448" y="120" width="22" height="70"/>
+              <rect x="476" y="100" width="24" height="90"/>
+            </g>
+            <g fill="#F40E0E" opacity="0.85">
+              <rect x="208" y="60" width="6" height="6"/><rect x="220" y="80" width="6" height="6"/>
+              <rect x="324" y="50" width="6" height="6"/><rect x="334" y="74" width="6" height="6"/>
+              <rect x="286" y="78" width="6" height="6"/><rect x="424" y="92" width="6" height="6"/>
+            </g>
+            <text x="500" y="186" text-anchor="end" font-size="13" font-weight="800" fill="#5A6472" letter-spacing="2">FRANKFURT</text>
+          </svg>
+        </div>
+      </div>
+      <div class="clients">
+        <div class="cl-label" data-i18n="cred_clients_label">WAMOCON'a güvenen markalar</div>
+        <div class="client-row">
+          <span class="c">Deutsche Bank</span><span class="c">Mercedes-Benz Bank</span><span class="c">Intel</span>
+          <span class="c">Deutsche Telekom</span><span class="c">Phoenix Contact</span><span class="c">iBS AG</span>
+          <span class="c">Lekkerland</span>
+        </div>
+        <p class="cred-note" data-i18n="cred_note">* Bu markalar WAMOCON'un kurumsal referanslarıdır — berber müşterileri değil. wamocon.com üzerinde herkese açık olarak listelenmiştir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM / PAIN ============ -->
+<section class="sec" id="problem">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow" data-i18n="prob_kicker">Sorun</span>
+      <h2 data-i18n="prob_title">Tanıdık geliyor mu?</h2>
+      <p class="lead" data-i18n="prob_sub">Alanya'daki çoğu berber her gün aynı müşterileri kaybediyor — fark etmeden.</p>
+    </div>
+    <div class="pain-grid" id="painGrid"></div>
+  </div>
+</section>
+
+<!-- ============ BEFORE / AFTER ============ -->
+<section class="sec ba">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" style="color:#ff8a8a" data-i18n="ba_kicker">Dönüşüm</span>
+      <h2 data-i18n="ba_title">Öncesi → Sonrası</h2>
+      <p class="lead" data-i18n="ba_sub">Tek bir karar, berberinizin günlük işleyişini değiştirir.</p>
+    </div>
+    <div class="ba-toggle reveal" role="tablist">
+      <button class="before active" id="baBefore" data-i18n="ba_before_tab">Öncesi</button>
+      <button class="after" id="baAfter" data-i18n="ba_after_tab">Sonrası</button>
+    </div>
+    <div class="ba-panels reveal">
+      <div class="ba-panel" id="baPanel"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PACKAGES ============ -->
+<section class="sec" id="packages">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="pkg-anchor"><span data-i18n="pkg_anchor_a">Avrupa kalitesi,</span> <span class="g" data-i18n="pkg_anchor_b">Türkiye fiyatı</span></span>
+      <h2 data-i18n="pkg_title">Size uygun paketi seçin</h2>
+      <p class="lead" data-i18n="pkg_sub">Şeffaf fiyatlar. Gizli ücret yok. %50 başlangıç, %50 teslimatta — 30 gün para iade garantisi.</p>
+    </div>
+    <div class="pkg-grid" id="pkgGrid"></div>
+    <p class="pkg-note" data-i18n="pkg_note">Tüm paketler aylık bakım & destek opsiyonu içerir. Fiyatlar 2026 Türkiye web tasarım piyasasına göre konumlandırılmıştır.</p>
+  </div>
+</section>
+
+<!-- ============ DEMOS ============ -->
+<section class="sec demos" id="demo">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow" data-i18n="demo_kicker">Nasıl çalışır</span>
+      <h2 data-i18n="demo_title">Müşterileriniz bunu görecek</h2>
+      <p class="lead" data-i18n="demo_sub">Gerçek müşteri deneyimini canlı önizleyin — hepsi sitenize dahil.</p>
+    </div>
+    <div class="demo-grid">
+      <!-- Booking demo -->
+      <div class="demo reveal">
+        <div class="demo-head"><span class="dt" data-i18n="demo_bk_title">Online Randevu</span><span class="badge" data-i18n="demo_badge">Demo</span></div>
+        <div class="demo-body">
+          <div class="bk-days" id="bkDays"></div>
+          <div class="bk-slots" id="bkSlots"></div>
+          <div class="bk-confirm" id="bkConfirm">✓ <span data-i18n="demo_bk_confirm">Randevunuz onaylandı!</span></div>
+        </div>
+      </div>
+      <!-- Chat demo -->
+      <div class="demo reveal d1">
+        <div class="demo-head"><span class="dt" data-i18n="demo_chat_title">AI Asistan · 7/24</span><span class="badge" data-i18n="demo_badge">Demo</span></div>
+        <div class="demo-body"><div class="chat" id="chatDemo"></div></div>
+      </div>
+      <!-- Google mock -->
+      <div class="demo reveal d2">
+        <div class="demo-head"><span class="dt" data-i18n="demo_serp_title">Google'da görünüm</span><span class="badge" data-i18n="demo_badge">Demo</span></div>
+        <div class="demo-body">
+          <div class="serp">
+            <div class="map"><span class="road r1"></span><span class="road r2"></span><span class="pin">📍</span></div>
+            <div class="url">🌐 berberiniz.com</div>
+            <div class="ttl" data-i18n="demo_serp_name">Premium Barber · Alanya</div>
+            <div><span class="stars">★★★★★</span> <span class="rev" data-i18n="demo_serp_rev">5,0 · 254 değerlendirme · Berber</span></div>
+            <div class="desc" data-i18n="demo_serp_desc">Online randevu · Çok dilli · Açık 08:30–21:00 · Saç, sakal, tıraş, bakım.</div>
+            <div class="gbtn"><span class="solid" data-i18n="demo_serp_btn1">Randevu Al</span><span data-i18n="demo_serp_btn2">Web sitesi</span><span data-i18n="demo_serp_btn3">Yol tarifi</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OPPORTUNITY / CHARTS ============ -->
+<section class="sec opp" id="opp">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow" data-i18n="opp_kicker">Fırsat</span>
+      <h2 data-i18n="opp_title">Neden şimdi?</h2>
+      <p class="lead" data-i18n="opp_sub">Alanya pazarı açık ve büyük. İlk hareket eden kazanır.</p>
+    </div>
+    <div class="opp-grid">
+      <div class="opp-card reveal" id="oppDonut">
+        <div class="donut"><svg viewBox="0 0 140 140"><circle class="track" cx="70" cy="70" r="60"/><circle class="fill" id="donutFill" cx="70" cy="70" r="60"/></svg><div class="pct">%<span class="count" data-to="90">0</span></div></div>
+        <h3 data-i18n="opp_c1_t">Web sitesi yok</h3>
+        <p data-i18n="opp_c1_p">Alanya'daki berberlerin tahminen %90'ının web sitesi yok. Boş bir alan = sizin fırsatınız.</p>
+      </div>
+      <div class="opp-card reveal d1" id="oppBars">
+        <div class="bars">
+          <div class="bar muted" data-h="42"><span class="bv">~30K</span></div>
+          <div class="bar" data-h="150"><span class="bv">4,5M</span></div>
+        </div>
+        <div class="bar-x"><span data-i18n="opp_c2_x1">Yabancı sakin</span><span data-i18n="opp_c2_x2">Turist/yıl</span></div>
+        <h3 data-i18n="opp_c2_t">Devasa talep</h3>
+        <p data-i18n="opp_c2_p">Yılda 4,5–5 milyon turist ve 30.000+ yabancı sakin. Hepsi çok dilli, online randevu arıyor.</p>
+      </div>
+      <div class="opp-card reveal d2" id="oppBig">
+        <div class="big-num"><span class="count" data-to="250">0</span>–<span class="count" data-to="450">0</span></div>
+        <h3 style="margin-top:14px" data-i18n="opp_c3_t">İşletme pazarı</h3>
+        <p data-i18n="opp_c3_p">Alanya'da tahmini 250–450 berber/kuaför işletmesi. Rakipleriniz online; siz hâlâ kâğıt defterle.</p>
+      </div>
+    </div>
+    <p class="opp-src" data-i18n="opp_src">Kaynaklar: TÜİK 2024 (nüfus), ALTID (turizm), TESK (işletme oranları). Berber sayısı TESK oranlarına dayalı tahmindir; resmi liste mevcut değildir.</p>
+  </div>
+</section>
+
+<!-- ============ METHOD / WHY ============ -->
+<section class="sec method" id="why">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow" data-i18n="why_kicker">Yöntem</span>
+      <h2 data-i18n="why_title">7 günde yayında — yapay zekâ destekli</h2>
+      <p class="lead" data-i18n="why_sub">Net bir süreç. Sürpriz yok. Teknik bilgi gerektirmez.</p>
+    </div>
+    <div class="steps" id="steps"></div>
+    <p class="method-foot reveal"><span data-i18n="why_foot_a">Yapay zekâ ile hızlı üretim:</span> <span class="hl" data-i18n="why_foot_b">Avrupa kalitesi, uygun fiyat.</span></p>
+  </div>
+</section>
+
+<!-- ============ TRUST LIST ============ -->
+<section class="sec" id="trustlist">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow" data-i18n="tl_kicker">Güven</span>
+      <h2 data-i18n="tl_title">Neden bize güvenebilirsiniz</h2>
+    </div>
+    <div class="tl-grid" id="tlGrid"></div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec method" id="faq">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow" data-i18n="faq_kicker">SSS</span>
+      <h2 data-i18n="faq_title">Sık sorulan sorular</h2>
+    </div>
+    <div class="faq-wrap" id="faqWrap"></div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="sec final">
+  <div class="wrap final-in reveal">
+    <span class="urgency"><span class="dot"></span><span data-i18n="cta_urgency">Bu ay sadece 5 berber alıyoruz</span></span>
+    <h2 data-i18n="cta_title">Berberinizi dijitale taşıyalım</h2>
+    <p data-i18n="cta_sub">15 dakikalık ücretsiz WhatsApp danışmanlığı. Hemen yerinizi ayırtın — bağlayıcı değil.</p>
+    <a class="btn btn-primary btn-lg btn-pulse" id="finalWa" href="#" target="_blank" rel="noopener" style="font-size:1.15rem;padding:20px 40px">
+      <svg class="wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.477-.915zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      <span data-i18n="cta_btn">WhatsApp'tan Ücretsiz Danışmanlık Al</span>
+    </a>
+    <p class="micro" data-i18n="cta_micro">⚡ Yanıt süresi: genellikle 1 saat içinde</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand"><span class="wm">WAMOCON</span><span class="tag">IT-Testmanagement</span></div>
+        <p class="f-about" data-i18n="foot_about">Frankfurt merkezli, ISTQB sertifikalı IT test, otomasyon ve kalite yönetimi firması. Yapay zekâ destekli. 40 yıl tecrübe.</p>
+      </div>
+      <div>
+        <h5 data-i18n="foot_h_links">Bağlantılar</h5>
+        <a class="f-link" href="#packages" data-i18n="nav_packages">Paketler</a>
+        <a class="f-link" href="#demo" data-i18n="nav_demo">Demo</a>
+        <a class="f-link" href="#faq" data-i18n="nav_faq">SSS</a>
+        <a class="f-link" href="https://www.wamocon.com/" target="_blank" rel="noopener" data-i18n="foot_visit">wamocon.com'u ziyaret edin ↗</a>
+      </div>
+      <div>
+        <h5 data-i18n="foot_h_contact">İletişim</h5>
+        <a class="f-wa" id="footWa" href="#" target="_blank" rel="noopener">
+          <svg class="wa" style="width:22px;height:22px" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.477-.915zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          +49 176 32838729
+        </a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span data-i18n="foot_copy">© 2026 WAMOCON GmbH. Tüm hakları saklıdır.</span>
+      <span data-i18n="foot_disclaimer">Referans markalar WAMOCON'un kurumsal müşterileridir. Berber verileri kamuya açık kaynaklardan (Yandex, Google, sektör dizinleri) derlenmiştir.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- floating whatsapp -->
+<a class="fab" id="fabWa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <span class="fab-ring"></span>
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.477-.915zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+/* =========================================================
+   WAMOCON Alanya Barber — i18n + interactions (offline)
+   ========================================================= */
+const WA_NUMBER = "4917632838729"; // WhatsApp business line
+
+/* ---------- i18n dictionary (TR source-of-truth from Excel) ---------- */
+const I18N = {
+  tr:{
+    _name:"Türkçe",
+    nav_problem:"Sorun",nav_packages:"Paketler",nav_demo:"Demo",nav_why:"Neden Biz",nav_faq:"SSS",
+    cta_wa_short:"WhatsApp",cta_wa:"WhatsApp'tan Yaz",
+    hero_badge:"WAMOCON × Alanya Berberler",
+    hero_h1a:"Daha Fazla Müşteri,",hero_h1b:"Daha Az Bekleme",
+    hero_sub:"Alanya'daki berber ve kuaförler için web sitesi, online randevu ve yapay zekâ asistan — 7 günde yayında.",
+    hero_cta1:"Ücretsiz Danışmanlık Al",hero_cta2:"Paketleri Gör",
+    hero_trust_a:"40 yıl tecrübe",hero_trust_b:"Deutsche Bank & Mercedes'in güvendiği firma",
+    hero_chip1:"7/24 online randevu",hero_chip2:"7 günde yayında",
+    hero_dvc_title:"Berber Demo",hero_dvc_sub:"Modern · Çok dilli · Mobil uyumlu",hero_dvc_btn:"Randevu Al →",
+    hero_dvc_c1t:"Saç Kesimi",hero_dvc_c2t:"Sakal & Tıraş",hero_dvc_c3t:"Çalışma Saati",hero_dvc_c4t:"Dil",
+    stat1:"Berber analiz edildi",stat2:"Web sitesi yok",stat3:"Yıllık turist",stat3_u:"M+",stat4:"Günde yayında",
+    cred_kicker:"Bu çözümün arkasında kim var?",
+    cred_title:"Almanya'nın kalite standardı, şimdi Alanya'da",
+    cred_body:"WAMOCON — Frankfurt merkezli, ISTQB sertifikalı IT test, otomasyon ve kalite yönetimi firması. 40 yıldır Avrupa'nın en büyük markaları bize güveniyor. Aynı kalite, şimdi berberinizin dijital dünyası için.",
+    cred_b1:"Sertifikalı iş ortağı",cred_b2:"yıl tecrübe",cred_b3:"memnun kurumsal müşteri",
+    cred_clients_label:"WAMOCON'a güvenen markalar",
+    cred_note:"* Bu markalar WAMOCON'un kurumsal referanslarıdır — berber müşterileri değil. wamocon.com üzerinde herkese açık olarak listelenmiştir.",
+    prob_kicker:"Sorun",prob_title:"Tanıdık geliyor mu?",
+    prob_sub:"Alanya'daki çoğu berber her gün aynı müşterileri kaybediyor — fark etmeden.",
+    pains:[
+      ["📞","Telefon sürekli çalıyor, randevu için sekreteriniz yok."],
+      ["🌍","Turist müşteriler dil engeli yüzünden başka yere gidiyor."],
+      ["📷","Instagram'da güzel fotoğraflar var ama müşteriye dönüşmüyor."],
+      ["🔎","Google'da aranıyorsunuz ama web siteniz yok."],
+      ["🌙","Mesai saatleri dışında randevu alınamıyor."],
+      ["📒","Rakipleriniz online; siz hâlâ kâğıt defterle çalışıyorsunuz."]
+    ],
+    ba_kicker:"Dönüşüm",ba_title:"Öncesi → Sonrası",ba_sub:"Tek bir karar, berberinizin günlük işleyişini değiştirir.",
+    ba_before_tab:"Öncesi",ba_after_tab:"Sonrası",
+    ba_before:["Web sitesi yok","Sadece telefonla randevu","Turist müşteri kaybı","Mesai dışı kapalı","Kâğıt defter karmaşası","Google'da görünmüyor"],
+    ba_after:["Google'da 1. sayfa","7/24 online randevu","Çok dilli site (TR·EN·RU·DE)","AI asistan hep açık","Otomatik hatırlatma","Daha çok dolu koltuk"],
+    pkg_anchor_a:"Avrupa kalitesi,",pkg_anchor_b:"Türkiye fiyatı",
+    pkg_title:"Size uygun paketi seçin",
+    pkg_sub:"Şeffaf fiyatlar. Gizli ücret yok. %50 başlangıç, %50 teslimatta — 30 gün para iade garantisi.",
+    pkg_from:"başlangıç",pkg_pop:"En Popüler",pkg_cta:"Bu paketi WhatsApp'tan sor",
+    pkg_note:"Tüm paketler aylık bakım & destek opsiyonu içerir. Fiyatlar 2026 Türkiye web tasarım piyasasına göre konumlandırılmıştır.",
+    packages:[
+      {name:"Başlangıç",fr:"Küçük berberler için",tl:"5.000 TL",eur:"≈ 95 €",feats:["5 sayfa, mobil uyumlu web sitesi","Google İşletme Profili kurulumu","WhatsApp randevu butonu","Temel SEO"]},
+      {name:"Profesyonel",fr:"Orta ölçekli & turist bölgesi",tl:"15.000 TL",eur:"≈ 285 €",feats:["Çok dilli web sitesi (TR+EN+RU/DE)","Online randevu sistemi","AI chat asistan (7/24)","Foto galerisi","Gelişmiş SEO + GEO"]},
+      {name:"Premium",fr:"Büyük salonlar için",tl:"25.000 TL",eur:"≈ 470 €",feats:["Profesyonel'deki her şey","Instagram entegrasyonu","Yorum (review) yönetimi","Aylık SEO raporu","VIP öncelikli destek"]}
+    ],
+    demo_kicker:"Nasıl çalışır",demo_title:"Müşterileriniz bunu görecek",demo_sub:"Gerçek müşteri deneyimini canlı önizleyin — hepsi sitenize dahil.",
+    demo_badge:"Demo",
+    demo_bk_title:"Online Randevu",demo_bk_confirm:"Randevunuz onaylandı!",
+    bk_days:["Pzt","Sal","Çar","Per","Cum"],bk_slots:["10:00","11:30","13:00","15:00","16:30","18:00"],
+    demo_chat_title:"AI Asistan · 7/24",
+    chat:[["them","Merhaba! 👋 Premium Barber'a hoş geldiniz. Size nasıl yardımcı olabilirim?"],["me","Yarın 15:00 müsait mi?"],["them","Evet, yarın 15:00 müsait ✅ Adınızı alabilir miyim? 💈"],["me","Mehmet"],["them","Harika Mehmet! Randevunuz onaylandı. Görüşmek üzere! 🎉"]],
+    demo_serp_title:"Google'da görünüm",demo_serp_name:"Premium Barber · Alanya",
+    demo_serp_rev:"5,0 · 254 değerlendirme · Berber",
+    demo_serp_desc:"Online randevu · Çok dilli · Açık 08:30–21:00 · Saç, sakal, tıraş, bakım.",
+    demo_serp_btn1:"Randevu Al",demo_serp_btn2:"Web sitesi",demo_serp_btn3:"Yol tarifi",
+    opp_kicker:"Fırsat",opp_title:"Neden şimdi?",opp_sub:"Alanya pazarı açık ve büyük. İlk hareket eden kazanır.",
+    opp_c1_t:"Web sitesi yok",opp_c1_p:"Alanya'daki berberlerin tahminen %90'ının web sitesi yok. Boş bir alan = sizin fırsatınız.",
+    opp_c2_x1:"Yabancı sakin",opp_c2_x2:"Turist/yıl",opp_c2_t:"Devasa talep",
+    opp_c2_p:"Yılda 4,5–5 milyon turist ve 30.000+ yabancı sakin. Hepsi çok dilli, online randevu arıyor.",
+    opp_c3_t:"İşletme pazarı",opp_c3_p:"Alanya'da tahmini 250–450 berber/kuaför işletmesi. Rakipleriniz online; siz hâlâ kâğıt defterle.",
+    opp_src:"Kaynaklar: TÜİK 2024 (nüfus), ALTID (turizm), TESK (işletme oranları). Berber sayısı TESK oranlarına dayalı tahmindir; resmi liste mevcut değildir.",
+    why_kicker:"Yöntem",why_title:"7 günde yayında — yapay zekâ destekli",why_sub:"Net bir süreç. Sürpriz yok. Teknik bilgi gerektirmez.",
+    steps:[["Analiz","İşletmenizi ve rakiplerinizi inceliyoruz, en hızlı kazancı buluyoruz."],["Tasarım","Markanıza özel, çok dilli, mobil uyumlu siteyi kuruyoruz."],["Yayın","7 gün içinde canlı. Ömür boyu teknik destek bizden."]],
+    why_foot_a:"Yapay zekâ ile hızlı üretim:",why_foot_b:"Avrupa kalitesi, uygun fiyat.",
+    tl_kicker:"Güven",tl_title:"Neden bize güvenebilirsiniz",
+    trustlist:[["🔍","Alanya'da 50+ berber analiz edildi"],["📉","%90'ının web sitesi yok"],["✈️","Yılda 4,5 milyon turist"],["⚡","7 gün içinde siteniz yayında"],["🛟","Ömür boyu teknik destek"]],
+    faq_kicker:"SSS",faq_title:"Sık sorulan sorular",
+    faqs:[
+      ["Web sitem ne zaman hazır olur?","Çoğu proje 7 iş günü içinde yayında olur."],
+      ["Teknik bilgim yok, kullanabilir miyim?","Evet. Yönetim paneli çok basittir ve her adımda biz yanınızdayız."],
+      ["Turist müşterilere nasıl ulaşacağım?","Çok dilli siteniz sayesinde (TR, EN, RU, DE) — ziyaretçi kendi dilinde görür."],
+      ["Ödeme nasıl yapılır?","%50 başlangıçta, %50 teslimatta. Şeffaf, gizli ücret yok."],
+      ["Vazgeçersem ne olur?","30 gün para iade garantisi. Risk size ait değil."]
+    ],
+    cta_urgency:"Bu ay sadece 5 berber alıyoruz",
+    cta_title:"Berberinizi dijitale taşıyalım",
+    cta_sub:"15 dakikalık ücretsiz WhatsApp danışmanlığı. Hemen yerinizi ayırtın — bağlayıcı değil.",
+    cta_btn:"WhatsApp'tan Ücretsiz Danışmanlık Al",cta_micro:"⚡ Yanıt süresi: genellikle 1 saat içinde",
+    foot_about:"Frankfurt merkezli, ISTQB sertifikalı IT test, otomasyon ve kalite yönetimi firması. Yapay zekâ destekli. 40 yıl tecrübe.",
+    foot_h_links:"Bağlantılar",foot_h_contact:"İletişim",foot_visit:"wamocon.com'u ziyaret edin ↗",
+    foot_copy:"© 2026 WAMOCON GmbH. Tüm hakları saklıdır.",
+    foot_disclaimer:"Referans markalar WAMOCON'un kurumsal müşterileridir. Berber verileri kamuya açık kaynaklardan (Yandex, Google, sektör dizinleri) derlenmiştir.",
+    wa_msg:"Merhaba, Alanya berber dijital paketi hakkında bilgi almak istiyorum."
+  },
+  en:{
+    _name:"English",
+    nav_problem:"Problem",nav_packages:"Packages",nav_demo:"Demo",nav_why:"Why Us",nav_faq:"FAQ",
+    cta_wa_short:"WhatsApp",cta_wa:"Chat on WhatsApp",
+    hero_badge:"WAMOCON × Alanya Barbers",
+    hero_h1a:"More Customers,",hero_h1b:"Less Waiting",
+    hero_sub:"Website, online booking and an AI assistant for barbers and salons in Alanya — live in 7 days.",
+    hero_cta1:"Get a Free Consultation",hero_cta2:"See Packages",
+    hero_trust_a:"40 years of experience",hero_trust_b:"Trusted by Deutsche Bank & Mercedes",
+    hero_chip1:"24/7 online booking",hero_chip2:"Live in 7 days",
+    hero_dvc_title:"Barber Demo",hero_dvc_sub:"Modern · Multilingual · Mobile-ready",hero_dvc_btn:"Book Now →",
+    hero_dvc_c1t:"Haircut",hero_dvc_c2t:"Beard & Shave",hero_dvc_c3t:"Opening Hours",hero_dvc_c4t:"Languages",
+    stat1:"Barbers analysed",stat2:"Have no website",stat3:"Tourists / year",stat3_u:"M+",stat4:"Days to launch",
+    cred_kicker:"Who stands behind this?",
+    cred_title:"Germany's quality standard — now in Alanya",
+    cred_body:"WAMOCON is a Frankfurt-based, ISTQB-certified IT testing, automation and quality-management firm. For 40 years, Europe's biggest brands have trusted us. The same quality, now for your barbershop's digital world.",
+    cred_b1:"Certified partner",cred_b2:"years of experience",cred_b3:"happy enterprise clients",
+    cred_clients_label:"Brands that trust WAMOCON",
+    cred_note:"* These are WAMOCON's enterprise references — not barbershop clients. They are publicly listed on wamocon.com.",
+    prob_kicker:"Problem",prob_title:"Sound familiar?",
+    prob_sub:"Most barbers in Alanya lose the same customers every day — without noticing.",
+    pains:[
+      ["📞","The phone never stops, but you have no receptionist for bookings."],
+      ["🌍","Tourist customers walk away because of the language barrier."],
+      ["📷","Great photos on Instagram, but they don't turn into customers."],
+      ["🔎","People search you on Google — but you have no website."],
+      ["🌙","No one can book outside your working hours."],
+      ["📒","Your competitors are online; you're still using a paper notebook."]
+    ],
+    ba_kicker:"The shift",ba_title:"Before → After",ba_sub:"One decision changes how your barbershop runs every day.",
+    ba_before_tab:"Before",ba_after_tab:"After",
+    ba_before:["No website","Phone-only booking","Losing tourist customers","Closed after hours","Paper-notebook chaos","Invisible on Google"],
+    ba_after:["Page 1 on Google","24/7 online booking","Multilingual site (TR·EN·RU·DE)","AI assistant always on","Automatic reminders","More chairs filled"],
+    pkg_anchor_a:"European quality,",pkg_anchor_b:"Turkish price",
+    pkg_title:"Choose the package that fits you",
+    pkg_sub:"Transparent prices. No hidden fees. 50% to start, 50% on delivery — 30-day money-back guarantee.",
+    pkg_from:"from",pkg_pop:"Most Popular",pkg_cta:"Ask about this on WhatsApp",
+    pkg_note:"Every package includes an optional monthly maintenance & support plan. Prices are positioned against the 2026 Turkish web-design market.",
+    packages:[
+      {name:"Starter",fr:"For small barbershops",tl:"5,000 TL",eur:"≈ €95",feats:["5-page, mobile-ready website","Google Business Profile setup","WhatsApp booking button","Basic SEO"]},
+      {name:"Professional",fr:"Mid-size & tourist areas",tl:"15,000 TL",eur:"≈ €285",feats:["Multilingual website (TR+EN+RU/DE)","Online booking system","AI chat assistant (24/7)","Photo gallery","Advanced SEO + GEO"]},
+      {name:"Premium",fr:"For large salons",tl:"25,000 TL",eur:"≈ €470",feats:["Everything in Professional","Instagram integration","Review management","Monthly SEO report","VIP priority support"]}
+    ],
+    demo_kicker:"How it works",demo_title:"This is what your customers will see",demo_sub:"Preview the real customer experience live — all included in your site.",
+    demo_badge:"Demo",
+    demo_bk_title:"Online Booking",demo_bk_confirm:"Your appointment is confirmed!",
+    bk_days:["Mon","Tue","Wed","Thu","Fri"],bk_slots:["10:00","11:30","13:00","15:00","16:30","18:00"],
+    demo_chat_title:"AI Assistant · 24/7",
+    chat:[["them","Hi! 👋 Welcome to Premium Barber. How can I help you?"],["me","Are you free tomorrow at 3 PM?"],["them","Yes, 3 PM tomorrow is free ✅ May I have your name? 💈"],["me","Michael"],["them","Great, Michael! Your appointment is confirmed. See you soon! 🎉"]],
+    demo_serp_title:"How you look on Google",demo_serp_name:"Premium Barber · Alanya",
+    demo_serp_rev:"5.0 · 254 reviews · Barber",
+    demo_serp_desc:"Online booking · Multilingual · Open 08:30–21:00 · Hair, beard, shave, care.",
+    demo_serp_btn1:"Book",demo_serp_btn2:"Website",demo_serp_btn3:"Directions",
+    opp_kicker:"Opportunity",opp_title:"Why now?",opp_sub:"The Alanya market is wide open and large. The first mover wins.",
+    opp_c1_t:"Have no website",opp_c1_p:"An estimated 90% of barbers in Alanya have no website. An empty field = your opportunity.",
+    opp_c2_x1:"Foreign residents",opp_c2_x2:"Tourists/yr",opp_c2_t:"Massive demand",
+    opp_c2_p:"4.5–5 million tourists a year and 30,000+ foreign residents. They all expect multilingual, online booking.",
+    opp_c3_t:"Business market",opp_c3_p:"An estimated 250–450 barber/salon businesses in Alanya. Your competitors are online; you're still on paper.",
+    opp_src:"Sources: TÜİK 2024 (population), ALTID (tourism), TESK (business ratios). The barber count is an estimate based on TESK ratios; no official list exists.",
+    why_kicker:"Method",why_title:"Live in 7 days — AI-powered",why_sub:"A clear process. No surprises. No technical skills required.",
+    steps:[["Analyse","We study your business and competitors and find the fastest win."],["Design","We build your branded, multilingual, mobile-ready site."],["Launch","Live within 7 days. Lifetime technical support from us."]],
+    why_foot_a:"AI-powered production:",why_foot_b:"European quality at an affordable price.",
+    tl_kicker:"Trust",tl_title:"Why you can trust us",
+    trustlist:[["🔍","50+ barbers analysed in Alanya"],["📉","90% have no website"],["✈️","4.5 million tourists a year"],["⚡","Your site live within 7 days"],["🛟","Lifetime technical support"]],
+    faq_kicker:"FAQ",faq_title:"Frequently asked questions",
+    faqs:[
+      ["When will my website be ready?","Most projects go live within 7 business days."],
+      ["I'm not technical — can I use it?","Yes. The admin panel is very simple, and we're with you every step."],
+      ["How do I reach tourist customers?","Through your multilingual site (TR, EN, RU, DE) — each visitor sees their own language."],
+      ["How does payment work?","50% to start, 50% on delivery. Transparent, no hidden fees."],
+      ["What if I change my mind?","30-day money-back guarantee. The risk isn't on you."]
+    ],
+    cta_urgency:"We only take 5 barbers this month",
+    cta_title:"Let's take your barbershop digital",
+    cta_sub:"A free 15-minute WhatsApp consultation. Reserve your spot now — no commitment.",
+    cta_btn:"Get a Free Consultation on WhatsApp",cta_micro:"⚡ Response time: usually within 1 hour",
+    foot_about:"Frankfurt-based, ISTQB-certified IT testing, automation and quality-management firm. AI-powered. 40 years of experience.",
+    foot_h_links:"Links",foot_h_contact:"Contact",foot_visit:"Visit wamocon.com ↗",
+    foot_copy:"© 2026 WAMOCON GmbH. All rights reserved.",
+    foot_disclaimer:"Reference brands are WAMOCON's enterprise clients. Barber data was compiled from public sources (Yandex, Google, industry directories).",
+    wa_msg:"Hello, I'd like information about the Alanya barber digital package."
+  },
+  ru:{
+    _name:"Русский",
+    nav_problem:"Проблема",nav_packages:"Пакеты",nav_demo:"Демо",nav_why:"Почему мы",nav_faq:"Вопросы",
+    cta_wa_short:"WhatsApp",cta_wa:"Написать в WhatsApp",
+    hero_badge:"WAMOCON × Барберы Аланьи",
+    hero_h1a:"Больше клиентов,",hero_h1b:"меньше ожидания",
+    hero_sub:"Сайт, онлайн-запись и ИИ-ассистент для барбершопов и салонов Аланьи — запуск за 7 дней.",
+    hero_cta1:"Бесплатная консультация",hero_cta2:"Смотреть пакеты",
+    hero_trust_a:"40 лет опыта",hero_trust_b:"Нам доверяют Deutsche Bank и Mercedes",
+    hero_chip1:"Запись 24/7 онлайн",hero_chip2:"Запуск за 7 дней",
+    hero_dvc_title:"Демо барбершопа",hero_dvc_sub:"Современно · Многоязычно · Для смартфона",hero_dvc_btn:"Записаться →",
+    hero_dvc_c1t:"Стрижка",hero_dvc_c2t:"Борода и бритьё",hero_dvc_c3t:"Часы работы",hero_dvc_c4t:"Языки",
+    stat1:"Барберов изучено",stat2:"Без сайта",stat3:"Туристов в год",stat3_u:"млн+",stat4:"Дней до запуска",
+    cred_kicker:"Кто стоит за этим решением?",
+    cred_title:"Немецкий стандарт качества — теперь в Аланье",
+    cred_body:"WAMOCON — компания из Франкфурта с сертификатом ISTQB в области тестирования ИТ, автоматизации и управления качеством. Уже 40 лет нам доверяют крупнейшие бренды Европы. То же качество — теперь для цифрового мира вашего барбершопа.",
+    cred_b1:"Сертифицированный партнёр",cred_b2:"лет опыта",cred_b3:"довольных корпоративных клиентов",
+    cred_clients_label:"Бренды, которые доверяют WAMOCON",
+    cred_note:"* Это корпоративные клиенты WAMOCON, а не барбершопы. Они публично указаны на сайте wamocon.com.",
+    prob_kicker:"Проблема",prob_title:"Знакомо?",
+    prob_sub:"Большинство барберов Аланьи каждый день теряют одних и тех же клиентов — не замечая этого.",
+    pains:[
+      ["📞","Телефон не умолкает, но администратора для записи нет."],
+      ["🌍","Туристы уходят к другим из-за языкового барьера."],
+      ["📷","В Instagram отличные фото, но они не превращаются в клиентов."],
+      ["🔎","Вас ищут в Google — а сайта у вас нет."],
+      ["🌙","Записаться вне рабочих часов невозможно."],
+      ["📒","Конкуренты онлайн, а вы всё ещё с бумажным журналом."]
+    ],
+    ba_kicker:"Перемена",ba_title:"До → После",ba_sub:"Одно решение меняет работу вашего барбершопа каждый день.",
+    ba_before_tab:"До",ba_after_tab:"После",
+    ba_before:["Нет сайта","Запись только по телефону","Потеря туристов","Закрыто вне часов","Хаос в бумажном журнале","Не видно в Google"],
+    ba_after:["1-я страница в Google","Онлайн-запись 24/7","Многоязычный сайт (TR·EN·RU·DE)","ИИ-ассистент всегда на связи","Автонапоминания","Больше занятых кресел"],
+    pkg_anchor_a:"Европейское качество,",pkg_anchor_b:"турецкая цена",
+    pkg_title:"Выберите подходящий пакет",
+    pkg_sub:"Прозрачные цены. Без скрытых платежей. 50% при старте, 50% при сдаче — гарантия возврата 30 дней.",
+    pkg_from:"от",pkg_pop:"Самый популярный",pkg_cta:"Спросить в WhatsApp",
+    pkg_note:"Все пакеты включают опциональный план ежемесячной поддержки. Цены соответствуют рынку веб-дизайна Турции 2026 года.",
+    packages:[
+      {name:"Старт",fr:"Для небольших барбершопов",tl:"5 000 TL",eur:"≈ 95 €",feats:["Сайт из 5 страниц для смартфонов","Настройка профиля Google Бизнес","Кнопка записи в WhatsApp","Базовое SEO"]},
+      {name:"Профессиональный",fr:"Средние и туристические районы",tl:"15 000 TL",eur:"≈ 285 €",feats:["Многоязычный сайт (TR+EN+RU/DE)","Система онлайн-записи","ИИ-чат-ассистент (24/7)","Фотогалерея","Расширенное SEO + GEO"]},
+      {name:"Премиум",fr:"Для крупных салонов",tl:"25 000 TL",eur:"≈ 470 €",feats:["Всё из «Профессионального»","Интеграция с Instagram","Управление отзывами","Ежемесячный SEO-отчёт","VIP-поддержка с приоритетом"]}
+    ],
+    demo_kicker:"Как это работает",demo_title:"Вот что увидят ваши клиенты",demo_sub:"Посмотрите реальный клиентский опыт вживую — всё входит в ваш сайт.",
+    demo_badge:"Демо",
+    demo_bk_title:"Онлайн-запись",demo_bk_confirm:"Ваша запись подтверждена!",
+    bk_days:["Пн","Вт","Ср","Чт","Пт"],bk_slots:["10:00","11:30","13:00","15:00","16:30","18:00"],
+    demo_chat_title:"ИИ-ассистент · 24/7",
+    chat:[["them","Здравствуйте! 👋 Добро пожаловать в Premium Barber. Чем могу помочь?"],["me","Завтра в 15:00 свободно?"],["them","Да, завтра в 15:00 свободно ✅ Подскажите ваше имя? 💈"],["me","Михаил"],["them","Отлично, Михаил! Запись подтверждена. До встречи! 🎉"]],
+    demo_serp_title:"Как вы выглядите в Google",demo_serp_name:"Premium Barber · Аланья",
+    demo_serp_rev:"5,0 · 254 отзыва · Барбершоп",
+    demo_serp_desc:"Онлайн-запись · Многоязычно · Открыто 08:30–21:00 · Стрижка, борода, бритьё, уход.",
+    demo_serp_btn1:"Записаться",demo_serp_btn2:"Сайт",demo_serp_btn3:"Маршрут",
+    opp_kicker:"Возможность",opp_title:"Почему сейчас?",opp_sub:"Рынок Аланьи открыт и велик. Побеждает тот, кто первый.",
+    opp_c1_t:"Без сайта",opp_c1_p:"По оценкам, у 90% барберов Аланьи нет сайта. Пустое поле = ваша возможность.",
+    opp_c2_x1:"Иностр. жители",opp_c2_x2:"Туристов/год",opp_c2_t:"Огромный спрос",
+    opp_c2_p:"4,5–5 млн туристов в год и более 30 000 иностранных жителей. Все ждут многоязычную онлайн-запись.",
+    opp_c3_t:"Рынок бизнеса",opp_c3_p:"По оценкам, 250–450 барбершопов/салонов в Аланье. Конкуренты онлайн, а вы — на бумаге.",
+    opp_src:"Источники: TÜİK 2024 (население), ALTID (туризм), TESK (отраслевые коэффициенты). Число барберов — оценка по коэффициентам TESK; официального списка нет.",
+    why_kicker:"Метод",why_title:"Запуск за 7 дней — на базе ИИ",why_sub:"Понятный процесс. Без сюрпризов. Технических знаний не нужно.",
+    steps:[["Анализ","Изучаем ваш бизнес и конкурентов, находим самую быструю выгоду."],["Дизайн","Создаём фирменный многоязычный сайт для смартфонов."],["Запуск","В эфире за 7 дней. Пожизненная техподдержка от нас."]],
+    why_foot_a:"Производство на базе ИИ:",why_foot_b:"европейское качество по доступной цене.",
+    tl_kicker:"Доверие",tl_title:"Почему нам можно доверять",
+    trustlist:[["🔍","Изучено 50+ барберов в Аланье"],["📉","У 90% нет сайта"],["✈️","4,5 млн туристов в год"],["⚡","Ваш сайт в эфире за 7 дней"],["🛟","Пожизненная техподдержка"]],
+    faq_kicker:"Вопросы",faq_title:"Частые вопросы",
+    faqs:[
+      ["Когда мой сайт будет готов?","Большинство проектов запускается в течение 7 рабочих дней."],
+      ["Я не технарь — справлюсь?","Да. Панель управления очень простая, и мы рядом на каждом шаге."],
+      ["Как привлечь туристов?","Через ваш многоязычный сайт (TR, EN, RU, DE) — каждый видит свой язык."],
+      ["Как происходит оплата?","50% при старте, 50% при сдаче. Прозрачно, без скрытых платежей."],
+      ["А если я передумаю?","Гарантия возврата денег 30 дней. Вы ничем не рискуете."]
+    ],
+    cta_urgency:"В этом месяце берём только 5 барберов",
+    cta_title:"Переведём ваш барбершоп в цифру",
+    cta_sub:"Бесплатная 15-минутная консультация в WhatsApp. Забронируйте место — без обязательств.",
+    cta_btn:"Бесплатная консультация в WhatsApp",cta_micro:"⚡ Время ответа: обычно в течение 1 часа",
+    foot_about:"Компания из Франкфурта с сертификатом ISTQB: тестирование ИТ, автоматизация и управление качеством. На базе ИИ. 40 лет опыта.",
+    foot_h_links:"Ссылки",foot_h_contact:"Контакты",foot_visit:"Перейти на wamocon.com ↗",
+    foot_copy:"© 2026 WAMOCON GmbH. Все права защищены.",
+    foot_disclaimer:"Указанные бренды — корпоративные клиенты WAMOCON. Данные о барберах собраны из открытых источников (Yandex, Google, отраслевые каталоги).",
+    wa_msg:"Здравствуйте, хочу узнать о цифровом пакете для барберов в Аланье."
+  },
+  de:{
+    _name:"Deutsch",
+    nav_problem:"Problem",nav_packages:"Pakete",nav_demo:"Demo",nav_why:"Warum wir",nav_faq:"FAQ",
+    cta_wa_short:"WhatsApp",cta_wa:"WhatsApp schreiben",
+    hero_badge:"WAMOCON × Alanya Barbiere",
+    hero_h1a:"Mehr Kunden,",hero_h1b:"weniger Warten",
+    hero_sub:"Website, Online-Terminbuchung und KI-Assistent für Barbiere und Salons in Alanya — in 7 Tagen live.",
+    hero_cta1:"Kostenlose Beratung",hero_cta2:"Pakete ansehen",
+    hero_trust_a:"40 Jahre Erfahrung",hero_trust_b:"Vertraut von Deutsche Bank & Mercedes",
+    hero_chip1:"Online-Buchung rund um die Uhr",hero_chip2:"In 7 Tagen live",
+    hero_dvc_title:"Barbier-Demo",hero_dvc_sub:"Modern · Mehrsprachig · Mobiloptimiert",hero_dvc_btn:"Termin buchen →",
+    hero_dvc_c1t:"Haarschnitt",hero_dvc_c2t:"Bart & Rasur",hero_dvc_c3t:"Öffnungszeiten",hero_dvc_c4t:"Sprachen",
+    stat1:"Barbiere analysiert",stat2:"Ohne Website",stat3:"Touristen / Jahr",stat3_u:"Mio.+",stat4:"Tage bis live",
+    cred_kicker:"Wer steht hinter dieser Lösung?",
+    cred_title:"Deutschlands Qualitätsstandard — jetzt in Alanya",
+    cred_body:"WAMOCON ist ein in Frankfurt ansässiges, ISTQB-zertifiziertes Unternehmen für IT-Test, Testautomatisierung und Qualitätsmanagement. Seit 40 Jahren vertrauen uns Europas größte Marken. Dieselbe Qualität — jetzt für die digitale Welt Ihres Barbershops.",
+    cred_b1:"Zertifizierter Partner",cred_b2:"Jahre Erfahrung",cred_b3:"zufriedene Firmenkunden",
+    cred_clients_label:"Marken, die WAMOCON vertrauen",
+    cred_note:"* Dies sind Firmenreferenzen von WAMOCON — keine Barbier-Kunden. Sie sind öffentlich auf wamocon.com gelistet.",
+    prob_kicker:"Problem",prob_title:"Kommt Ihnen das bekannt vor?",
+    prob_sub:"Die meisten Barbiere in Alanya verlieren jeden Tag dieselben Kunden — ohne es zu merken.",
+    pains:[
+      ["📞","Das Telefon klingelt ständig, aber niemand nimmt Termine an."],
+      ["🌍","Touristen gehen wegen der Sprachbarriere woanders hin."],
+      ["📷","Tolle Fotos auf Instagram, aber sie werden nicht zu Kunden."],
+      ["🔎","Man sucht Sie bei Google — aber Sie haben keine Website."],
+      ["🌙","Außerhalb der Öffnungszeiten kann niemand buchen."],
+      ["📒","Ihre Konkurrenz ist online; Sie nutzen noch das Papierheft."]
+    ],
+    ba_kicker:"Der Wandel",ba_title:"Vorher → Nachher",ba_sub:"Eine Entscheidung verändert den Alltag Ihres Barbershops.",
+    ba_before_tab:"Vorher",ba_after_tab:"Nachher",
+    ba_before:["Keine Website","Termine nur per Telefon","Touristen gehen verloren","Nach Feierabend geschlossen","Chaos im Papierheft","Bei Google unsichtbar"],
+    ba_after:["Seite 1 bei Google","Online-Buchung rund um die Uhr","Mehrsprachige Website (TR·EN·RU·DE)","KI-Assistent immer aktiv","Automatische Erinnerungen","Mehr besetzte Stühle"],
+    pkg_anchor_a:"Europäische Qualität,",pkg_anchor_b:"türkischer Preis",
+    pkg_title:"Wählen Sie Ihr passendes Paket",
+    pkg_sub:"Transparente Preise. Keine versteckten Kosten. 50% bei Start, 50% bei Lieferung — 30 Tage Geld-zurück-Garantie.",
+    pkg_from:"ab",pkg_pop:"Am beliebtesten",pkg_cta:"Per WhatsApp anfragen",
+    pkg_note:"Jedes Paket enthält einen optionalen monatlichen Wartungs- & Support-Plan. Die Preise orientieren sich am türkischen Webdesign-Markt 2026.",
+    packages:[
+      {name:"Starter",fr:"Für kleine Barbershops",tl:"5.000 TL",eur:"≈ 95 €",feats:["5-seitige, mobiloptimierte Website","Einrichtung Google-Unternehmensprofil","WhatsApp-Buchungsbutton","Basis-SEO"]},
+      {name:"Professional",fr:"Mittelgroß & Touristengebiete",tl:"15.000 TL",eur:"≈ 285 €",feats:["Mehrsprachige Website (TR+EN+RU/DE)","Online-Buchungssystem","KI-Chat-Assistent (24/7)","Fotogalerie","Erweitertes SEO + GEO"]},
+      {name:"Premium",fr:"Für große Salons",tl:"25.000 TL",eur:"≈ 470 €",feats:["Alles aus Professional","Instagram-Integration","Bewertungs-Management","Monatlicher SEO-Bericht","VIP-Priority-Support"]}
+    ],
+    demo_kicker:"So funktioniert's",demo_title:"Das werden Ihre Kunden sehen",demo_sub:"Erleben Sie das echte Kundenerlebnis live — alles in Ihrer Website enthalten.",
+    demo_badge:"Demo",
+    demo_bk_title:"Online-Buchung",demo_bk_confirm:"Ihr Termin ist bestätigt!",
+    bk_days:["Mo","Di","Mi","Do","Fr"],bk_slots:["10:00","11:30","13:00","15:00","16:30","18:00"],
+    demo_chat_title:"KI-Assistent · 24/7",
+    chat:[["them","Hallo! 👋 Willkommen bei Premium Barber. Wie kann ich helfen?"],["me","Haben Sie morgen um 15 Uhr frei?"],["them","Ja, morgen um 15 Uhr ist frei ✅ Wie ist Ihr Name? 💈"],["me","Michael"],["them","Super, Michael! Ihr Termin ist bestätigt. Bis bald! 🎉"]],
+    demo_serp_title:"So sehen Sie bei Google aus",demo_serp_name:"Premium Barber · Alanya",
+    demo_serp_rev:"5,0 · 254 Bewertungen · Barbier",
+    demo_serp_desc:"Online-Buchung · Mehrsprachig · Geöffnet 08:30–21:00 · Haare, Bart, Rasur, Pflege.",
+    demo_serp_btn1:"Termin buchen",demo_serp_btn2:"Website",demo_serp_btn3:"Route",
+    opp_kicker:"Chance",opp_title:"Warum jetzt?",opp_sub:"Der Markt in Alanya ist weit offen und groß. Wer zuerst handelt, gewinnt.",
+    opp_c1_t:"Ohne Website",opp_c1_p:"Schätzungsweise 90% der Barbiere in Alanya haben keine Website. Ein leeres Feld = Ihre Chance.",
+    opp_c2_x1:"Ausl. Einwohner",opp_c2_x2:"Touristen/Jahr",opp_c2_t:"Riesige Nachfrage",
+    opp_c2_p:"4,5–5 Millionen Touristen pro Jahr und über 30.000 ausländische Einwohner. Alle erwarten mehrsprachige Online-Buchung.",
+    opp_c3_t:"Geschäftsmarkt",opp_c3_p:"Schätzungsweise 250–450 Barbier-/Friseurbetriebe in Alanya. Ihre Konkurrenz ist online; Sie noch auf Papier.",
+    opp_src:"Quellen: TÜİK 2024 (Bevölkerung), ALTID (Tourismus), TESK (Branchen-Kennzahlen). Die Barbier-Anzahl ist eine Schätzung auf Basis von TESK-Kennzahlen; eine offizielle Liste existiert nicht.",
+    why_kicker:"Methode",why_title:"In 7 Tagen live — KI-gestützt",why_sub:"Ein klarer Ablauf. Keine Überraschungen. Keine technischen Kenntnisse nötig.",
+    steps:[["Analyse","Wir prüfen Ihr Geschäft und Ihre Konkurrenz und finden den schnellsten Gewinn."],["Design","Wir bauen Ihre markeneigene, mehrsprachige, mobiloptimierte Website."],["Launch","In 7 Tagen live. Lebenslanger technischer Support von uns."]],
+    why_foot_a:"KI-gestützte Produktion:",why_foot_b:"europäische Qualität zum fairen Preis.",
+    tl_kicker:"Vertrauen",tl_title:"Warum Sie uns vertrauen können",
+    trustlist:[["🔍","50+ Barbiere in Alanya analysiert"],["📉","90% ohne Website"],["✈️","4,5 Millionen Touristen pro Jahr"],["⚡","Ihre Website in 7 Tagen live"],["🛟","Lebenslanger technischer Support"]],
+    faq_kicker:"FAQ",faq_title:"Häufige Fragen",
+    faqs:[
+      ["Wann ist meine Website fertig?","Die meisten Projekte gehen innerhalb von 7 Werktagen live."],
+      ["Ich bin kein Technik-Profi — geht das?","Ja. Das Verwaltungspanel ist sehr einfach, und wir begleiten Sie bei jedem Schritt."],
+      ["Wie erreiche ich Touristen?","Über Ihre mehrsprachige Website (TR, EN, RU, DE) — jeder Besucher sieht seine Sprache."],
+      ["Wie läuft die Bezahlung?","50% bei Start, 50% bei Lieferung. Transparent, keine versteckten Kosten."],
+      ["Was, wenn ich es mir anders überlege?","30 Tage Geld-zurück-Garantie. Das Risiko liegt nicht bei Ihnen."]
+    ],
+    cta_urgency:"Diesen Monat nehmen wir nur 5 Barbiere an",
+    cta_title:"Bringen wir Ihren Barbershop ins Digitale",
+    cta_sub:"Kostenlose 15-minütige WhatsApp-Beratung. Sichern Sie sich jetzt Ihren Platz — unverbindlich.",
+    cta_btn:"Kostenlose Beratung per WhatsApp",cta_micro:"⚡ Antwortzeit: meist innerhalb von 1 Stunde",
+    foot_about:"In Frankfurt ansässiges, ISTQB-zertifiziertes Unternehmen für IT-Test, Automatisierung und Qualitätsmanagement. KI-gestützt. 40 Jahre Erfahrung.",
+    foot_h_links:"Links",foot_h_contact:"Kontakt",foot_visit:"wamocon.com besuchen ↗",
+    foot_copy:"© 2026 WAMOCON GmbH. Alle Rechte vorbehalten.",
+    foot_disclaimer:"Die genannten Marken sind Firmenkunden von WAMOCON. Barbier-Daten wurden aus öffentlichen Quellen (Yandex, Google, Branchenverzeichnisse) zusammengestellt.",
+    wa_msg:"Hallo, ich interessiere mich für das Digital-Paket für Barbiere in Alanya."
+  }
+};
+
+/* ---------- State ---------- */
+let LANG = (function(){
+  const saved = localStorage.getItem('wm_lang');
+  if(saved && I18N[saved]) return saved;
+  const b = (navigator.language||'tr').slice(0,2).toLowerCase();
+  return I18N[b] ? b : 'tr';
+})();
+
+/* ---------- WhatsApp link builder ---------- */
+function waLink(){
+  return "https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent(I18N[LANG].wa_msg);
+}
+function updateWaLinks(){
+  const l = waLink();
+  ['navWa','heroWa','finalWa','footWa','fabWa','mmWa'].forEach(id=>{
+    const el=document.getElementById(id); if(el) el.href=l;
+  });
+}
+
+/* ---------- Render dynamic sections ---------- */
+function el(tag,cls,html){const e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e;}
+
+function renderDynamic(){
+  const t = I18N[LANG];
+  // pains
+  const pg=document.getElementById('painGrid');pg.innerHTML='';
+  t.pains.forEach((p,i)=>{
+    const c=el('div','pain reveal'+(i%3?' d'+(i%3):''));
+    c.innerHTML='<div class="pi">'+p[0]+'</div><p>'+p[1]+'</p>';
+    pg.appendChild(c);
+  });
+  // before/after
+  renderBA();
+  // packages
+  const kg=document.getElementById('pkgGrid');kg.innerHTML='';
+  t.packages.forEach((p,i)=>{
+    const feat=i===1;
+    const c=el('div','pkg reveal'+(i?' d'+i:'')+(feat?' feat':''));
+    let h = feat?'<span class="tag-pop">'+t.pkg_pop+'</span>':'';
+    h+='<div class="pk-name">'+p.name+'</div><div class="pk-for">'+p.fr+'</div>';
+    h+='<div class="pk-price"><span class="pk-from">'+t.pkg_from+'</span><span class="pk-tl">'+p.tl+'</span><span class="pk-eur">'+p.eur+'</span></div>';
+    h+='<ul class="pk-feats">'+p.feats.map(f=>'<li><span class="ck">✓</span>'+f+'</li>').join('')+'</ul>';
+    h+='<a class="btn '+(feat?'btn-primary':'btn-dark')+' btn-block pkgCta" href="'+waLink()+'" target="_blank" rel="noopener">'+t.pkg_cta+'</a>';
+    c.innerHTML=h;
+    kg.appendChild(c);
+  });
+  // steps
+  const st=document.getElementById('steps');st.innerHTML='';
+  t.steps.forEach((s,i)=>{
+    const c=el('div','step reveal'+(i?' d'+i:''));
+    c.innerHTML='<div class="n">0'+(i+1)+'</div><h3>'+s[0]+'</h3><p>'+s[1]+'</p>'+(i<2?'<span class="arrow">→</span>':'');
+    st.appendChild(c);
+  });
+  // trust list
+  const tl=document.getElementById('tlGrid');tl.innerHTML='';
+  t.trustlist.forEach((x,i)=>{
+    const c=el('div','tl reveal'+(i?' d'+(i%4):''));
+    c.innerHTML='<div class="ti">'+x[0]+'</div><p>'+x[1]+'</p>';
+    tl.appendChild(c);
+  });
+  // faq
+  const fw=document.getElementById('faqWrap');fw.innerHTML='';
+  t.faqs.forEach((f,i)=>{
+    const c=el('div','faq');
+    c.innerHTML='<button aria-expanded="false"><span class="q">'+f[0]+'</span><span class="pm">+</span></button><div class="a"><p>'+f[1]+'</p></div>';
+    const btn=c.querySelector('button'), ans=c.querySelector('.a');
+    btn.addEventListener('click',()=>{
+      const open=c.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open);
+      ans.style.maxHeight = open ? ans.scrollHeight+'px' : 0;
+    });
+    fw.appendChild(c);
+  });
+  // booking demo
+  renderBooking();
+  // chat demo (re-run animation)
+  renderChat();
+  // re-observe new reveal elements
+  observeReveals();
+}
+
+let baMode='before';
+function renderBA(){
+  const t=I18N[LANG];const panel=document.getElementById('baPanel');panel.innerHTML='';
+  const arr = baMode==='before'?t.ba_before:t.ba_after;
+  const cls = baMode==='before'?'bad':'good';
+  const ic  = baMode==='before'?'✕':'✓';
+  arr.forEach(x=>{
+    const it=el('div','ba-item '+cls);
+    it.innerHTML='<span class="ic">'+ic+'</span>'+x;
+    panel.appendChild(it);
+  });
+}
+
+function renderBooking(){
+  const t=I18N[LANG];
+  const days=document.getElementById('bkDays');days.innerHTML='';
+  t.bk_days.forEach((d,i)=>{const e=el('div','bk-day'+(i===3?' sel':''),d);days.appendChild(e);});
+  days.querySelectorAll('.bk-day').forEach(d=>d.addEventListener('click',()=>{
+    days.querySelectorAll('.bk-day').forEach(x=>x.classList.remove('sel'));d.classList.add('sel');
+  }));
+  const slots=document.getElementById('bkSlots');slots.innerHTML='';
+  const taken=[1,4];
+  t.bk_slots.forEach((s,i)=>{
+    const e=el('div','bk-slot'+(taken.includes(i)?' taken':''),s);
+    if(!taken.includes(i)) e.addEventListener('click',()=>{
+      slots.querySelectorAll('.bk-slot').forEach(x=>x.classList.remove('sel'));
+      e.classList.add('sel');
+      document.getElementById('bkConfirm').classList.add('show');
+    });
+    slots.appendChild(e);
+  });
+  document.getElementById('bkConfirm').classList.remove('show');
+}
+
+let chatTimer=[];
+function renderChat(){
+  chatTimer.forEach(clearTimeout);chatTimer=[];
+  const t=I18N[LANG];const box=document.getElementById('chatDemo');
+  if(!box) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  box.innerHTML='';
+  if(reduce){
+    t.chat.forEach(m=>{const b=el('div','bubble '+m[0],m[1]);b.style.animation='none';b.style.opacity=1;b.style.transform='none';box.appendChild(b);});
+    return;
+  }
+  let delay=300;
+  t.chat.forEach((m)=>{
+    chatTimer.push(setTimeout(()=>{
+      // typing indicator for 'them'
+      if(m[0]==='them'){
+        const ty=el('div','bubble typing','<i></i><i></i><i></i>');box.appendChild(ty);
+        chatTimer.push(setTimeout(()=>{ty.remove();const b=el('div','bubble '+m[0],m[1]);box.appendChild(b);box.scrollTop=box.scrollHeight;},700));
+      } else {
+        const b=el('div','bubble '+m[0],m[1]);box.appendChild(b);box.scrollTop=box.scrollHeight;
+      }
+    },delay));
+    delay += m[0]==='them'?1700:900;
+  });
+}
+
+/* ---------- Apply static i18n ---------- */
+function applyI18n(){
+  const t=I18N[LANG];
+  document.documentElement.lang=LANG;
+  document.querySelectorAll('[data-i18n]').forEach(node=>{
+    const k=node.getAttribute('data-i18n');
+    if(t[k]!=null && typeof t[k]==='string') node.textContent=t[k];
+  });
+  // active lang button
+  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang===LANG));
+  updateWaLinks();
+  renderDynamic();
+}
+
+function setLang(l){
+  if(!I18N[l])return;LANG=l;localStorage.setItem('wm_lang',l);applyI18n();
+}
+
+/* ---------- Count-up ---------- */
+function countUp(node){
+  const to=parseFloat(node.dataset.to);const dec=parseInt(node.dataset.dec||'0');
+  const dur=1500;const start=performance.now();
+  function tick(now){
+    let p=Math.min((now-start)/dur,1);p=1-Math.pow(1-p,3);
+    let val=(to*p);
+    node.textContent = dec? val.toFixed(dec).replace('.',(LANG==='en')?'.':',') : Math.round(val).toString();
+    if(p<1) requestAnimationFrame(tick); else node.textContent = dec? to.toFixed(dec).replace('.',(LANG==='en')?'.':',') : to;
+  }
+  requestAnimationFrame(tick);
+}
+
+/* ---------- Reveal + triggers via IntersectionObserver ---------- */
+let io;
+function observeReveals(){
+  if(!io){
+    io=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+      });
+    },{threshold:.12});
+  }
+  document.querySelectorAll('.reveal:not(.in)').forEach(n=>io.observe(n));
+}
+// one-shot observers for counters / charts
+function observeOnce(id,cb){
+  const node=document.getElementById(id);if(!node)return;
+  const o=new IntersectionObserver((ents)=>{ents.forEach(e=>{if(e.isIntersecting){cb();o.disconnect();}});},{threshold:.3});
+  o.observe(node);
+}
+
+/* ---------- Interactions ---------- */
+function initUI(){
+  // header shadow
+  const hdr=document.getElementById('hdr');
+  window.addEventListener('scroll',()=>{hdr.classList.toggle('scrolled',window.scrollY>10);},{passive:true});
+  // lang buttons
+  document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+  // before/after toggle
+  document.getElementById('baBefore').addEventListener('click',function(){baMode='before';this.classList.add('active');document.getElementById('baAfter').classList.remove('active');renderBA();});
+  document.getElementById('baAfter').addEventListener('click',function(){baMode='after';this.classList.add('active');document.getElementById('baBefore').classList.remove('active');renderBA();});
+  // mobile menu
+  const mm=document.getElementById('mobileMenu'),ov=document.getElementById('overlay'),bg=document.getElementById('burger');
+  function openMenu(o){mm.classList.toggle('open',o);ov.classList.toggle('show',o);bg.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';}
+  bg.addEventListener('click',()=>openMenu(!mm.classList.contains('open')));
+  document.getElementById('mmClose').addEventListener('click',()=>openMenu(false));
+  ov.addEventListener('click',()=>openMenu(false));
+  mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>openMenu(false)));
+  // hero parallax (light)
+  const reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(!reduce){
+    const vis=document.querySelector('.hero-visual');
+    window.addEventListener('scroll',()=>{
+      const y=window.scrollY;if(y<700&&vis)vis.style.transform='translateY('+(y*0.06)+'px)';
+    },{passive:true});
+  }
+}
+
+/* ---------- Boot ---------- */
+document.addEventListener('DOMContentLoaded',()=>{
+  initUI();
+  applyI18n();
+  observeReveals();
+  // counters (run when stats visible)
+  observeOnce('statsSec',()=>{document.querySelectorAll('#statsSec .count').forEach(countUp);});
+  // donut + bars + big numbers on opportunity
+  observeOnce('opp',()=>{
+    const fill=document.getElementById('donutFill');if(fill)fill.style.strokeDashoffset = (377*(1-0.90)).toFixed(0);
+    document.querySelectorAll('#opp .count').forEach(countUp);
+    document.querySelectorAll('#opp .bar').forEach(b=>{b.style.height=b.dataset.h+'px';});
+  });
+});
+</script>
+</body>
+</html>
