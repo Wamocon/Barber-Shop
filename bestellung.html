@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WAMOCON · Paket Siparişi</title>
+<meta name="description" content="Alanya berberleri için WAMOCON dijital paketi sipariş formu.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#F40E0E">
+<style>
+:root{
+  --red:#F40E0E; --red-600:#D10A0A;
+  --ink:#0E1116; --muted:#5A6472; --muted-2:#8A93A2;
+  --line:#E6E8EC; --surface:#F5F6F8; --surface-2:#EEF0F3; --white:#FFFFFF;
+  --wa:#25D366; --wa-600:#1EB457;
+  --maxw:640px; --radius:16px;
+  --shadow-sm:0 2px 10px rgba(14,17,22,.06); --shadow:0 12px 40px rgba(14,17,22,.10);
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);color:var(--ink);background:var(--white);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;padding-bottom:96px}
+a{color:var(--red)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(18px,5vw,28px)}
+h1,h2{font-weight:800;letter-spacing:-.01em;color:var(--ink)}
+
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:10px}
+.brand{font-weight:900;font-size:1.1rem;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
+.brand span{color:var(--red)}
+.back{font-size:.78rem;font-weight:700;color:var(--muted);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.back:hover{color:var(--ink)}
+
+.lang{position:relative}
+.lang-btn{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:none;border-radius:40px;padding:8px 13px;font-size:.76rem;font-weight:800;color:var(--ink);cursor:pointer;margin-right:10px}
+.lang-menu{position:absolute;top:calc(100% + 8px);right:0;min-width:150px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:6px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:.18s var(--ease);z-index:120}
+.lang.open .lang-menu{opacity:1;visibility:visible;transform:none}
+.lang-menu button{display:flex;align-items:center;gap:10px;width:100%;padding:9px 12px;border-radius:9px;font-size:.86rem;font-weight:700;color:var(--muted);background:none;border:none;text-align:left;cursor:pointer}
+.lang-menu button:hover{background:var(--surface);color:var(--ink)}
+.lang-menu button.active{background:var(--ink);color:#fff}
+.hr{display:flex;align-items:center}
+
+.intro{padding:clamp(28px,6vw,44px) 0 6px;text-align:center}
+.intro .eyebrow{font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:12px}
+.intro h1{font-size:clamp(1.8rem,6vw,2.4rem);margin-bottom:10px}
+.intro p{color:var(--muted);font-size:.98rem;max-width:44ch;margin:0 auto}
+
+form{padding:26px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(18px,4vw,26px);margin-bottom:16px}
+.card h2{font-size:1.25rem;margin-bottom:4px;display:flex;align-items:center;gap:9px}
+.card h2 .n{color:var(--red);font-weight:900;font-size:.95rem}
+.card .hint{font-size:.82rem;color:var(--muted-2);margin-bottom:16px}
+
+.pkg-grid{display:grid;gap:12px}
+.pkg{display:flex;align-items:center;gap:14px;background:#fff;border:2px solid var(--line);border-radius:12px;padding:16px;cursor:pointer;transition:.2s}
+.pkg:hover{border-color:#d8dbe0}
+.pkg.sel{border-color:var(--red);box-shadow:0 0 0 3px rgba(244,14,14,.08)}
+.pkg input{width:20px;height:20px;accent-color:var(--red);flex:none}
+.pkg .pn{flex:1;min-width:0}
+.pkg .pt{font-weight:800;font-size:1.02rem;color:var(--ink);display:flex;align-items:center;flex-wrap:wrap;gap:8px;row-gap:4px}
+.pkg .pd{font-size:.82rem;color:var(--muted-2);margin-top:4px}
+.pkg .pp{font-weight:900;font-size:1.1rem;color:var(--red);white-space:nowrap}
+.pkg .pop{display:inline-block;font-size:.62rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--red);border-radius:20px;padding:3px 9px;white-space:nowrap}
+
+.field{margin-bottom:15px}
+.field:last-child{margin-bottom:0}
+.field label{display:block;font-size:.76rem;font-weight:700;color:var(--ink);margin-bottom:7px}
+.field .req{color:var(--red)}
+.control{width:100%;background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:13px 14px;color:var(--ink);font-size:16px;transition:.2s;font-family:var(--font)}
+.control:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 3px rgba(244,14,14,.10)}
+.control::placeholder{color:var(--muted-2)}
+textarea.control{min-height:76px;resize:vertical}
+
+.consent{display:flex;gap:11px;align-items:flex-start;margin-top:4px;font-size:.86rem;color:var(--muted)}
+.consent input{width:19px;height:19px;accent-color:var(--red);flex:none;margin-top:2px}
+.consent a{color:var(--red);text-decoration:underline}
+
+.subbar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:12px clamp(18px,5vw,28px);box-shadow:0 -6px 24px rgba(14,17,22,.06)}
+.subbar .inner{max-width:var(--maxw);margin:0 auto}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;font-weight:800;font-size:.96rem;padding:15px 20px;border-radius:60px;cursor:pointer;border:none;width:100%;transition:.25s var(--ease)}
+.btn svg{width:19px;height:19px}
+.btn-wa{background:var(--wa);color:#04210f;box-shadow:0 10px 26px rgba(37,211,102,.32)}
+.btn-wa:hover{background:var(--wa-600);transform:translateY(-2px)}
+.btn-wa:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+.toast{position:fixed;left:50%;bottom:96px;transform:translate(-50%,20px);z-index:60;background:var(--ink);color:#fff;border-radius:12px;padding:13px 22px;font-size:.9rem;opacity:0;visibility:hidden;transition:.3s var(--ease);max-width:calc(100vw - 32px);text-align:center}
+.toast.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.toast b{color:#ffb4b4}
+
+footer{text-align:center;padding:30px 0;color:var(--muted-2);font-size:.8rem}
+footer b{color:var(--red)}
+@media(max-width:430px){ .back .txt{display:none} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="WAMOCON-Alanya-Barber-Landing.html" class="brand">WAMOCON<span>·</span></a>
+    <div class="hr">
+      <div class="lang" id="lang">
+        <button class="lang-btn" id="langBtn"><span id="langTxt">TR</span> ▾</button>
+        <div class="lang-menu" id="langMenu">
+          <button data-lang="tr">🇹🇷 Türkçe</button>
+          <button data-lang="en">🇬🇧 English</button>
+          <button data-lang="ru">🇷🇺 Русский</button>
+          <button data-lang="de">🇩🇪 Deutsch</button>
+        </div>
+      </div>
+      <a href="WAMOCON-Alanya-Barber-Landing.html" class="back">← <span class="txt" data-i18n="back">Geri</span></a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="intro">
+    <span class="eyebrow" data-i18n="eyebrow">WAMOCON · Alanya Berber Dijital Paketi</span>
+    <h1 data-i18n="title">Paket Siparişi</h1>
+    <p data-i18n="intro">Paketinizi seçin, bilgilerinizi girin ve WhatsApp'tan gönderin. 24 saat içinde size dönüş yapıyoruz.</p>
+  </div>
+
+  <form id="f">
+    <div class="card">
+      <h2><span class="n">01</span> <span data-i18n="s1">Paket Seçimi</span></h2>
+      <div class="pkg-grid" id="pkgGrid"></div>
+    </div>
+
+    <div class="card">
+      <h2><span class="n">02</span> <span data-i18n="s2">İletişim Bilgileri</span></h2>
+      <div class="field"><label data-i18n="l_name">Adınız Soyadınız <span class="req">*</span></label><input class="control" id="fName" required data-i18n-ph="ph_name" placeholder="Adınız Soyadınız"></div>
+      <div class="field"><label data-i18n="l_biz">İşletme Adı</label><input class="control" id="fBiz" data-i18n-ph="ph_biz" placeholder="Örn. Maryam Barber Shop"></div>
+      <div class="field"><label data-i18n="l_phone">Telefon / WhatsApp <span class="req">*</span></label><input class="control" id="fPhone" type="tel" inputmode="tel" required placeholder="0532 000 00 00"></div>
+      <div class="field"><label data-i18n="l_city">Şehir / Bölge</label><input class="control" id="fCity" data-i18n-ph="ph_city" placeholder="Örn. Avsallar, Alanya"></div>
+      <div class="field"><label data-i18n="l_notes">Notlar (opsiyonel)</label><textarea class="control" id="fNotes" data-i18n-ph="ph_notes" placeholder="Eklemek istedikleriniz..."></textarea></div>
+    </div>
+
+    <div class="card">
+      <label class="consent">
+        <input type="checkbox" id="fConsent" required>
+        <span data-i18n="consent">Kişisel verilerimin, talebimin değerlendirilmesi amacıyla işlenmesini ve <a href="datenschutz.html" target="_blank">Gizlilik Politikası</a>'nı okuduğumu kabul ediyorum. <span class="req">*</span></span>
+      </label>
+    </div>
+  </form>
+</main>
+
+<div class="subbar">
+  <div class="inner">
+    <button class="btn btn-wa" id="sendWa" type="button">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.45-.14-.64.14-.19.29-.73.94-.9 1.13-.16.19-.33.21-.61.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.73-1.63-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.44-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.08-.14-.64-1.55-.88-2.12-.23-.56-.47-.48-.64-.49-.16-.01-.36-.01-.55-.01-.19 0-.51.07-.77.36-.26.29-1.01.99-1.01 2.4 0 1.42 1.03 2.79 1.18 2.98.14.19 2.04 3.12 4.95 4.37.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.7-.7 1.95-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.34z M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2"/></svg>
+      <span data-i18n="btn_send">WhatsApp ile Gönder</span>
+    </button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<footer>WAMOCON · Frankfurt am Main, Almanya · <a href="datenschutz.html" data-i18n="foot_privacy">Gizlilik Politikası</a></footer>
+
+<script>
+var WA_NUMBER = "4917632838729";
+
+var PACKAGES = [
+ {key:"starter", tl:"9.900 TL"},
+ {key:"professional", tl:"15.000 TL", pop:true},
+ {key:"premium", tl:"25.000 TL"}
+];
+
+var I18N = {
+tr:{ _name:"TR", back:"Geri", eyebrow:"WAMOCON · Alanya Berber Dijital Paketi",
+ title:"Paket Siparişi", intro:"Paketinizi seçin, bilgilerinizi girin ve WhatsApp'tan gönderin. 24 saat içinde size dönüş yapıyoruz.",
+ s1:"Paket Seçimi", s2:"İletişim Bilgileri",
+ l_name:"Adınız Soyadınız", l_biz:"İşletme Adı", l_phone:"Telefon / WhatsApp", l_city:"Şehir / Bölge", l_notes:"Notlar (opsiyonel)",
+ ph_name:"Adınız Soyadınız", ph_biz:"Örn. Maryam Barber Shop", ph_city:"Örn. Avsallar, Alanya", ph_notes:"Eklemek istedikleriniz...",
+ consent:'Kişisel verilerimin, talebimin değerlendirilmesi amacıyla işlenmesini ve <a href="datenschutz.html" target="_blank">Gizlilik Politikası</a>\'nı okuduğumu kabul ediyorum. <span class="req">*</span>',
+ btn_send:"WhatsApp ile Gönder", foot_privacy:"Gizlilik Politikası",
+ t_consent:"Devam etmek için lütfen Gizlilik Politikası onayını işaretleyin.", t_fields:"Lütfen adınızı ve telefon numaranızı girin.",
+ t_open:"WhatsApp açılıyor… <b>Gönder</b>'e basmayı unutmayın.",
+ pkgNames:{starter:"Başlangıç",professional:"Profesyonel",premium:"Premium"},
+ pkgDesc:{starter:"Küçük berberler için",professional:"En Popüler · Orta ölçekli & turist bölgesi",premium:"Büyük salonlar için"},
+ pop:"En Popüler",
+ m_header:"Yeni Paket Siparişi", m_pkg:"Paket", m_name:"Ad Soyad", m_biz:"İşletme", m_phone:"Telefon", m_city:"Şehir", m_notes:"Not"
+},
+en:{ _name:"EN", back:"Back", eyebrow:"WAMOCON · Alanya Barber Digital Package",
+ title:"Order a Package", intro:"Choose your package, enter your details and send via WhatsApp. We'll get back to you within 24 hours.",
+ s1:"Choose Package", s2:"Contact Details",
+ l_name:"Full Name", l_biz:"Business Name", l_phone:"Phone / WhatsApp", l_city:"City / Region", l_notes:"Notes (optional)",
+ ph_name:"Your full name", ph_biz:"e.g. Maryam Barber Shop", ph_city:"e.g. Avsallar, Alanya", ph_notes:"Anything you'd like to add...",
+ consent:'I agree that my personal data will be processed to evaluate my request and that I have read the <a href="datenschutz.html" target="_blank">Privacy Policy</a>. <span class="req">*</span>',
+ btn_send:"Send via WhatsApp", foot_privacy:"Privacy Policy",
+ t_consent:"Please confirm you've read the Privacy Policy to continue.", t_fields:"Please enter your name and phone number.",
+ t_open:"WhatsApp is opening… don't forget to tap <b>Send</b>.",
+ pkgNames:{starter:"Starter",professional:"Professional",premium:"Premium"},
+ pkgDesc:{starter:"For small barbershops",professional:"Most Popular · Mid-size & tourist areas",premium:"For large salons"},
+ pop:"Most Popular",
+ m_header:"New Package Order", m_pkg:"Package", m_name:"Name", m_biz:"Business", m_phone:"Phone", m_city:"City", m_notes:"Note"
+},
+ru:{ _name:"RU", back:"Назад", eyebrow:"WAMOCON · Цифровой пакет для барберов Аланьи",
+ title:"Заказать пакет", intro:"Выберите пакет, укажите данные и отправьте через WhatsApp. Мы свяжемся с вами в течение 24 часов.",
+ s1:"Выбор пакета", s2:"Контактные данные",
+ l_name:"Имя и фамилия", l_biz:"Название бизнеса", l_phone:"Телефон / WhatsApp", l_city:"Город / регион", l_notes:"Примечания (необязательно)",
+ ph_name:"Имя и фамилия", ph_biz:"напр. Maryam Barber Shop", ph_city:"напр. Авсаллар, Аланья", ph_notes:"Что хотите добавить...",
+ consent:'Я согласен(на) на обработку моих персональных данных для оценки запроса и подтверждаю, что ознакомился(лась) с <a href="datenschutz.html" target="_blank">Политикой конфиденциальности</a>. <span class="req">*</span>',
+ btn_send:"Отправить в WhatsApp", foot_privacy:"Политика конфиденциальности",
+ t_consent:"Пожалуйста, подтвердите ознакомление с Политикой конфиденциальности.", t_fields:"Пожалуйста, укажите имя и номер телефона.",
+ t_open:"Открывается WhatsApp… не забудьте нажать <b>Отправить</b>.",
+ pkgNames:{starter:"Старт",professional:"Профессиональный",premium:"Премиум"},
+ pkgDesc:{starter:"Для небольших барбершопов",professional:"Самый популярный · Средние и туристические районы",premium:"Для крупных салонов"},
+ pop:"Самый популярный",
+ m_header:"Новый заказ пакета", m_pkg:"Пакет", m_name:"Имя", m_biz:"Бизнес", m_phone:"Телефон", m_city:"Город", m_notes:"Примечание"
+},
+de:{ _name:"DE", back:"Zurück", eyebrow:"WAMOCON · Alanya Barber Digital-Paket",
+ title:"Paket bestellen", intro:"Wählen Sie Ihr Paket, geben Sie Ihre Daten ein und senden Sie sie per WhatsApp. Wir melden uns innerhalb von 24 Stunden.",
+ s1:"Paketauswahl", s2:"Kontaktdaten",
+ l_name:"Vor- und Nachname", l_biz:"Firmenname", l_phone:"Telefon / WhatsApp", l_city:"Stadt / Region", l_notes:"Notizen (optional)",
+ ph_name:"Vor- und Nachname", ph_biz:"z. B. Maryam Barber Shop", ph_city:"z. B. Avsallar, Alanya", ph_notes:"Was Sie ergänzen möchten...",
+ consent:'Ich stimme zu, dass meine personenbezogenen Daten zur Prüfung meiner Anfrage verarbeitet werden, und bestätige, die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen zu haben. <span class="req">*</span>',
+ btn_send:"Per WhatsApp senden", foot_privacy:"Datenschutz",
+ t_consent:"Bitte bestätigen Sie, dass Sie die Datenschutzerklärung gelesen haben.", t_fields:"Bitte geben Sie Ihren Namen und Ihre Telefonnummer ein.",
+ t_open:"WhatsApp öffnet sich… nicht vergessen, auf <b>Senden</b> zu tippen.",
+ pkgNames:{starter:"Starter",professional:"Professional",premium:"Premium"},
+ pkgDesc:{starter:"Für kleine Barbershops",professional:"Am beliebtesten · Mittelgroß & Touristengebiete",premium:"Für große Salons"},
+ pop:"Am beliebtesten",
+ m_header:"Neue Paketbestellung", m_pkg:"Paket", m_name:"Name", m_biz:"Firma", m_phone:"Telefon", m_city:"Stadt", m_notes:"Notiz"
+}
+};
+
+var LANG = "tr";
+var SELECTED = null;
+function $(s){ return document.querySelector(s); }
+function $$(s){ return document.querySelectorAll(s); }
+function val(id){ var e=document.getElementById(id); return e ? e.value.trim() : ""; }
+
+function renderPackages(){
+  var t = I18N[LANG];
+  $("#pkgGrid").innerHTML = PACKAGES.map(function(p){
+    var checked = SELECTED===p.key ? "checked" : "";
+    var pop = p.pop ? '<span class="pop">'+t.pop+'</span>' : "";
+    return '<label class="pkg'+(SELECTED===p.key?' sel':'')+'" data-key="'+p.key+'">'+
+      '<input type="radio" name="pkg" value="'+p.key+'" '+checked+'>'+
+      '<span class="pn"><span class="pt">'+t.pkgNames[p.key]+pop+'</span><span class="pd">'+t.pkgDesc[p.key]+'</span></span>'+
+      '<span class="pp">'+p.tl+'</span></label>';
+  }).join("");
+  $$('.pkg').forEach(function(el){
+    el.addEventListener("click", function(){
+      SELECTED = el.getAttribute("data-key");
+      $$('.pkg').forEach(function(x){ x.classList.toggle("sel", x.getAttribute("data-key")===SELECTED); });
+      var r = el.querySelector('input[type=radio]'); if(r) r.checked = true;
+    });
+  });
+}
+
+function applyLang(){
+  var t = I18N[LANG];
+  $$("[data-i18n]").forEach(function(el){ var k=el.getAttribute("data-i18n"); if(t[k]!=null) el.innerHTML=t[k]; });
+  $$("[data-i18n-ph]").forEach(function(el){ var k=el.getAttribute("data-i18n-ph"); if(t[k]!=null) el.setAttribute("placeholder", t[k]); });
+  document.documentElement.lang = LANG;
+  document.title = "WAMOCON · " + t.title;
+  $("#langTxt").textContent = t._name;
+  $$("#langMenu button").forEach(function(b){ b.classList.toggle("active", b.dataset.lang===LANG); });
+  renderPackages();
+}
+function setLang(l){ if(!I18N[l]) l="tr"; LANG=l; try{ localStorage.setItem("wm_lang",l); }catch(e){} applyLang(); }
+$("#langBtn").addEventListener("click", function(e){ e.stopPropagation(); $("#lang").classList.toggle("open"); });
+$$("#langMenu button").forEach(function(b){ b.addEventListener("click", function(){ setLang(b.dataset.lang); $("#lang").classList.remove("open"); }); });
+document.addEventListener("click", function(){ $("#lang").classList.remove("open"); });
+
+var toastT;
+function toast(msg){ var el=$("#toast"); el.innerHTML=msg; el.classList.add("show"); clearTimeout(toastT); toastT=setTimeout(function(){ el.classList.remove("show"); }, 2800); }
+
+$("#sendWa").addEventListener("click", function(){
+  var t = I18N[LANG];
+  if(!$("#fConsent").checked){ toast(t.t_consent); return; }
+  if(!val("fName") || !val("fPhone")){ toast(t.t_fields); return; }
+  var pkgLabel = SELECTED ? t.pkgNames[SELECTED] : "-";
+  var L = [];
+  L.push("💈 "+t.m_header+" · WAMOCON");
+  L.push("");
+  L.push(t.m_pkg+": "+pkgLabel);
+  L.push(t.m_name+": "+val("fName"));
+  if(val("fBiz"))   L.push(t.m_biz+": "+val("fBiz"));
+  L.push(t.m_phone+": "+val("fPhone"));
+  if(val("fCity"))  L.push(t.m_city+": "+val("fCity"));
+  if(val("fNotes")) L.push(t.m_notes+": "+val("fNotes"));
+  var msg = L.join("\n");
+  window.open("https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent(msg), "_blank");
+  toast(t.t_open);
+});
+
+(function init(){
+  var saved=null; try{ saved=localStorage.getItem("wm_lang"); }catch(e){}
+  if(!saved){ var n=(navigator.language||"tr").slice(0,2).toLowerCase(); saved=["tr","en","ru","de"].indexOf(n)>-1 ? n : "tr"; }
+  LANG=saved;
+  var qp = new URLSearchParams(location.search);
+  var p = (qp.get("pkg")||"").toLowerCase();
+  if(["starter","professional","premium"].indexOf(p) > -1) SELECTED = p;
+  applyLang();
+})();
+</script>
+</body>
+</html>

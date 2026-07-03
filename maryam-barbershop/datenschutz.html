@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MARYAM · Gizlilik Politikası / Datenschutz</title>
+<meta name="description" content="MARYAM Berber Atölyesi — Kişisel verilerin korunması hakkında bilgilendirme (KVKK) / Datenschutzerklärung (DSGVO).">
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#0C0B0A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%23C6A15B' stroke-width='1.5'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Georgia,serif' font-size='20' fill='%23C6A15B'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noir:#0C0B0A; --noir-2:#131110; --char:#1B1815; --char-2:#221E19;
+  --gold:#C6A15B; --gold-2:#E4C784; --gold-deep:#9C7C3E; --gold-soft:rgba(198,161,91,.12); --gold-line:rgba(198,161,91,.30);
+  --cream:#F4EEE2; --stone:#A79E90; --stone-2:#8F8676; --line:rgba(230,220,200,.12); --line-2:rgba(230,220,200,.20);
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:"Jost",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; --ease:cubic-bezier(.19,1,.22,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:80px}
+body{background:var(--noir);color:var(--cream);font-family:var(--sans);font-weight:300;line-height:1.7;font-size:16px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:var(--gold);text-decoration:underline;text-underline-offset:2px}
+a:hover{color:var(--gold-2)}
+::selection{background:var(--gold);color:var(--noir)}
+.wrap{max-width:760px;margin:0 auto;padding:0 clamp(18px,5vw,28px)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;color:var(--cream)}
+.it{font-style:italic;color:var(--gold)}
+.label{font-family:var(--sans);font-size:.7rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.mono{color:var(--gold)}.mono circle{stroke:currentColor;fill:none}.mono text{fill:currentColor;font-family:var(--serif);font-weight:600}
+
+header{position:sticky;top:0;z-index:40;background:rgba(12,11,10,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:10px}
+.brand{display:flex;align-items:center;gap:11px;flex:none}
+.brand .mono{width:36px;height:36px}
+.brand .bn{font-family:var(--serif);font-weight:600;font-size:1.25rem;letter-spacing:.14em}
+.hr{display:flex;align-items:center;gap:10px}
+.back{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);display:inline-flex;align-items:center;gap:6px;text-decoration:none}
+.back:hover{color:var(--gold)} .back svg{width:14px;height:14px}
+
+.lang{position:relative}
+.lang-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line-2);padding:8px 11px;font-family:var(--sans);
+  font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);transition:.3s;cursor:pointer;background:none}
+.lang-btn:hover{border-color:var(--gold-line)}
+.lang-btn .globe{width:14px;height:14px;color:var(--gold)}
+.lang-btn .chev{width:9px;height:9px;opacity:.6;transition:transform .3s}
+.lang.open .chev{transform:rotate(180deg)}
+.lang-menu{position:absolute;top:calc(100% + 8px);right:0;min-width:152px;background:var(--char);border:1px solid var(--line-2);
+  padding:6px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:.2s var(--ease);z-index:60}
+.lang.open .lang-menu{opacity:1;visibility:visible;transform:none}
+.lang-menu button{display:flex;align-items:center;gap:10px;width:100%;padding:10px 12px;font-family:var(--sans);font-size:.85rem;
+  color:var(--stone);text-align:left;background:none;border:none;cursor:pointer;transition:.15s}
+.lang-menu button:hover{background:var(--char-2);color:var(--cream)}
+.lang-menu button.active{color:var(--gold)}
+.lang-menu .fl{font-size:1.05rem}
+
+.intro{padding:clamp(30px,7vw,52px) 0 8px}
+.intro .label{display:block;margin-bottom:14px}
+.intro h1{font-size:clamp(1.9rem,6vw,2.6rem);margin-bottom:10px}
+.intro .updated{font-size:.82rem;color:var(--stone-2)}
+.intro .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.intro .badge{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-line);padding:5px 10px}
+
+main{padding:20px 0 60px}
+.sec{padding:28px 0;border-bottom:1px solid var(--line)}
+.sec:last-child{border-bottom:none}
+.sec h2{font-size:1.35rem;margin-bottom:12px;display:flex;align-items:baseline;gap:10px}
+.sec h2 .n{font-family:var(--serif);color:var(--gold-deep);font-size:1rem}
+.sec p{color:var(--stone);margin-bottom:10px;font-size:.96rem}
+.sec p:last-child{margin-bottom:0}
+.sec ul{margin:10px 0 10px 20px;color:var(--stone);font-size:.96rem}
+.sec li{margin-bottom:6px}
+.sec strong{color:var(--cream);font-weight:500}
+.callout{background:var(--char);border:1px solid var(--gold-line);padding:16px 18px;margin-top:14px;font-size:.88rem;color:var(--stone)}
+.callout b{color:var(--gold)}
+.placeholder{color:var(--gold-2);font-style:italic}
+table.rights{width:100%;border-collapse:collapse;margin-top:12px;font-size:.88rem}
+table.rights th{text-align:left;font-family:var(--sans);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);padding:8px 10px;border-bottom:1px solid var(--gold-line)}
+table.rights td{padding:9px 10px;border-bottom:1px solid var(--line);color:var(--stone);vertical-align:top}
+table.rights tr:last-child td{border-bottom:none}
+
+footer{text-align:center;padding:30px 0;color:var(--stone-2);font-size:.78rem;border-top:1px solid var(--line)}
+footer b{color:var(--gold)}
+@media(max-width:430px){ .back .txt{display:none} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><svg class="mono" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" stroke-width="1.4"/><circle cx="50" cy="50" r="39" stroke-width="0.6"/><text x="50" y="65" text-anchor="middle" font-size="46">M</text></svg><span class="bn">MARYAM</span></a>
+    <div class="hr">
+      <div class="lang" id="lang">
+        <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+          <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg>
+          <span id="langTxt">TR</span>
+          <svg class="chev" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+        </button>
+        <div class="lang-menu" id="langMenu" role="menu">
+          <button data-lang="tr"><span class="fl">🇹🇷</span> Türkçe</button>
+          <button data-lang="en"><span class="fl">🇬🇧</span> English</button>
+          <button data-lang="ru"><span class="fl">🇷🇺</span> Русский</button>
+          <button data-lang="de"><span class="fl">🇩🇪</span> Deutsch</button>
+        </div>
+      </div>
+      <a href="index.html" class="back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 6l-6 6 6 6"/></svg><span class="txt" data-i18n="back">Geri</span></a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="intro">
+    <span class="label" data-i18n="eyebrow">MARYAM Berber Atölyesi</span>
+    <h1 data-i18n="title">Gizlilik <span class="it">Politikası</span></h1>
+    <div class="updated" data-i18n="updated">Son güncelleme: Temmuz 2026</div>
+    <div class="badges">
+      <span class="badge">KVKK · Kanun No. 6698</span>
+      <span class="badge">EU DSGVO / GDPR</span>
+    </div>
+  </div>
+
+  <div id="content"></div>
+</main>
+
+<footer>MARYAM Berber Atölyesi · <b>WAMOCON</b> Webdesign</footer>
+
+<script>
+var I18N = {
+tr:{ _name:"TR", back:"Geri", eyebrow:"MARYAM Berber Atölyesi",
+ title:'Gizlilik <span class="it">Politikası</span>', updated:"Son güncelleme: Temmuz 2026",
+ sections:[
+  ["01","Kapsam ve Uygulanan Mevzuat","scope",
+   "Bu metin, MARYAM Berber Atölyesi (\"MARYAM\", \"biz\") tarafından işletilen internet sitesi üzerinden toplanan kişisel verilerin işlenmesine ilişkin bilgilendirmedir.",
+   "MARYAM, Türkiye'de yerleşik bir işletme olduğundan <strong>6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK)</strong> kapsamında veri sorumlusudur. Ayrıca site; Almanca dil seçeneği, uluslararası müşterilere yönelik pazarlama ve online randevu imkânı sunduğundan, Avrupa Birliği'nde bulunan ziyaretçilere yönelik hizmet sunumu söz konusu olduğunda <strong>Genel Veri Koruma Tüzüğü (DSGVO/GDPR)</strong> madde 3/2 kapsamında da uygulanabilir olabilir. Web sitesinin geliştirilmesini üstlenen WAMOCON (Frankfurt, Almanya), kendi ilettiği talepler bakımından ayrıca DSGVO'ya doğrudan tabidir.",
+   "Bu nedenle bu metin, hem KVKK madde 10 hem de DSGVO madde 13 gerekliliklerini birlikte karşılayacak şekilde hazırlanmıştır."],
+  ["02","Veri Sorumlusu","controller",
+   "<strong>MARYAM Berber Atölyesi</strong><br><span class='placeholder'>[Ticaret unvanı / şahıs işletmesi bilgisi eklenecek]</span><br>Zafer Cd. No:4D, Avsallar Mah., 07470 Alanya / Antalya, Türkiye<br>E-posta: <span class='placeholder'>[eklenecek]</span> · Telefon: <span class='placeholder'>[eklenecek]</span>",
+   "Web sitesinin teknik geliştirilmesi ve barındırılmasında görev alan: <strong>WAMOCON</strong>, Frankfurt am Main, Almanya — <a href='https://www.wamocon.com' target='_blank' rel='noopener'>wamocon.com</a>. WAMOCON, randevu ve iletişim formları üzerinden kendi WhatsApp hattına ulaşan talepler bakımından ayrıca (müşterek) veri sorumlusu sıfatıyla hareket edebilir."],
+  ["03","Hangi Veriler İşlenir","data",
+   "Web sitesi üzerinden yalnızca sizin kendi isteğinizle, formları doldurduğunuzda aşağıdaki veriler işlenir:",
+   "LIST:<strong>Randevu formu:</strong> ad soyad, seçilen hizmet, tarih/saat, isteğe bağlı not.|<strong>Site dil tercihi:</strong> tarayıcınızda yerel olarak (localStorage) saklanır, sunucuya gönderilmez, çerez kullanılmaz.|<strong>WhatsApp üzerinden iletişim:</strong> mesajınızı gönderdiğinizde telefon numaranız ve mesaj içeriği WhatsApp/Meta (ABD) altyapısı üzerinden iletilir.",
+   "Site; harita gösterimi için <strong>Google Maps</strong>, yazı tipleri için <strong>Google Fonts</strong> ve iletişim için <strong>WhatsApp (Meta)</strong> gibi üçüncü taraf servisler kullanır. Bu servisler, sayfa yüklendiğinde IP adresiniz gibi teknik verileri kendi sunucularına (çoğunlukla ABD) iletebilir."],
+  ["04","İşleme Amaçları ve Hukuki Sebep","purpose",
+   "Verileriniz; randevu taleplerinizin karşılanması, size ulaşılabilmesi ve hizmet kalitesinin sağlanması amacıyla işlenir.",
+   "LIST:KVKK madde 5/6 uyarınca: <strong>sözleşmenin kurulması/ifası</strong> (randevu talebi) ve gerektiğinde <strong>açık rızanız</strong>.|DSGVO madde 6/1 uyarınca: <strong>madde 6/1(b) sözleşme</strong> ve/veya <strong>madde 6/1(a) açık rıza</strong>."],
+  ["05","Veri Aktarımı ve Yurt Dışı Transferi","transfer",
+   "Verileriniz; randevu talebinizi almak amacıyla MARYAM'ın kendi WhatsApp hattına, teknik destek amacıyla WAMOCON'a aktarılabilir.",
+   "WhatsApp/Meta (ABD merkezli) verilerinizi işlediğinden, bu bir yurt dışı veri transferidir. Türkiye ile AB arasında bu konuda karşılıklı yeterlilik kararları bulunmamaktadır; ABD'li servis sağlayıcılar genellikle AB-ABD Veri Gizliliği Çerçevesi (Data Privacy Framework) kapsamında sertifikalıdır. Verileriniz, yasal zorunluluk olmadıkça başka üçüncü kişilerle paylaşılmaz veya satılmaz."],
+  ["06","Saklama Süresi","retention",
+   "Verileriniz, randevu talebinizin karşılanması için gerekli süre boyunca saklanır ve amaç ortadan kalktığında ya da yasal saklama süreleri sona erdiğinde silinir/anonimleştirilir. Ticari defter ve belgelere ilişkin yasal saklama yükümlülükleri (ör. 10 yıla kadar) saklıdır."],
+  ["07","Haklarınız","rights",
+   "TABLE",
+   "Haklarınızı kullanmak için bizimle <strong>İletişim</strong> bölümündeki bilgiler üzerinden irtibata geçebilirsiniz. Ayrıca şikâyet hakkınız bulunmaktadır: Türkiye'de <strong>Kişisel Verileri Koruma Kurumu (KVKK Kurumu)</strong> — <a href='https://www.kvkk.gov.tr' target='_blank' rel='noopener'>kvkk.gov.tr</a>; Avrupa Birliği'nde ikamet edenler için ilgili ulusal veri koruma otoritesi (ör. Almanya'da Hessischer Beauftragter für Datenschutz)."],
+  ["08","Çerezler ve Yerel Depolama","cookies",
+   "Bu site takip amaçlı çerez (cookie) veya analitik izleme aracı kullanmaz. Yalnızca dil tercihiniz, tarayıcınızın yerel depolama alanında (localStorage) cihazınızda saklanır ve hiçbir sunucuya gönderilmez."],
+  ["09","Değişiklikler","changes",
+   "Bu politika, mevzuat değişiklikleri veya site güncellemeleri nedeniyle zaman zaman güncellenebilir. Güncel sürüm her zaman bu sayfada yayınlanır."],
+  ["10","İletişim","contact",
+   "Gizlilikle ilgili sorularınız için: <span class='placeholder'>[MARYAM iletişim bilgisi eklenecek]</span><br>Web sitesi teknik geliştirme: WAMOCON — <a href='https://www.wamocon.com/webdesign/' target='_blank' rel='noopener'>wamocon.com/webdesign</a>"]
+ ],
+ rightsHead:["Hak","Açıklama"],
+ rightsRows:[
+  ["Bilgi edinme (KVKK m.11 / DSGVO m.15)","Verilerinizin işlenip işlenmediğini öğrenme ve bilgi talep etme."],
+  ["Düzeltme (KVKK m.11 / DSGVO m.16)","Eksik veya yanlış verilerin düzeltilmesini isteme."],
+  ["Silme (KVKK m.11 / DSGVO m.17)","Verilerinizin silinmesini veya yok edilmesini talep etme."],
+  ["İşlemeye itiraz (KVKK m.11 / DSGVO m.21)","Belirli işleme faaliyetlerine itiraz etme."],
+  ["Rızayı geri çekme (DSGVO m.7/3)","Açık rızaya dayalı işlemeyi istediğiniz zaman durdurma."],
+  ["Veri taşınabilirliği (DSGVO m.20)","Verilerinizi yapılandırılmış bir formatta talep etme."],
+  ["Şikâyet hakkı","Yetkili denetim makamına (KVKK Kurumu veya AB üye ülke otoritesi) başvurma."]
+ ]},
+en:{ _name:"EN", back:"Back", eyebrow:"MARYAM Barber Atelier",
+ title:'Privacy <span class="it">Policy</span>', updated:"Last updated: July 2026",
+ sections:[
+  ["01","Scope & Applicable Law","scope",
+   "This notice explains how personal data is processed via the website operated by MARYAM Barber Atelier (\"MARYAM\", \"we\").",
+   "As a business established in Turkey, MARYAM is a data controller under <strong>Turkish Law No. 6698 on the Protection of Personal Data (KVKK)</strong>. Because the site also offers a German-language version, markets to international visitors and provides online booking, it may additionally fall within the scope of the <strong>EU General Data Protection Regulation (GDPR)</strong> under Art. 3(2) whenever it processes data of visitors located in the EU. WAMOCON (Frankfurt, Germany), which developed the site, is directly subject to the GDPR for requests it receives itself.",
+   "This notice is therefore drafted to satisfy both KVKK Art. 10 and GDPR Art. 13 requirements together."],
+  ["02","Data Controller","controller",
+   "<strong>MARYAM Barber Atelier</strong><br><span class='placeholder'>[legal business details to be added]</span><br>Zafer Cd. No:4D, Avsallar Mah., 07470 Alanya / Antalya, Türkiye<br>Email: <span class='placeholder'>[to be added]</span> · Phone: <span class='placeholder'>[to be added]</span>",
+   "Technical development and hosting: <strong>WAMOCON</strong>, Frankfurt am Main, Germany — <a href='https://www.wamocon.com' target='_blank' rel='noopener'>wamocon.com</a>. WAMOCON may act as an additional (joint) controller for requests that reach its own WhatsApp line via the booking/contact forms."],
+  ["03","What Data We Process","data",
+   "Data is processed only when you voluntarily submit a form on the site:",
+   "LIST:<strong>Booking form:</strong> full name, selected service, date/time, optional note.|<strong>Language preference:</strong> stored locally in your browser (localStorage), never sent to a server, no cookies used.|<strong>WhatsApp contact:</strong> once you send a message, your phone number and message content are transmitted via WhatsApp/Meta (USA) infrastructure.",
+   "The site uses third-party services: <strong>Google Maps</strong> (map display), <strong>Google Fonts</strong> (typography) and <strong>WhatsApp (Meta)</strong> (contact). These services may receive technical data such as your IP address on their own servers (mostly in the USA)."],
+  ["04","Purposes & Legal Basis","purpose",
+   "Your data is processed to handle your booking request, to enable us to contact you, and to ensure service quality.",
+   "LIST:Under KVKK Art. 5/6: <strong>necessity for the performance of a contract</strong> (your booking request) and, where relevant, your <strong>explicit consent</strong>.|Under GDPR Art. 6(1): <strong>Art. 6(1)(b) contract</strong> and/or <strong>Art. 6(1)(a) consent</strong>."],
+  ["05","Data Sharing & International Transfers","transfer",
+   "Your data may be shared with MARYAM's own WhatsApp line to process your booking, and with WAMOCON for technical support.",
+   "Because WhatsApp/Meta is based in the USA, this constitutes an international data transfer. There is no mutual adequacy decision between Turkey and the EU; US providers are generally self-certified under the EU-US Data Privacy Framework. Your data is not shared with or sold to any other third party except where legally required."],
+  ["06","Retention Period","retention",
+   "Your data is retained only as long as necessary to process your booking request, then deleted or anonymised once the purpose no longer applies, subject to statutory retention obligations for commercial records (up to 10 years under Turkish commercial law)."],
+  ["07","Your Rights","rights",
+   "TABLE",
+   "To exercise your rights, contact us using the details in the <strong>Contact</strong> section below. You also have the right to lodge a complaint: in Turkey with the <strong>Personal Data Protection Authority (KVKK Kurumu)</strong> — <a href='https://www.kvkk.gov.tr' target='_blank' rel='noopener'>kvkk.gov.tr</a>; EU residents may contact their national supervisory authority (e.g. the Hessian Data Protection Commissioner in Germany)."],
+  ["08","Cookies & Local Storage","cookies",
+   "This site does not use tracking cookies or analytics tools. Only your language preference is stored locally in your browser (localStorage) on your own device and is never transmitted to any server."],
+  ["09","Changes","changes",
+   "This policy may be updated from time to time to reflect legal or technical changes. The current version is always published on this page."],
+  ["10","Contact","contact",
+   "For privacy-related questions: <span class='placeholder'>[MARYAM contact details to be added]</span><br>Technical development: WAMOCON — <a href='https://www.wamocon.com/webdesign/' target='_blank' rel='noopener'>wamocon.com/webdesign</a>"]
+ ],
+ rightsHead:["Right","Description"],
+ rightsRows:[
+  ["Access (KVKK Art.11 / GDPR Art.15)","Learn whether your data is processed and request information."],
+  ["Rectification (KVKK Art.11 / GDPR Art.16)","Request correction of incomplete or inaccurate data."],
+  ["Erasure (KVKK Art.11 / GDPR Art.17)","Request deletion or destruction of your data."],
+  ["Object to processing (KVKK Art.11 / GDPR Art.21)","Object to certain processing activities."],
+  ["Withdraw consent (GDPR Art.7(3))","Stop consent-based processing at any time."],
+  ["Data portability (GDPR Art.20)","Request your data in a structured format."],
+  ["Lodge a complaint","Contact the competent supervisory authority (KVKK Kurumu or an EU Member State authority)."]
+ ]},
+ru:{ _name:"RU", back:"Назад", eyebrow:"MARYAM Барбер-ателье",
+ title:'Политика <span class="it">конфиденциальности</span>', updated:"Последнее обновление: июль 2026",
+ sections:[
+  ["01","Область действия и применимое право","scope",
+   "Этот документ разъясняет обработку персональных данных через веб-сайт барбер-ателье MARYAM (\"MARYAM\", \"мы\").",
+   "Поскольку MARYAM зарегистрирован в Турции, он является оператором данных по турецкому <strong>Закону №6698 о защите персональных данных (KVKK)</strong>. Так как сайт также предлагает немецкую версию, ориентирован на международных гостей и предоставляет онлайн-запись, он может дополнительно подпадать под действие <strong>Общего регламента ЕС по защите данных (GDPR)</strong> согласно ст. 3(2), если обрабатываются данные посетителей, находящихся в ЕС. WAMOCON (Франкфурт, Германия), разработавшая сайт, напрямую подчиняется GDPR в отношении запросов, поступающих на её собственный номер.",
+   "Поэтому документ составлен так, чтобы одновременно соответствовать требованиям ст. 10 KVKK и ст. 13 GDPR."],
+  ["02","Оператор данных","controller",
+   "<strong>MARYAM Барбер-ателье</strong><br><span class='placeholder'>[юридические реквизиты будут добавлены]</span><br>Zafer Cd. No:4D, Avsallar Mah., 07470 Alanya / Antalya, Турция<br>E-mail: <span class='placeholder'>[будет добавлен]</span> · Телефон: <span class='placeholder'>[будет добавлен]</span>",
+   "Техническая разработка и хостинг: <strong>WAMOCON</strong>, Франкфурт-на-Майне, Германия — <a href='https://www.wamocon.com' target='_blank' rel='noopener'>wamocon.com</a>. WAMOCON может выступать в качестве дополнительного (совместного) оператора данных для запросов, поступающих на её собственный номер WhatsApp через формы записи/контакта."],
+  ["03","Какие данные мы обрабатываем","data",
+   "Данные обрабатываются только тогда, когда вы добровольно заполняете форму на сайте:",
+   "LIST:<strong>Форма записи:</strong> имя и фамилия, выбранная услуга, дата/время, необязательное примечание.|<strong>Языковые настройки:</strong> сохраняются локально в вашем браузере (localStorage), никогда не отправляются на сервер, файлы cookie не используются.|<strong>Связь через WhatsApp:</strong> при отправке сообщения ваш номер телефона и текст сообщения передаются через инфраструктуру WhatsApp/Meta (США).",
+   "Сайт использует сторонние сервисы: <strong>Google Maps</strong> (отображение карты), <strong>Google Fonts</strong> (шрифты) и <strong>WhatsApp (Meta)</strong> (связь). Эти сервисы могут получать технические данные, такие как ваш IP-адрес, на своих серверах (в основном в США)."],
+  ["04","Цели и правовые основания","purpose",
+   "Ваши данные обрабатываются для выполнения вашего запроса на запись, для связи с вами и обеспечения качества обслуживания.",
+   "LIST:Согласно ст. 5/6 KVKK: <strong>необходимость для исполнения договора</strong> (ваш запрос на запись) и, при необходимости, ваше <strong>явное согласие</strong>.|Согласно ст. 6(1) GDPR: <strong>ст. 6(1)(b) договор</strong> и/или <strong>ст. 6(1)(a) согласие</strong>."],
+  ["05","Передача данных и международная передача","transfer",
+   "Ваши данные могут передаваться на собственный номер WhatsApp MARYAM для обработки записи и в WAMOCON для технической поддержки.",
+   "Поскольку WhatsApp/Meta базируется в США, это является международной передачей данных. Между Турцией и ЕС нет взаимного решения об адекватности; провайдеры из США обычно самосертифицированы в рамках Рамочного соглашения о конфиденциальности данных ЕС-США. Ваши данные не передаются третьим лицам и не продаются, кроме случаев, предусмотренных законом."],
+  ["06","Срок хранения","retention",
+   "Ваши данные хранятся только до тех пор, пока это необходимо для обработки вашего запроса на запись, после чего удаляются или анонимизируются, с учётом установленных законом сроков хранения коммерческих документов (до 10 лет по турецкому коммерческому праву)."],
+  ["07","Ваши права","rights",
+   "TABLE",
+   "Для реализации своих прав свяжитесь с нами, используя данные в разделе <strong>Контакты</strong> ниже. У вас также есть право подать жалобу: в Турции — в <strong>Управление по защите персональных данных (KVKK Kurumu)</strong> — <a href='https://www.kvkk.gov.tr' target='_blank' rel='noopener'>kvkk.gov.tr</a>; жители ЕС могут обратиться в национальный надзорный орган (напр., Уполномоченный по защите данных земли Гессен в Германии)."],
+  ["08","Файлы cookie и локальное хранилище","cookies",
+   "Этот сайт не использует отслеживающие файлы cookie или инструменты аналитики. Только ваши языковые настройки сохраняются локально в браузере (localStorage) на вашем устройстве и никогда не передаются на сервер."],
+  ["09","Изменения","changes",
+   "Эта политика может периодически обновляться в связи с правовыми или техническими изменениями. Актуальная версия всегда публикуется на этой странице."],
+  ["10","Контакты","contact",
+   "По вопросам конфиденциальности: <span class='placeholder'>[контактные данные MARYAM будут добавлены]</span><br>Техническая разработка: WAMOCON — <a href='https://www.wamocon.com/webdesign/' target='_blank' rel='noopener'>wamocon.com/webdesign</a>"]
+ ],
+ rightsHead:["Право","Описание"],
+ rightsRows:[
+  ["Доступ (KVKK ст.11 / GDPR ст.15)","Узнать, обрабатываются ли ваши данные, и запросить информацию."],
+  ["Исправление (KVKK ст.11 / GDPR ст.16)","Запросить исправление неполных или неверных данных."],
+  ["Удаление (KVKK ст.11 / GDPR ст.17)","Запросить удаление или уничтожение ваших данных."],
+  ["Возражение против обработки (KVKK ст.11 / GDPR ст.21)","Возразить против определённых видов обработки."],
+  ["Отзыв согласия (GDPR ст.7(3))","Прекратить обработку, основанную на согласии, в любое время."],
+  ["Переносимость данных (GDPR ст.20)","Запросить свои данные в структурированном формате."],
+  ["Право на жалобу","Обратиться в компетентный надзорный орган (KVKK Kurumu или орган страны-члена ЕС)."]
+ ]},
+de:{ _name:"DE", back:"Zurück", eyebrow:"MARYAM Barber-Atelier",
+ title:'Datenschutz<span class="it">erklärung</span>', updated:"Zuletzt aktualisiert: Juli 2026",
+ sections:[
+  ["01","Geltungsbereich & anwendbares Recht","scope",
+   "Diese Erklärung beschreibt die Verarbeitung personenbezogener Daten über die von MARYAM Barber-Atelier (\"MARYAM\", \"wir\") betriebene Website.",
+   "Als in der Türkei ansässiges Unternehmen ist MARYAM Verantwortlicher im Sinne des türkischen <strong>Gesetzes Nr. 6698 zum Schutz personenbezogener Daten (KVKK)</strong>. Da die Website zusätzlich eine deutsche Sprachversion anbietet, gezielt internationale Gäste anspricht und eine Online-Terminbuchung ermöglicht, kann sie zusätzlich in den Anwendungsbereich der <strong>EU-Datenschutz-Grundverordnung (DSGVO)</strong> nach Art. 3 Abs. 2 fallen, sobald Daten von Besuchern in der EU verarbeitet werden. WAMOCON (Frankfurt am Main), das die Website entwickelt hat, unterliegt für Anfragen, die bei ihm selbst eingehen, unmittelbar der DSGVO.",
+   "Diese Erklärung ist daher so gestaltet, dass sie sowohl die Vorgaben aus Art. 10 KVKK als auch aus Art. 13 DSGVO erfüllt."],
+  ["02","Verantwortlicher","controller",
+   "<strong>MARYAM Barber-Atelier</strong><br><span class='placeholder'>[Firmierung/Rechtsform wird ergänzt]</span><br>Zafer Cd. No:4D, Avsallar Mah., 07470 Alanya / Antalya, Türkei<br>E-Mail: <span class='placeholder'>[wird ergänzt]</span> · Telefon: <span class='placeholder'>[wird ergänzt]</span>",
+   "Technische Entwicklung und Hosting: <strong>WAMOCON</strong>, Frankfurt am Main, Deutschland — <a href='https://www.wamocon.com' target='_blank' rel='noopener'>wamocon.com</a>. WAMOCON kann für Anfragen, die über die Buchungs-/Kontaktformulare an die eigene WhatsApp-Nummer gelangen, zusätzlich als (gemeinsam) Verantwortlicher handeln."],
+  ["03","Welche Daten wir verarbeiten","data",
+   "Daten werden nur verarbeitet, wenn Sie freiwillig ein Formular auf der Website ausfüllen:",
+   "LIST:<strong>Buchungsformular:</strong> Vor- und Nachname, gewählte Leistung, Datum/Uhrzeit, optionale Notiz.|<strong>Spracheinstellung:</strong> wird lokal in Ihrem Browser gespeichert (localStorage), nie an einen Server gesendet, keine Cookies.|<strong>Kontakt per WhatsApp:</strong> beim Senden einer Nachricht werden Ihre Telefonnummer und der Nachrichteninhalt über die Infrastruktur von WhatsApp/Meta (USA) übertragen.",
+   "Die Website nutzt Drittanbieterdienste: <strong>Google Maps</strong> (Kartendarstellung), <strong>Google Fonts</strong> (Schriftarten) und <strong>WhatsApp (Meta)</strong> (Kontakt). Diese Dienste können technische Daten wie Ihre IP-Adresse an ihre eigenen Server (überwiegend in den USA) übertragen."],
+  ["04","Zwecke & Rechtsgrundlage","purpose",
+   "Ihre Daten werden verarbeitet, um Ihre Terminanfrage zu bearbeiten, Sie kontaktieren zu können und die Servicequalität sicherzustellen.",
+   "LIST:Nach Art. 5/6 KVKK: <strong>Erforderlichkeit zur Vertragserfüllung</strong> (Ihre Terminanfrage) und, soweit einschlägig, Ihre <strong>ausdrückliche Einwilligung</strong>.|Nach Art. 6 Abs. 1 DSGVO: <strong>Art. 6 Abs. 1 lit. b (Vertrag)</strong> und/oder <strong>Art. 6 Abs. 1 lit. a (Einwilligung)</strong>."],
+  ["05","Weitergabe & internationale Übermittlung","transfer",
+   "Ihre Daten können zur Bearbeitung Ihrer Terminanfrage an die eigene WhatsApp-Nummer von MARYAM sowie zu technischen Support-Zwecken an WAMOCON übermittelt werden.",
+   "Da WhatsApp/Meta in den USA ansässig ist, stellt dies eine internationale Datenübermittlung dar. Zwischen der Türkei und der EU besteht kein gegenseitiger Angemessenheitsbeschluss; US-Anbieter sind in der Regel im Rahmen des EU-US Data Privacy Framework selbstzertifiziert. Ihre Daten werden außer bei gesetzlicher Verpflichtung nicht an sonstige Dritte weitergegeben oder verkauft."],
+  ["06","Speicherdauer","retention",
+   "Ihre Daten werden nur so lange gespeichert, wie es zur Bearbeitung Ihrer Terminanfrage erforderlich ist, und danach gelöscht bzw. anonymisiert — vorbehaltlich gesetzlicher Aufbewahrungspflichten für Geschäftsunterlagen (nach türkischem Handelsrecht bis zu 10 Jahre)."],
+  ["07","Ihre Rechte","rights",
+   "TABLE",
+   "Zur Ausübung Ihrer Rechte kontaktieren Sie uns über die Angaben im Abschnitt <strong>Kontakt</strong> unten. Sie haben zudem ein Beschwerderecht: in der Türkei bei der <strong>Behörde zum Schutz personenbezogener Daten (KVKK Kurumu)</strong> — <a href='https://www.kvkk.gov.tr' target='_blank' rel='noopener'>kvkk.gov.tr</a>; EU-Bürger können sich an ihre nationale Aufsichtsbehörde wenden (z. B. den Hessischen Beauftragten für Datenschutz)."],
+  ["08","Cookies & lokale Speicherung","cookies",
+   "Diese Website verwendet keine Tracking-Cookies oder Analyse-Tools. Lediglich Ihre Spracheinstellung wird lokal in Ihrem Browser (localStorage) auf Ihrem eigenen Gerät gespeichert und niemals an einen Server übertragen."],
+  ["09","Änderungen","changes",
+   "Diese Datenschutzerklärung kann von Zeit zu Zeit an rechtliche oder technische Änderungen angepasst werden. Die jeweils aktuelle Fassung ist stets auf dieser Seite veröffentlicht."],
+  ["10","Kontakt","contact",
+   "Für Fragen zum Datenschutz: <span class='placeholder'>[Kontaktdaten MARYAM werden ergänzt]</span><br>Technische Entwicklung: WAMOCON — <a href='https://www.wamocon.com/webdesign/' target='_blank' rel='noopener'>wamocon.com/webdesign</a>"]
+ ],
+ rightsHead:["Recht","Beschreibung"],
+ rightsRows:[
+  ["Auskunft (KVKK Art.11 / DSGVO Art.15)","Erfahren, ob Ihre Daten verarbeitet werden, und Auskunft verlangen."],
+  ["Berichtigung (KVKK Art.11 / DSGVO Art.16)","Berichtigung unvollständiger oder unrichtiger Daten verlangen."],
+  ["Löschung (KVKK Art.11 / DSGVO Art.17)","Löschung bzw. Vernichtung Ihrer Daten verlangen."],
+  ["Widerspruch (KVKK Art.11 / DSGVO Art.21)","Bestimmten Verarbeitungen widersprechen."],
+  ["Widerruf der Einwilligung (DSGVO Art.7 Abs.3)","Einwilligungsbasierte Verarbeitung jederzeit beenden."],
+  ["Datenübertragbarkeit (DSGVO Art.20)","Ihre Daten in einem strukturierten Format anfordern."],
+  ["Beschwerderecht","Sich an die zuständige Aufsichtsbehörde wenden (KVKK Kurumu oder eine EU-Mitgliedstaats-Behörde)."]
+ ]}
+};
+
+var LANG = "tr";
+function $(s){ return document.querySelector(s); }
+function $$(s){ return document.querySelectorAll(s); }
+
+function renderContent(){
+  var t = I18N[LANG];
+  var html = "";
+  t.sections.forEach(function(s){
+    var num = s[0], title = s[1];
+    html += '<section class="sec"><h2><span class="n">'+num+'</span> '+title+'</h2>';
+    for(var i=3;i<s.length;i++){
+      var block = s[i];
+      if(block === "TABLE"){
+        html += '<table class="rights"><thead><tr><th>'+t.rightsHead[0]+'</th><th>'+t.rightsHead[1]+'</th></tr></thead><tbody>';
+        t.rightsRows.forEach(function(r){ html += '<tr><td><strong>'+r[0]+'</strong></td><td>'+r[1]+'</td></tr>'; });
+        html += '</tbody></table>';
+      } else if(block.indexOf("LIST:") === 0){
+        var items = block.slice(5).split("|");
+        html += '<ul>'; items.forEach(function(it){ html += '<li>'+it+'</li>'; }); html += '</ul>';
+      } else {
+        html += '<p>'+block+'</p>';
+      }
+    }
+    html += '</section>';
+  });
+  $("#content").innerHTML = html;
+}
+
+function applyLang(){
+  var t = I18N[LANG];
+  $$("[data-i18n]").forEach(function(el){ var k=el.getAttribute("data-i18n"); if(t[k]!=null) el.innerHTML=t[k]; });
+  document.documentElement.lang = LANG;
+  document.title = "MARYAM · " + t.title.replace(/<[^>]+>/g,"");
+  $("#langTxt").textContent = t._name;
+  $$("#langMenu button").forEach(function(b){ b.classList.toggle("active", b.dataset.lang===LANG); });
+  renderContent();
+}
+
+function setLang(l){ if(!I18N[l]) l="tr"; LANG=l; try{ localStorage.setItem("maryam_lang",l); }catch(e){} applyLang(); }
+$("#langBtn").addEventListener("click", function(e){ e.stopPropagation(); $("#lang").classList.toggle("open"); $("#langBtn").setAttribute("aria-expanded", $("#lang").classList.contains("open")); });
+$$("#langMenu button").forEach(function(b){ b.addEventListener("click", function(){ setLang(b.dataset.lang); $("#lang").classList.remove("open"); }); });
+document.addEventListener("click", function(){ $("#lang").classList.remove("open"); });
+
+(function init(){
+  var saved=null; try{ saved=localStorage.getItem("maryam_lang"); }catch(e){}
+  if(!saved){ var n=(navigator.language||"tr").slice(0,2).toLowerCase(); saved=["tr","en","ru","de"].indexOf(n)>-1 ? n : "tr"; }
+  LANG=saved; applyLang();
+})();
+</script>
+</body>
+</html>

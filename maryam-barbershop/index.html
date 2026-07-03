@@ -653,6 +653,7 @@ footer{background:var(--noir);padding:76px 0 34px;border-top:1px solid var(--lin
           <span data-i18n="book_submit">WhatsApp ile Gönder</span>
         </button>
         <p class="bf-fine" data-i18n="book_fine">Göndere bastığınızda WhatsApp açılır, mesaj hazır olur.</p>
+        <p class="bf-fine" data-i18n="book_privacy">Randevu göndererek <a href="datenschutz.html" style="color:var(--gold)">Gizlilik Politikası</a>'nı kabul etmiş olursunuz.</p>
       </form>
     </div>
   </div>
@@ -766,6 +767,7 @@ footer{background:var(--noir);padding:76px 0 34px;border-top:1px solid var(--lin
         <a href="#menu" data-i18n="nav_menu">Hizmetler</a>
         <a href="#reviews" data-i18n="nav_reviews">Yorumlar</a>
         <a href="#location" data-i18n="nav_location">Konum</a>
+        <a href="datenschutz.html" data-i18n="foot_privacy">Gizlilik Politikası</a>
       </div>
       <div class="foot-col">
         <h4 data-i18n="foot_contact">İletişim</h4>
@@ -775,7 +777,7 @@ footer{background:var(--noir);padding:76px 0 34px;border-top:1px solid var(--lin
       </div>
     </div>
     <div class="foot-bot">
-      <p>© <span id="yr">2026</span> MARYAM Berber Atölyesi · <span data-i18n="foot_rights">Tüm hakları saklıdır</span></p>
+      <p>© <span id="yr">2026</span> MARYAM Berber Atölyesi · <span data-i18n="foot_rights">Tüm hakları saklıdır</span> · <a href="datenschutz.html" style="color:var(--stone-2)" data-i18n="foot_privacy">Gizlilik Politikası</a></p>
       <a href="https://www.wamocon.com/webdesign/" target="_blank" rel="noopener" class="foot-credit"><span style="color:var(--stone-2)" data-i18n="foot_by">Website by</span> <b>WAMOCON</b></a>
     </div>
   </div>
@@ -877,6 +879,7 @@ const I18N = {
   book_tag:"Avsallar, Zafer Cd. No:4D",
   book_f_service:"Hizmet", book_f_date:"Tarih", book_f_time:"Saat", book_f_name:"Adınız", book_f_name_ph:"Adınız Soyadınız", book_f_note:"Not (isteğe bağlı)", book_f_note_ph:"Örn. belirli bir usta veya stil",
   book_submit:"WhatsApp ile Gönder", book_fine:"'Gönder'e bastığınızda WhatsApp açılır ve mesajınız hazır olur.",
+  book_privacy:'Randevu göndererek <a href="datenschutz.html" style="color:var(--gold)">Gizlilik Politikası</a>\'nı kabul etmiş olursunuz.',
   book_wa_head:"Yeni randevu talebi", book_wa_service:"Hizmet", book_wa_date:"Tarih", book_wa_time:"Saat", book_wa_name:"Ad", book_wa_note:"Not",
   book_alert:"Lütfen hizmet, tarih, saat ve adınızı doldurun.",
   rev_label:"Müşteri Yorumları", rev_title:'Misafirlerimiz ne <span class="it">diyor</span>', rev_count_lbl:"Google yorumu", rev_verified:"Google onaylı", rev_write:"Google'da Yorum Yap",
@@ -887,7 +890,7 @@ const I18N = {
   res_label:"Randevu", res_title:'Sıra <span class="it">sizde.</span>', res_p:"Zarafet, keskinlik ve gerçek ustalık sizi bekliyor. Avsallar, Zafer Caddesi. Bir MARYAM ritüeli için yerinizi ayırtın.",
   res_cta1:"WhatsApp'tan Randevu", res_cta2:"Yol Tarifi",
   foot_about:"Zanaat, zarafet ve keskin bir çizgi. Avsallar'ın kalbinde modern bir klasik. Dört dilde hizmet.",
-  foot_menu:"Menü", foot_contact:"İletişim", foot_addr:"Zafer Cd. No:4D<br>Avsallar, 07470 Alanya", foot_rights:"Tüm hakları saklıdır", foot_by:"Web tasarımı",
+  foot_menu:"Menü", foot_contact:"İletişim", foot_addr:"Zafer Cd. No:4D<br>Avsallar, 07470 Alanya", foot_rights:"Tüm hakları saklıdır", foot_by:"Web tasarımı", foot_privacy:"Gizlilik Politikası",
   mbar_call:"Ara", mbar_book:"Randevu Al",
   days:["Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi","Pazar"], days_short:["Pzt","Sal","Çar","Per","Cum","Cmt","Paz"], closed:"Kapalı", today_lbl:"Bugün",
   chat_title:"MARYAM Asistanı", chat_status:"Genellikle hemen yanıtlar",
@@ -925,6 +928,7 @@ const I18N = {
   book_tag:"Avsallar, Zafer St. No:4D",
   book_f_service:"Service", book_f_date:"Date", book_f_time:"Time", book_f_name:"Your name", book_f_name_ph:"Your full name", book_f_note:"Note (optional)", book_f_note_ph:"e.g. a specific barber or style",
   book_submit:"Send via WhatsApp", book_fine:"When you tap Send, WhatsApp opens with your message ready.",
+  book_privacy:'By sending your request you agree to our <a href="datenschutz.html" style="color:var(--gold)">Privacy Policy</a>.',
   book_wa_head:"New booking request", book_wa_service:"Service", book_wa_date:"Date", book_wa_time:"Time", book_wa_name:"Name", book_wa_note:"Note",
   book_alert:"Please fill in service, date, time and your name.",
   rev_label:"Reviews", rev_title:'What our guests <span class="it">say</span>', rev_count_lbl:"Google reviews", rev_verified:"Google verified", rev_write:"Review us on Google",
@@ -935,7 +939,7 @@ const I18N = {
   res_label:"Booking", res_title:'Your <span class="it">turn.</span>', res_p:"Elegance, precision and real craftsmanship await you. Avsallar, Zafer Street. Reserve your spot for a MARYAM ritual.",
   res_cta1:"Book on WhatsApp", res_cta2:"Directions",
   foot_about:"Craft, elegance and a sharp line. A modern classic in the heart of Avsallar. Service in four languages.",
-  foot_menu:"Menu", foot_contact:"Contact", foot_addr:"Zafer St. No:4D<br>Avsallar, 07470 Alanya", foot_rights:"All rights reserved", foot_by:"Website by",
+  foot_menu:"Menu", foot_contact:"Contact", foot_addr:"Zafer St. No:4D<br>Avsallar, 07470 Alanya", foot_rights:"All rights reserved", foot_by:"Website by", foot_privacy:"Privacy Policy",
   mbar_call:"Call", mbar_book:"Book Now",
   days:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], days_short:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"], closed:"Closed", today_lbl:"Today",
   chat_title:"MARYAM Assistant", chat_status:"Usually replies instantly",
@@ -973,6 +977,7 @@ const I18N = {
   book_tag:"Авсаллар, ул. Zafer No:4D",
   book_f_service:"Услуга", book_f_date:"Дата", book_f_time:"Время", book_f_name:"Ваше имя", book_f_name_ph:"Имя и фамилия", book_f_note:"Примечание (по желанию)", book_f_note_ph:"напр. конкретный мастер или стиль",
   book_submit:"Отправить в WhatsApp", book_fine:"После отправки откроется WhatsApp с готовым сообщением.",
+  book_privacy:'Отправляя заявку, вы соглашаетесь с нашей <a href="datenschutz.html" style="color:var(--gold)">Политикой конфиденциальности</a>.',
   book_wa_head:"Новая заявка на запись", book_wa_service:"Услуга", book_wa_date:"Дата", book_wa_time:"Время", book_wa_name:"Имя", book_wa_note:"Примечание",
   book_alert:"Пожалуйста, укажите услугу, дату, время и имя.",
   rev_label:"Отзывы", rev_title:'Что говорят наши <span class="it">гости</span>', rev_count_lbl:"отзывов Google", rev_verified:"Проверено Google", rev_write:"Оставить отзыв в Google",
@@ -983,7 +988,7 @@ const I18N = {
   res_label:"Запись", res_title:'Ваш <span class="it">черёд.</span>', res_p:"Элегантность, точность и настоящее мастерство ждут вас. Авсаллар, улица Zafer. Забронируйте место для ритуала MARYAM.",
   res_cta1:"Запись в WhatsApp", res_cta2:"Маршрут",
   foot_about:"Ремесло, элегантность и чёткая линия. Современная классика в сердце Авсаллара. На четырёх языках.",
-  foot_menu:"Меню", foot_contact:"Контакты", foot_addr:"ул. Zafer No:4D<br>Авсаллар, 07470 Аланья", foot_rights:"Все права защищены", foot_by:"Сайт от",
+  foot_menu:"Меню", foot_contact:"Контакты", foot_addr:"ул. Zafer No:4D<br>Авсаллар, 07470 Аланья", foot_rights:"Все права защищены", foot_by:"Сайт от", foot_privacy:"Политика конфиденциальности",
   mbar_call:"Позвонить", mbar_book:"Записаться",
   days:["Понедельник","Вторник","Среда","Четверг","Пятница","Суббота","Воскресенье"], days_short:["Пн","Вт","Ср","Чт","Пт","Сб","Вс"], closed:"Закрыто", today_lbl:"Сегодня",
   chat_title:"Ассистент MARYAM", chat_status:"Обычно отвечает сразу",
@@ -1021,6 +1026,7 @@ const I18N = {
   book_tag:"Avsallar, Zafer Cd. No:4D",
   book_f_service:"Leistung", book_f_date:"Datum", book_f_time:"Uhrzeit", book_f_name:"Dein Name", book_f_name_ph:"Vor- und Nachname", book_f_note:"Notiz (optional)", book_f_note_ph:"z.B. bestimmter Barbier oder Style",
   book_submit:"Per WhatsApp senden", book_fine:"Beim Senden öffnet sich WhatsApp mit fertiger Nachricht.",
+  book_privacy:'Mit dem Senden Ihrer Anfrage stimmen Sie unserer <a href="datenschutz.html" style="color:var(--gold)">Datenschutzerklärung</a> zu.',
   book_wa_head:"Neue Terminanfrage", book_wa_service:"Leistung", book_wa_date:"Datum", book_wa_time:"Uhrzeit", book_wa_name:"Name", book_wa_note:"Notiz",
   book_alert:"Bitte Leistung, Datum, Uhrzeit und Namen ausfüllen.",
   rev_label:"Bewertungen", rev_title:'Was unsere Gäste <span class="it">sagen</span>', rev_count_lbl:"Google-Bewertungen", rev_verified:"Von Google verifiziert", rev_write:"Bei Google bewerten",
@@ -1031,7 +1037,7 @@ const I18N = {
   res_label:"Termin", res_title:'Du bist <span class="it">dran.</span>', res_p:"Eleganz, Präzision und echtes Handwerk erwarten dich. Avsallar, Zafer Caddesi. Sichere dir deinen Platz für ein MARYAM-Ritual.",
   res_cta1:"Termin per WhatsApp", res_cta2:"Route",
   foot_about:"Handwerk, Eleganz und eine klare Linie. Ein moderner Klassiker im Herzen von Avsallar. Service in vier Sprachen.",
-  foot_menu:"Menü", foot_contact:"Kontakt", foot_addr:"Zafer Cd. No:4D<br>Avsallar, 07470 Alanya", foot_rights:"Alle Rechte vorbehalten", foot_by:"Website von",
+  foot_menu:"Menü", foot_contact:"Kontakt", foot_addr:"Zafer Cd. No:4D<br>Avsallar, 07470 Alanya", foot_rights:"Alle Rechte vorbehalten", foot_by:"Website von", foot_privacy:"Datenschutz",
   mbar_call:"Anrufen", mbar_book:"Termin",
   days:["Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag","Sonntag"], days_short:["Mo","Di","Mi","Do","Fr","Sa","So"], closed:"Geschlossen", today_lbl:"Heute",
   chat_title:"MARYAM-Assistent", chat_status:"Antwortet meist sofort",

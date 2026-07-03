@@ -194,6 +194,7 @@ footer b{color:var(--gold)}
       <div class="field"><label data-i18n="l_domain">Alan Adı İsteği (Domain)</label><input class="control" id="domain" data-i18n-ph="ph_domain" placeholder="Örn. maryambarber.com"></div>
       <div class="field"><label data-i18n="l_notes">Notlar / İstekler</label><textarea class="control" id="notes" data-i18n-ph="ph_notes" placeholder="Eklemek istedikleriniz..."></textarea></div>
       <div class="note-photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 7h3l2-2h6l2 2h3v12H4z"/><circle cx="12" cy="13" r="3.2"/></svg><span data-i18n="note_photo">Logo ve fotoğraflarınızı gönderdikten sonra WhatsApp'tan iletebilirsiniz.</span></div>
+      <div class="note-photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-6.3-7-11a7 7 0 0114 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="note_privacy">Bilgilerinizi göndererek <a href="datenschutz.html" style="color:var(--gold)">Gizlilik Politikası</a>'nı kabul etmiş olursunuz.</span></div>
     </div>
   </form>
 </main>
@@ -212,7 +213,7 @@ footer b{color:var(--gold)}
 </div>
 
 <div class="toast" id="toast"></div>
-<footer>MARYAM Berber Atölyesi · <b>WAMOCON</b> Webdesign</footer>
+<footer>MARYAM Berber Atölyesi · <b>WAMOCON</b> Webdesign · <a href="datenschutz.html" style="color:var(--stone-2)" data-i18n="foot_privacy">Gizlilik Politikası</a></footer>
 
 <script>
 /* ============================================================
@@ -235,6 +236,8 @@ var I18N = {
   l_team:"Berber / Ekip İsimleri", l_domain:"Alan Adı İsteği (Domain)", l_notes:"Notlar / İstekler",
   ph_email:"ornek@maryam.com", ph_team:"Örn. Mehmet, Ali, ...", ph_domain:"Örn. maryambarber.com", ph_notes:"Eklemek istedikleriniz...",
   note_photo:"Logo ve fotoğraflarınızı gönderdikten sonra WhatsApp'tan iletebilirsiniz.",
+  note_privacy:'Bilgilerinizi göndererek <a href="datenschutz.html" style="color:var(--gold)">Gizlilik Politikası</a>\'nı kabul etmiş olursunuz.',
+  foot_privacy:"Gizlilik Politikası",
   btn_send:"WhatsApp ile Gönder", btn_copy:"Kopyala",
   t_need:"Lütfen en az telefon veya WhatsApp girin.", t_open:"WhatsApp açılıyor… <b>Gönder</b>'e basmayı unutmayın.", t_copied:"Bilgiler <b>kopyalandı</b>.",
   svc:["Saç Kesimi","Sakal & Ustura","Saç + Sakal","Sıcak Havlu Tıraşı","Çocuk Kesimi","Saç Örgüsü","Renk & Röfle","Yıkama & Fön"],
@@ -257,6 +260,8 @@ var I18N = {
   l_team:"Barber / Team Names", l_domain:"Desired Domain", l_notes:"Notes / Requests",
   ph_email:"example@maryam.com", ph_team:"e.g. Mehmet, Ali, ...", ph_domain:"e.g. maryambarber.com", ph_notes:"Anything you'd like to add...",
   note_photo:"You can send your logo and photos via WhatsApp afterwards.",
+  note_privacy:'By submitting this form you agree to our <a href="datenschutz.html" style="color:var(--gold)">Privacy Policy</a>.',
+  foot_privacy:"Privacy Policy",
   btn_send:"Send via WhatsApp", btn_copy:"Copy",
   t_need:"Please enter at least a phone or WhatsApp number.", t_open:"WhatsApp is opening… don't forget to tap <b>Send</b>.", t_copied:"Details <b>copied</b>.",
   svc:["Haircut","Beard & Razor","Hair + Beard","Hot Towel Shave","Kids Cut","Braids","Colour & Highlights","Wash & Blow-dry"],
@@ -279,6 +284,8 @@ var I18N = {
   l_team:"Имена мастеров", l_domain:"Желаемый домен", l_notes:"Заметки / пожелания",
   ph_email:"primer@maryam.com", ph_team:"напр. Мехмет, Али, ...", ph_domain:"напр. maryambarber.com", ph_notes:"Что хотите добавить...",
   note_photo:"Логотип и фотографии можно отправить позже в WhatsApp.",
+  note_privacy:'Отправляя данные, вы соглашаетесь с нашей <a href="datenschutz.html" style="color:var(--gold)">Политикой конфиденциальности</a>.',
+  foot_privacy:"Политика конфиденциальности",
   btn_send:"Отправить в WhatsApp", btn_copy:"Копировать",
   t_need:"Укажите хотя бы телефон или WhatsApp.", t_open:"Открывается WhatsApp… не забудьте нажать <b>Отправить</b>.", t_copied:"Данные <b>скопированы</b>.",
   svc:["Стрижка","Борода и бритва","Волосы + борода","Бритьё горячим полотенцем","Детская стрижка","Косы","Окрашивание","Мойка и укладка"],
@@ -301,6 +308,8 @@ var I18N = {
   l_team:"Barbier- / Team-Namen", l_domain:"Wunsch-Domain", l_notes:"Notizen / Wünsche",
   ph_email:"beispiel@maryam.com", ph_team:"z. B. Mehmet, Ali, ...", ph_domain:"z. B. maryambarber.com", ph_notes:"Was Sie ergänzen möchten...",
   note_photo:"Logo und Fotos können Sie danach per WhatsApp senden.",
+  note_privacy:'Mit dem Absenden dieser Angaben stimmen Sie unserer <a href="datenschutz.html" style="color:var(--gold)">Datenschutzerklärung</a> zu.',
+  foot_privacy:"Datenschutz",
   btn_send:"Per WhatsApp senden", btn_copy:"Kopieren",
   t_need:"Bitte mindestens Telefon oder WhatsApp angeben.", t_open:"WhatsApp öffnet sich… nicht vergessen, auf <b>Senden</b> zu tippen.", t_copied:"Angaben <b>kopiert</b>.",
   svc:["Haarschnitt","Bart & Rasur","Haar + Bart","Heißhandtuch-Rasur","Kinderschnitt","Braids","Coloration","Waschen & Föhnen"],

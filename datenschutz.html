@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WAMOCON · Gizlilik Politikası / Datenschutzerklärung</title>
+<meta name="description" content="WAMOCON — Alanya berberleri için dijital paket hizmetinde kişisel verilerin korunması hakkında bilgilendirme (KVKK) / Datenschutzerklärung (DSGVO).">
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#F40E0E">
+<style>
+:root{
+  --red:#F40E0E; --red-600:#D10A0A;
+  --ink:#0E1116; --muted:#5A6472; --muted-2:#8A93A2;
+  --line:#E6E8EC; --surface:#F5F6F8; --surface-2:#EEF0F3; --white:#FFFFFF;
+  --gold:#D4A843;
+  --maxw:800px; --radius:16px;
+  --shadow-sm:0 2px 10px rgba(14,17,22,.06); --shadow:0 12px 40px rgba(14,17,22,.10);
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--ink);background:var(--white);line-height:1.65;font-size:16.5px;-webkit-font-smoothing:antialiased}
+a{color:var(--red);text-decoration:underline;text-underline-offset:2px}
+a:hover{color:var(--red-600)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+h1,h2{font-weight:800;letter-spacing:-.01em;color:var(--ink)}
+
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px;gap:14px}
+.brand{font-weight:900;font-size:1.15rem;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
+.brand span{color:var(--red)}
+.hr{display:flex;align-items:center;gap:10px}
+.back{font-size:.82rem;font-weight:700;color:var(--muted);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.back:hover{color:var(--ink)}
+
+.lang{position:relative}
+.lang-btn{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:none;border-radius:40px;padding:8px 13px;font-size:.78rem;font-weight:800;color:var(--ink);cursor:pointer}
+.lang-menu{position:absolute;top:calc(100% + 8px);right:0;min-width:150px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:6px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:.18s var(--ease);z-index:120}
+.lang.open .lang-menu{opacity:1;visibility:visible;transform:none}
+.lang-menu button{display:flex;align-items:center;gap:10px;width:100%;padding:9px 12px;border-radius:9px;font-size:.88rem;font-weight:700;color:var(--muted);background:none;border:none;text-align:left;cursor:pointer}
+.lang-menu button:hover{background:var(--surface);color:var(--ink)}
+.lang-menu button.active{background:var(--ink);color:#fff}
+
+.intro{padding:44px 0 8px}
+.intro .eyebrow{font-size:.76rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:12px}
+.intro h1{font-size:clamp(1.9rem,5vw,2.5rem);margin-bottom:8px}
+.intro .updated{font-size:.86rem;color:var(--muted-2)}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.badge{font-size:.7rem;font-weight:800;letter-spacing:.05em;color:var(--red);border:1.5px solid var(--red);border-radius:40px;padding:5px 11px}
+
+main{padding:16px 0 60px}
+.sec{padding:26px 0;border-bottom:1px solid var(--line)}
+.sec:last-child{border-bottom:none}
+.sec h2{font-size:1.28rem;margin-bottom:10px;display:flex;gap:9px;align-items:baseline}
+.sec h2 .n{color:var(--red);font-size:.95rem;font-weight:900}
+.sec p{color:var(--muted);margin-bottom:9px;font-size:.96rem}
+.sec ul{margin:9px 0 9px 20px;color:var(--muted);font-size:.96rem}
+.sec li{margin-bottom:6px}
+.sec strong{color:var(--ink);font-weight:800}
+.placeholder{color:var(--red);font-style:italic}
+table.rights{width:100%;border-collapse:collapse;margin-top:10px;font-size:.88rem}
+table.rights th{text-align:left;font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--red);padding:8px 10px;border-bottom:2px solid var(--line)}
+table.rights td{padding:9px 10px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+table.rights tr:last-child td{border-bottom:none}
+
+footer{text-align:center;padding:30px 0;color:var(--muted-2);font-size:.82rem;border-top:1px solid var(--line)}
+footer b{color:var(--red)}
+@media(max-width:430px){ .back .txt{display:none} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="WAMOCON-Alanya-Barber-Landing.html" class="brand">WAMOCON<span>·</span></a>
+    <div class="hr">
+      <div class="lang" id="lang">
+        <button class="lang-btn" id="langBtn"><span id="langTxt">TR</span> ▾</button>
+        <div class="lang-menu" id="langMenu">
+          <button data-lang="tr">🇹🇷 Türkçe</button>
+          <button data-lang="en">🇬🇧 English</button>
+          <button data-lang="ru">🇷🇺 Русский</button>
+          <button data-lang="de">🇩🇪 Deutsch</button>
+        </div>
+      </div>
+      <a href="WAMOCON-Alanya-Barber-Landing.html" class="back">← <span class="txt" data-i18n="back">Geri</span></a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="intro">
+    <span class="eyebrow" data-i18n="eyebrow">WAMOCON · Alanya Berber Dijital Paketi</span>
+    <h1 data-i18n="title">Gizlilik Politikası</h1>
+    <div class="updated" data-i18n="updated">Son güncelleme: Temmuz 2026</div>
+    <div class="badges"><span class="badge">KVKK · Kanun No. 6698</span><span class="badge">EU DSGVO / GDPR</span></div>
+  </div>
+  <div id="content"></div>
+</main>
+
+<footer>WAMOCON · Frankfurt am Main, Almanya</footer>
+
+<script>
+var I18N = {
+tr:{ _name:"TR", back:"Geri", eyebrow:"WAMOCON · Alanya Berber Dijital Paketi", title:"Gizlilik Politikası", updated:"Son güncelleme: Temmuz 2026",
+ sections:[
+  ["01","Kapsam","scope",
+   "Bu metin, WAMOCON'un (\"biz\") Alanya'daki berber ve kuaförlere yönelik dijital paket hizmetini tanıttığı bu internet sitesi üzerinden toplanan kişisel verilerin işlenmesine ilişkindir.",
+   "WAMOCON, Frankfurt am Main, Almanya'da yerleşik olduğundan <strong>Avrupa Birliği Genel Veri Koruma Tüzüğü (DSGVO/GDPR)</strong> madde 3/1 kapsamında doğrudan veri sorumlusudur. Site, Türkiye'deki işletmelere (berber/kuaförlere) yönelik olduğundan ve form/WhatsApp aracılığıyla Türkiye'deki kişilerin verilerini işlediğinden, <strong>6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK)</strong> da uygulanabilir olabilir.",
+   "Bu nedenle bu metin, hem DSGVO madde 13 hem de KVKK madde 10 gerekliliklerini birlikte karşılayacak şekilde hazırlanmıştır."],
+  ["02","Veri Sorumlusu","controller",
+   "<strong>WAMOCON</strong><br>Frankfurt am Main, Almanya<br>Web: <a href='https://www.wamocon.com' target='_blank' rel='noopener'>wamocon.com</a><br>E-posta: <span class='placeholder'>[eklenecek]</span> · WhatsApp: +49 176 32838729"],
+  ["03","Hangi Veriler İşlenir","data",
+   "Bu site üzerinden yalnızca formu doldurduğunuzda veya WhatsApp'tan bize yazdığınızda aşağıdaki veriler işlenir:",
+   "LIST:<strong>Danışmanlık/sipariş formu:</strong> ad soyad, işletme adı, telefon/WhatsApp numarası, seçilen paket, isteğe bağlı notlar.|<strong>Dil tercihi:</strong> tarayıcınızda yerel olarak (localStorage) saklanır, sunucuya gönderilmez.|<strong>WhatsApp üzerinden iletişim:</strong> mesajınızı gönderdiğinizde telefon numaranız ve mesaj içeriği WhatsApp/Meta (ABD) altyapısı üzerinden iletilir."],
+  ["04","İşleme Amaçları ve Hukuki Sebep","purpose",
+   "Verileriniz; talebinizin değerlendirilmesi, size teklif sunulması ve sözleşme öncesi görüşmelerin yürütülmesi amacıyla işlenir.",
+   "LIST:DSGVO madde 6/1(b) — sözleşme öncesi tedbirler.|KVKK madde 5/6 — sözleşmenin kurulmasıyla doğrudan ilgili olması ve/veya açık rızanız."],
+  ["05","Veri Aktarımı ve Yurt Dışı Transferi","transfer",
+   "WhatsApp/Meta (ABD merkezli) mesaj verilerinizi işlediğinden, bu bir yurt dışı veri transferidir; ABD'li servis sağlayıcı genellikle AB-ABD Veri Gizliliği Çerçevesi kapsamında sertifikalıdır. Verileriniz, yasal zorunluluk olmadıkça üçüncü kişilerle paylaşılmaz veya satılmaz."],
+  ["06","Saklama Süresi","retention",
+   "Verileriniz, talebinizin değerlendirilmesi için gerekli süre boyunca saklanır; bir sözleşme kurulursa ticari kayıtlara ilişkin yasal saklama süreleri (Almanya'da genellikle 6-10 yıl) uygulanır."],
+  ["07","Haklarınız","rights",
+   "TABLE",
+   "Haklarınızı kullanmak için <strong>İletişim</strong> bölümündeki bilgiler üzerinden bize ulaşabilirsiniz. Şikâyet hakkınız: Almanya'da <strong>Hessischer Beauftragter für Datenschutz</strong> — <a href='https://datenschutz.hessen.de' target='_blank' rel='noopener'>datenschutz.hessen.de</a>; Türkiye'de <strong>Kişisel Verileri Koruma Kurumu</strong> — <a href='https://www.kvkk.gov.tr' target='_blank' rel='noopener'>kvkk.gov.tr</a>."],
+  ["08","Değişiklikler","changes",
+   "Bu politika zaman zaman güncellenebilir. Güncel sürüm her zaman bu sayfada yayınlanır."],
+  ["09","İletişim","contact",
+   "WAMOCON — <a href='https://www.wamocon.com/webdesign/' target='_blank' rel='noopener'>wamocon.com/webdesign</a> · WhatsApp: +49 176 32838729"]
+ ],
+ rightsHead:["Hak","Açıklama"],
+ rightsRows:[
+  ["Bilgi edinme (DSGVO m.15 / KVKK m.11)","Verilerinizin işlenip işlenmediğini öğrenme."],
+  ["Düzeltme (DSGVO m.16 / KVKK m.11)","Eksik/yanlış verilerin düzeltilmesi."],
+  ["Silme (DSGVO m.17 / KVKK m.11)","Verilerinizin silinmesi/yok edilmesi."],
+  ["İşlemeye itiraz (DSGVO m.21 / KVKK m.11)","Belirli işleme faaliyetlerine itiraz."],
+  ["Rızayı geri çekme (DSGVO m.7/3)","İstediğiniz zaman rızanızı geri çekme."],
+  ["Veri taşınabilirliği (DSGVO m.20)","Verilerinizi yapılandırılmış formatta talep etme."],
+  ["Şikâyet hakkı","Yetkili denetim makamına başvurma."]
+ ]},
+en:{ _name:"EN", back:"Back", eyebrow:"WAMOCON · Alanya Barber Digital Package", title:"Privacy Policy", updated:"Last updated: July 2026",
+ sections:[
+  ["01","Scope","scope",
+   "This notice covers personal data processed via this website, through which WAMOCON (\"we\") presents its digital package service for barbers and hairdressers in Alanya, Turkey.",
+   "As WAMOCON is established in Frankfurt am Main, Germany, we are directly a data controller under <strong>Art. 3(1) of the EU General Data Protection Regulation (GDPR)</strong>. Because the site targets businesses in Turkey and processes data of people located there via forms/WhatsApp, <strong>Turkish Law No. 6698 (KVKK)</strong> may also apply.",
+   "This notice is therefore drafted to satisfy both GDPR Art. 13 and KVKK Art. 10 requirements together."],
+  ["02","Data Controller","controller",
+   "<strong>WAMOCON</strong><br>Frankfurt am Main, Germany<br>Web: <a href='https://www.wamocon.com' target='_blank' rel='noopener'>wamocon.com</a><br>Email: <span class='placeholder'>[to be added]</span> · WhatsApp: +49 176 32838729"],
+  ["03","What Data We Process","data",
+   "Data is processed only when you submit our form or contact us via WhatsApp:",
+   "LIST:<strong>Consultation/order form:</strong> full name, business name, phone/WhatsApp number, selected package, optional notes.|<strong>Language preference:</strong> stored locally in your browser (localStorage), never sent to a server.|<strong>WhatsApp contact:</strong> once you send a message, your phone number and message content are transmitted via WhatsApp/Meta (USA) infrastructure."],
+  ["04","Purposes & Legal Basis","purpose",
+   "Your data is processed to evaluate your inquiry, provide you with an offer, and conduct pre-contractual discussions.",
+   "LIST:GDPR Art. 6(1)(b) — pre-contractual measures.|KVKK Art. 5/6 — directly related to the establishment of a contract and/or your explicit consent."],
+  ["05","Data Sharing & International Transfers","transfer",
+   "Because WhatsApp/Meta is based in the USA, this constitutes an international data transfer; the US provider is generally self-certified under the EU-US Data Privacy Framework. Your data is not shared with or sold to third parties except where legally required."],
+  ["06","Retention Period","retention",
+   "Your data is retained only as long as necessary to evaluate your inquiry; if a contract is concluded, statutory retention periods for commercial records apply (generally 6-10 years in Germany)."],
+  ["07","Your Rights","rights",
+   "TABLE",
+   "To exercise your rights, contact us using the details in the <strong>Contact</strong> section below. You have the right to lodge a complaint: in Germany with the <strong>Hessian Data Protection Commissioner</strong> — <a href='https://datenschutz.hessen.de' target='_blank' rel='noopener'>datenschutz.hessen.de</a>; in Turkey with the <strong>Personal Data Protection Authority</strong> — <a href='https://www.kvkk.gov.tr' target='_blank' rel='noopener'>kvkk.gov.tr</a>."],
+  ["08","Changes","changes",
+   "This policy may be updated from time to time. The current version is always published on this page."],
+  ["09","Contact","contact",
+   "WAMOCON — <a href='https://www.wamocon.com/webdesign/' target='_blank' rel='noopener'>wamocon.com/webdesign</a> · WhatsApp: +49 176 32838729"]
+ ],
+ rightsHead:["Right","Description"],
+ rightsRows:[
+  ["Access (GDPR Art.15 / KVKK Art.11)","Learn whether your data is processed."],
+  ["Rectification (GDPR Art.16 / KVKK Art.11)","Correction of incomplete/inaccurate data."],
+  ["Erasure (GDPR Art.17 / KVKK Art.11)","Deletion/destruction of your data."],
+  ["Object (GDPR Art.21 / KVKK Art.11)","Object to certain processing activities."],
+  ["Withdraw consent (GDPR Art.7(3))","Withdraw your consent at any time."],
+  ["Data portability (GDPR Art.20)","Request your data in a structured format."],
+  ["Lodge a complaint","Contact the competent supervisory authority."]
+ ]},
+ru:{ _name:"RU", back:"Назад", eyebrow:"WAMOCON · Цифровой пакет для барберов Аланьи", title:"Политика конфиденциальности", updated:"Последнее обновление: июль 2026",
+ sections:[
+  ["01","Область действия","scope",
+   "Этот документ касается персональных данных, обрабатываемых через этот сайт, на котором WAMOCON (\"мы\") представляет услугу цифрового пакета для барберов и парикмахеров в Аланье, Турция.",
+   "Поскольку WAMOCON зарегистрирована во Франкфурте-на-Майне, Германия, мы напрямую являемся оператором данных согласно <strong>ст. 3(1) Общего регламента ЕС по защите данных (GDPR)</strong>. Так как сайт ориентирован на предприятия в Турции и обрабатывает данные лиц, находящихся там, через формы/WhatsApp, может также применяться турецкий <strong>Закон №6698 (KVKK)</strong>.",
+   "Поэтому документ составлен так, чтобы одновременно соответствовать требованиям ст. 13 GDPR и ст. 10 KVKK."],
+  ["02","Оператор данных","controller",
+   "<strong>WAMOCON</strong><br>Франкфурт-на-Майне, Германия<br>Сайт: <a href='https://www.wamocon.com' target='_blank' rel='noopener'>wamocon.com</a><br>E-mail: <span class='placeholder'>[будет добавлен]</span> · WhatsApp: +49 176 32838729"],
+  ["03","Какие данные мы обрабатываем","data",
+   "Данные обрабатываются только тогда, когда вы заполняете нашу форму или связываетесь с нами через WhatsApp:",
+   "LIST:<strong>Форма консультации/заказа:</strong> имя и фамилия, название бизнеса, номер телефона/WhatsApp, выбранный пакет, необязательные примечания.|<strong>Языковые настройки:</strong> сохраняются локально в браузере (localStorage), никогда не отправляются на сервер.|<strong>Связь через WhatsApp:</strong> при отправке сообщения ваш номер телефона и текст передаются через инфраструктуру WhatsApp/Meta (США)."],
+  ["04","Цели и правовые основания","purpose",
+   "Ваши данные обрабатываются для оценки вашего запроса, предоставления предложения и проведения переговоров перед заключением договора.",
+   "LIST:Ст. 6(1)(b) GDPR — преддоговорные меры.|Ст. 5/6 KVKK — непосредственно связано с заключением договора и/или ваше явное согласие."],
+  ["05","Передача данных","transfer",
+   "Поскольку WhatsApp/Meta базируется в США, это является международной передачей данных; US-провайдер обычно самосертифицирован в рамках Рамочного соглашения о конфиденциальности данных ЕС-США. Ваши данные не передаются третьим лицам и не продаются, кроме случаев, предусмотренных законом."],
+  ["06","Срок хранения","retention",
+   "Ваши данные хранятся только до тех пор, пока это необходимо для оценки вашего запроса; при заключении договора применяются установленные законом сроки хранения коммерческих документов (обычно 6-10 лет в Германии)."],
+  ["07","Ваши права","rights",
+   "TABLE",
+   "Для реализации своих прав свяжитесь с нами, используя данные в разделе <strong>Контакты</strong> ниже. У вас есть право подать жалобу: в Германии — <strong>Уполномоченному по защите данных земли Гессен</strong> — <a href='https://datenschutz.hessen.de' target='_blank' rel='noopener'>datenschutz.hessen.de</a>; в Турции — в <strong>Управление по защите персональных данных</strong> — <a href='https://www.kvkk.gov.tr' target='_blank' rel='noopener'>kvkk.gov.tr</a>."],
+  ["08","Изменения","changes",
+   "Эта политика может периодически обновляться. Актуальная версия всегда публикуется на этой странице."],
+  ["09","Контакты","contact",
+   "WAMOCON — <a href='https://www.wamocon.com/webdesign/' target='_blank' rel='noopener'>wamocon.com/webdesign</a> · WhatsApp: +49 176 32838729"]
+ ],
+ rightsHead:["Право","Описание"],
+ rightsRows:[
+  ["Доступ (GDPR ст.15 / KVKK ст.11)","Узнать, обрабатываются ли ваши данные."],
+  ["Исправление (GDPR ст.16 / KVKK ст.11)","Исправление неполных/неверных данных."],
+  ["Удаление (GDPR ст.17 / KVKK ст.11)","Удаление/уничтожение ваших данных."],
+  ["Возражение (GDPR ст.21 / KVKK ст.11)","Возразить против определённой обработки."],
+  ["Отзыв согласия (GDPR ст.7(3))","Отозвать согласие в любое время."],
+  ["Переносимость данных (GDPR ст.20)","Запросить данные в структурированном формате."],
+  ["Право на жалобу","Обратиться в компетентный надзорный орган."]
+ ]},
+de:{ _name:"DE", back:"Zurück", eyebrow:"WAMOCON · Alanya Barber Digital-Paket", title:"Datenschutzerklärung", updated:"Zuletzt aktualisiert: Juli 2026",
+ sections:[
+  ["01","Geltungsbereich","scope",
+   "Diese Erklärung betrifft personenbezogene Daten, die über diese Website verarbeitet werden, auf der WAMOCON (\"wir\") sein Digital-Paket für Barbiere und Friseure in Alanya, Türkei, vorstellt.",
+   "Da WAMOCON in Frankfurt am Main, Deutschland, ansässig ist, sind wir unmittelbar Verantwortlicher nach <strong>Art. 3 Abs. 1 DSGVO</strong>. Da sich die Website an Unternehmen in der Türkei richtet und Daten dort ansässiger Personen über Formulare/WhatsApp verarbeitet, kann zusätzlich das türkische <strong>Gesetz Nr. 6698 (KVKK)</strong> anwendbar sein.",
+   "Diese Erklärung ist daher so gestaltet, dass sie sowohl Art. 13 DSGVO als auch Art. 10 KVKK erfüllt."],
+  ["02","Verantwortlicher","controller",
+   "<strong>WAMOCON</strong><br>Frankfurt am Main, Deutschland<br>Web: <a href='https://www.wamocon.com' target='_blank' rel='noopener'>wamocon.com</a><br>E-Mail: <span class='placeholder'>[wird ergänzt]</span> · WhatsApp: +49 176 32838729"],
+  ["03","Welche Daten wir verarbeiten","data",
+   "Daten werden nur verarbeitet, wenn Sie unser Formular ausfüllen oder uns per WhatsApp kontaktieren:",
+   "LIST:<strong>Beratungs-/Bestellformular:</strong> Vor- und Nachname, Firmenname, Telefon-/WhatsApp-Nummer, gewähltes Paket, optionale Notizen.|<strong>Spracheinstellung:</strong> wird lokal in Ihrem Browser gespeichert (localStorage), nie an einen Server übertragen.|<strong>Kontakt per WhatsApp:</strong> beim Senden werden Ihre Telefonnummer und der Nachrichteninhalt über die Infrastruktur von WhatsApp/Meta (USA) übertragen."],
+  ["04","Zwecke & Rechtsgrundlage","purpose",
+   "Ihre Daten werden verarbeitet, um Ihre Anfrage zu prüfen, Ihnen ein Angebot zu unterbreiten und vorvertragliche Gespräche zu führen.",
+   "LIST:Art. 6 Abs. 1 lit. b DSGVO — vorvertragliche Maßnahmen.|Art. 5/6 KVKK — unmittelbarer Zusammenhang mit dem Vertragsschluss und/oder Ihre ausdrückliche Einwilligung."],
+  ["05","Weitergabe & internationale Übermittlung","transfer",
+   "Da WhatsApp/Meta in den USA ansässig ist, stellt dies eine internationale Datenübermittlung dar; der US-Anbieter ist in der Regel im Rahmen des EU-US Data Privacy Framework selbstzertifiziert. Ihre Daten werden außer bei gesetzlicher Verpflichtung nicht an Dritte weitergegeben oder verkauft."],
+  ["06","Speicherdauer","retention",
+   "Ihre Daten werden nur so lange gespeichert, wie es zur Prüfung Ihrer Anfrage erforderlich ist; kommt ein Vertrag zustande, gelten die gesetzlichen Aufbewahrungsfristen für Geschäftsunterlagen (in Deutschland regelmäßig 6-10 Jahre)."],
+  ["07","Ihre Rechte","rights",
+   "TABLE",
+   "Zur Ausübung Ihrer Rechte kontaktieren Sie uns über die Angaben im Abschnitt <strong>Kontakt</strong> unten. Sie haben ein Beschwerderecht: in Deutschland beim <strong>Hessischen Beauftragten für Datenschutz</strong> — <a href='https://datenschutz.hessen.de' target='_blank' rel='noopener'>datenschutz.hessen.de</a>; in der Türkei bei der <strong>Behörde zum Schutz personenbezogener Daten</strong> — <a href='https://www.kvkk.gov.tr' target='_blank' rel='noopener'>kvkk.gov.tr</a>."],
+  ["08","Änderungen","changes",
+   "Diese Erklärung kann von Zeit zu Zeit aktualisiert werden. Die jeweils aktuelle Fassung ist stets auf dieser Seite veröffentlicht."],
+  ["09","Kontakt","contact",
+   "WAMOCON — <a href='https://www.wamocon.com/webdesign/' target='_blank' rel='noopener'>wamocon.com/webdesign</a> · WhatsApp: +49 176 32838729"]
+ ],
+ rightsHead:["Recht","Beschreibung"],
+ rightsRows:[
+  ["Auskunft (DSGVO Art.15 / KVKK Art.11)","Erfahren, ob Ihre Daten verarbeitet werden."],
+  ["Berichtigung (DSGVO Art.16 / KVKK Art.11)","Berichtigung unvollständiger/unrichtiger Daten."],
+  ["Löschung (DSGVO Art.17 / KVKK Art.11)","Löschung/Vernichtung Ihrer Daten."],
+  ["Widerspruch (DSGVO Art.21 / KVKK Art.11)","Widerspruch gegen bestimmte Verarbeitungen."],
+  ["Widerruf der Einwilligung (DSGVO Art.7 Abs.3)","Einwilligung jederzeit widerrufen."],
+  ["Datenübertragbarkeit (DSGVO Art.20)","Ihre Daten in strukturiertem Format anfordern."],
+  ["Beschwerderecht","Sich an die zuständige Aufsichtsbehörde wenden."]
+ ]}
+};
+
+var LANG = "tr";
+function $(s){ return document.querySelector(s); }
+function $$(s){ return document.querySelectorAll(s); }
+
+function renderContent(){
+  var t = I18N[LANG]; var html = "";
+  t.sections.forEach(function(s){
+    html += '<section class="sec"><h2><span class="n">'+s[0]+'</span> '+s[1]+'</h2>';
+    for(var i=3;i<s.length;i++){
+      var block = s[i];
+      if(block === "TABLE"){
+        html += '<table class="rights"><thead><tr><th>'+t.rightsHead[0]+'</th><th>'+t.rightsHead[1]+'</th></tr></thead><tbody>';
+        t.rightsRows.forEach(function(r){ html += '<tr><td><strong>'+r[0]+'</strong></td><td>'+r[1]+'</td></tr>'; });
+        html += '</tbody></table>';
+      } else if(block.indexOf("LIST:") === 0){
+        var items = block.slice(5).split("|");
+        html += '<ul>'; items.forEach(function(it){ html += '<li>'+it+'</li>'; }); html += '</ul>';
+      } else { html += '<p>'+block+'</p>'; }
+    }
+    html += '</section>';
+  });
+  $("#content").innerHTML = html;
+}
+function applyLang(){
+  var t = I18N[LANG];
+  $$("[data-i18n]").forEach(function(el){ var k=el.getAttribute("data-i18n"); if(t[k]!=null) el.innerHTML=t[k]; });
+  document.documentElement.lang = LANG;
+  document.title = "WAMOCON · " + t.title;
+  $("#langTxt").textContent = t._name;
+  $$("#langMenu button").forEach(function(b){ b.classList.toggle("active", b.dataset.lang===LANG); });
+  renderContent();
+}
+function setLang(l){ if(!I18N[l]) l="tr"; LANG=l; try{ localStorage.setItem("wm_lang",l); }catch(e){} applyLang(); }
+$("#langBtn").addEventListener("click", function(e){ e.stopPropagation(); $("#lang").classList.toggle("open"); });
+$$("#langMenu button").forEach(function(b){ b.addEventListener("click", function(){ setLang(b.dataset.lang); $("#lang").classList.remove("open"); }); });
+document.addEventListener("click", function(){ $("#lang").classList.remove("open"); });
+
+(function init(){
+  var saved=null; try{ saved=localStorage.getItem("wm_lang"); }catch(e){}
+  if(!saved){ var n=(navigator.language||"tr").slice(0,2).toLowerCase(); saved=["tr","en","ru","de"].indexOf(n)>-1 ? n : "tr"; }
+  LANG=saved; applyLang();
+})();
+</script>
+</body>
+</html>
