@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MARYAM · Berber Atölyesi — Avsallar</title>
+<meta name="description" content="MARYAM Berber Atölyesi, Avsallar. Zanaat, zarafet ve keskin bir çizgi. Bir tıraş değil, bir ritüel.">
+<meta name="theme-color" content="#0C0B0A">
+
+<!-- ============================================================================
+     MARYAM · ATELIER CONCEPT  (Next-Level Vorschlag / Luxus-Direktion)
+     Editoriales Grooming-Atelier: Champagner-Gold auf Noir, Serifen-Couture,
+     eigenes Monogramm, cinematisch gegradete Fotos (assets/img-lux), Ritual-
+     Storytelling, feine Motion. Fokus-Konzept in TR (Wow fuer den Barbier).
+     Sales-/Buchungs-/4-Sprach-Engine der v1 kann bei OK uebernommen werden.
+     ============================================================================ -->
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%23C6A15B' stroke-width='1.5'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Georgia,serif' font-size='20' fill='%23C6A15B'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --noir:#0C0B0A; --noir-2:#131110; --char:#1B1815; --char-2:#221E19;
+  --gold:#C6A15B; --gold-2:#E4C784; --gold-deep:#9C7C3E;
+  --gold-soft:rgba(198,161,91,.13); --gold-line:rgba(198,161,91,.28);
+  --cream:#F4EEE2; --stone:#A79E90; --stone-2:#7C7466;
+  --line:rgba(230,220,200,.12); --line-2:rgba(230,220,200,.20);
+  --wa:#25D366;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Jost",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --maxw:1240px; --ease:cubic-bezier(.19,1,.22,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--noir);color:var(--cream);font-family:var(--sans);font-weight:300;
+  line-height:1.7;font-size:16.5px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body.lock{overflow:hidden;height:100vh}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+::selection{background:var(--gold);color:var(--noir)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,54px)}
+
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.02;letter-spacing:.005em}
+.serif{font-family:var(--serif)}
+.italic{font-style:italic}
+.label{font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.34em;
+  text-transform:uppercase;color:var(--gold)}
+.label.stone{color:var(--stone-2)}
+.rule{width:64px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+
+/* ---------- Monogram ---------- */
+.mono{color:var(--gold)}
+.mono circle,.mono path,.mono line{stroke:currentColor;fill:none}
+.mono text{fill:currentColor;font-family:var(--serif);font-weight:600}
+.mono .dia{fill:currentColor;stroke:none}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:11px;font-family:var(--sans);
+  font-weight:500;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;padding:17px 34px;
+  border:1px solid var(--gold-line);color:var(--gold);position:relative;overflow:hidden;
+  transition:color .5s var(--ease),border-color .5s;background:transparent}
+.btn::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,var(--gold),var(--gold-2));
+  transform:translateY(101%);transition:transform .5s var(--ease);z-index:-1}
+.btn:hover{color:var(--noir);border-color:var(--gold)}
+.btn:hover::before{transform:translateY(0)}
+.btn svg{width:17px;height:17px}
+.btn-solid{background:linear-gradient(120deg,var(--gold),var(--gold-2));color:var(--noir);border-color:transparent}
+.btn-solid::before{background:var(--cream)}
+.btn-wa{border-color:rgba(37,211,102,.4);color:#7ee0a3}
+.btn-wa::before{background:var(--wa)}
+.btn-wa:hover{color:#04210f}
+
+/* ---------- Loader ---------- */
+.loader{position:fixed;inset:0;z-index:300;background:var(--noir);display:grid;place-items:center;
+  transition:opacity .8s var(--ease),visibility .8s}
+body.ready .loader{opacity:0;visibility:hidden}
+.loader .lmono{width:120px;height:120px}
+.loader .lmono circle{stroke-dasharray:300;stroke-dashoffset:300;animation:draw 1.4s var(--ease) forwards}
+.loader .lmono text{opacity:0;animation:fadeIn .8s .7s forwards}
+.loader .ltx{margin-top:22px;opacity:0;animation:fadeIn .8s 1s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fadeIn{to{opacity:1}}
+.curtain{position:fixed;inset:0;z-index:290;background:var(--noir);transform-origin:top;
+  transform:scaleY(1);transition:transform 1s var(--ease) .1s}
+body.ready .curtain{transform:scaleY(0)}
+
+/* ---------- Custom cursor (desktop) ---------- */
+.cur{position:fixed;top:0;left:0;width:8px;height:8px;border-radius:50%;background:var(--gold);
+  pointer-events:none;z-index:250;transform:translate(-50%,-50%);transition:width .3s,height .3s,background .3s;mix-blend-mode:difference}
+.cur-ring{position:fixed;top:0;left:0;width:38px;height:38px;border:1px solid var(--gold-line);border-radius:50%;
+  pointer-events:none;z-index:250;transform:translate(-50%,-50%);transition:width .35s var(--ease),height .35s var(--ease),opacity .3s}
+.cur-ring.hover{width:64px;height:64px;opacity:.6}
+@media(hover:none){.cur,.cur-ring{display:none}}
+
+/* ---------- Header ---------- */
+header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .5s,border-color .5s,padding .5s;
+  border-bottom:1px solid transparent;padding:6px 0}
+header.scrolled{background:rgba(12,11,10,.82);backdrop-filter:blur(14px);border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:13px}
+.brand .mono{width:42px;height:42px;flex:none}
+.brand .bt{display:flex;flex-direction:column;line-height:1}
+.brand .bn{font-family:var(--serif);font-weight:600;font-size:1.5rem;letter-spacing:.14em;color:var(--cream)}
+.brand .bs{font-family:var(--sans);font-size:.56rem;font-weight:500;letter-spacing:.34em;color:var(--stone-2);text-transform:uppercase;margin-top:3px}
+.nav-links{display:flex;gap:38px;align-items:center}
+.nav-links a{font-family:var(--sans);font-size:.74rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);transition:color .3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{display:flex;align-items:center;gap:18px}
+.burger{display:none;flex-direction:column;gap:6px;width:40px;height:40px;align-items:center;justify-content:center}
+.burger span{width:24px;height:1px;background:var(--cream);transition:.3s}
+.burger.open span:nth-child(1){transform:translateY(3.5px) rotate(45deg)}
+.burger.open span:nth-child(2){transform:translateY(-3.5px) rotate(-45deg)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;animation:kb 20s ease-out infinite alternate}
+@keyframes kb{from{transform:scale(1.06)}to{transform:scale(1.16) translateY(-2%)}}
+.hero-bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(12,11,10,.62) 0%,rgba(12,11,10,.34) 34%,rgba(12,11,10,.72) 78%,var(--noir) 100%)}
+.hero-bg::before{content:"";position:absolute;inset:0;z-index:1;
+  background:radial-gradient(120% 80% at 50% 40%,transparent 40%,rgba(12,11,10,.5))}
+.hero-in{position:relative;z-index:2;text-align:center;width:100%;padding-top:80px}
+.hero .eyebrow{margin-bottom:26px;opacity:0;animation:up 1s var(--ease) 1.3s forwards}
+.hero .eyebrow span{display:inline-flex;align-items:center;gap:16px}
+.hero .eyebrow i{width:40px;height:1px;background:var(--gold-line);display:inline-block}
+.hero h1{font-size:clamp(3.6rem,13vw,10.5rem);font-weight:500;letter-spacing:.02em;color:var(--cream);
+  line-height:.92;opacity:0;animation:up 1.2s var(--ease) 1.4s forwards}
+.hero h1 .amp{font-style:italic;color:var(--gold)}
+.hero .tag{font-family:var(--serif);font-style:italic;font-size:clamp(1.25rem,2.6vw,1.9rem);color:var(--stone);
+  margin-top:22px;opacity:0;animation:up 1s var(--ease) 1.7s forwards}
+.hero .hero-cta{margin-top:40px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;opacity:0;animation:up 1s var(--ease) 1.95s forwards}
+@keyframes up{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+.scrollcue{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;
+  align-items:center;gap:10px;opacity:0;animation:fadeIn 1s 2.4s forwards}
+.scrollcue .ln{width:1px;height:52px;background:linear-gradient(var(--gold),transparent);position:relative;overflow:hidden}
+.scrollcue .ln::after{content:"";position:absolute;top:-50%;left:0;width:1px;height:50%;background:var(--gold-2);animation:sc 2.2s ease-in-out infinite}
+@keyframes sc{to{top:100%}}
+.scrollcue span{font-family:var(--sans);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--stone-2)}
+
+/* ---------- Marquee ---------- */
+.marq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:var(--noir-2)}
+.marq-t{display:flex;gap:44px;padding:20px 0;white-space:nowrap;width:max-content;animation:mv 38s linear infinite}
+.marq-item{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--stone);display:inline-flex;align-items:center;gap:44px}
+.marq-item::after{content:"✦";color:var(--gold);font-style:normal;font-size:.7rem}
+@keyframes mv{to{transform:translateX(-50%)}}
+
+/* ---------- Section shell ---------- */
+.sec{padding:clamp(80px,12vw,150px) 0;position:relative}
+.sec-head{max-width:720px}
+.sec-head.center{margin:0 auto;text-align:center}
+.sec-head .label{display:inline-block;margin-bottom:22px}
+.sec-head h2{font-size:clamp(2.4rem,5.4vw,4.4rem);font-weight:500;color:var(--cream)}
+.sec-head h2 .it{font-style:italic;color:var(--gold)}
+.sec-head p{color:var(--stone);margin-top:22px;font-size:1.06rem;max-width:56ch}
+.sec-head.center p{margin-left:auto;margin-right:auto}
+
+/* ---------- Manifesto ---------- */
+.mani{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,90px);align-items:center}
+.mani-img{position:relative;aspect-ratio:4/5;overflow:hidden}
+.mani-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.mani-img:hover img{transform:scale(1.05)}
+.mani-img .frame{position:absolute;inset:14px;border:1px solid var(--gold-line);z-index:2;pointer-events:none}
+.mani-img .est{position:absolute;left:-14px;top:50%;transform:rotate(-90deg) translateX(50%);transform-origin:left center;
+  font-family:var(--sans);font-size:.66rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);z-index:3}
+.mani-copy .big{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);font-weight:500;line-height:1.08;color:var(--cream);margin:20px 0 24px}
+.mani-copy .big .it{font-style:italic;color:var(--gold)}
+.mani-copy p{color:var(--stone);margin-bottom:20px}
+.mani-sign{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--gold);margin-top:8px}
+.mani-stats{display:flex;gap:40px;margin-top:36px;padding-top:28px;border-top:1px solid var(--line)}
+.mani-stats .n{font-family:var(--serif);font-size:2.6rem;font-weight:500;color:var(--gold);line-height:1}
+.mani-stats .l{font-family:var(--sans);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--stone-2);margin-top:8px}
+
+/* ---------- Ritual ---------- */
+.ritual{background:var(--noir-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:64px}
+.rit{padding:40px 30px;border-left:1px solid var(--line);transition:background .5s}
+.rit:first-child{border-left:none}
+.rit:hover{background:var(--char)}
+.rit .rn{font-family:var(--serif);font-size:3.4rem;font-weight:400;color:var(--gold-deep);line-height:1;transition:color .4s}
+.rit:hover .rn{color:var(--gold-2)}
+.rit h3{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--cream);margin:20px 0 12px;letter-spacing:.01em}
+.rit p{font-size:.9rem;color:var(--stone)}
+
+/* ---------- Lookbook ---------- */
+.look-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:150px;gap:14px;margin-top:60px}
+.look figure{position:relative;overflow:hidden;cursor:pointer}
+.look img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.look figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(12,11,10,.82));opacity:.62;transition:opacity .5s}
+.look figure:hover img{transform:scale(1.07)}
+.look figure:hover::after{opacity:.75}
+.look .cap{position:absolute;left:22px;right:18px;bottom:18px;z-index:2;font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--cream);
+  opacity:.94;transform:translateY(0);transition:.5s var(--ease)}
+.look .cap small{display:block;font-family:var(--sans);font-style:normal;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-2);margin-bottom:7px;line-height:1}
+.look figure:hover .cap{transform:translateY(-3px)}
+.lk-a{grid-column:span 5;grid-row:span 4}
+.lk-b{grid-column:span 7;grid-row:span 2}
+.lk-c{grid-column:span 7;grid-row:span 2}
+.lk-d{grid-column:span 4;grid-row:span 2}
+.lk-e{grid-column:span 4;grid-row:span 2}
+.lk-f{grid-column:span 4;grid-row:span 2}
+
+/* ---------- Menu ---------- */
+.menu-wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(36px,6vw,80px);align-items:start}
+.menu-list{margin-top:20px}
+.mrow{display:flex;align-items:baseline;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
+.mrow .mn{font-family:var(--serif);font-size:1.5rem;font-weight:500;color:var(--cream);white-space:nowrap}
+.mrow .md{font-size:.82rem;color:var(--stone-2);margin-top:2px}
+.mrow .dots{flex:1;border-bottom:1px dotted var(--line-2);transform:translateY(-5px)}
+.mrow .mp{font-family:var(--serif);font-size:1.5rem;font-weight:500;color:var(--gold);white-space:nowrap}
+.menu-note{font-size:.82rem;color:var(--stone-2);margin-top:24px;font-style:italic;font-family:var(--serif)}
+.menu-card{background:linear-gradient(180deg,var(--char),var(--noir-2));border:1px solid var(--gold-line);padding:clamp(28px,3vw,44px);position:sticky;top:100px}
+.menu-card .mono{width:52px;height:52px;margin-bottom:22px}
+.menu-card h3{font-size:1.9rem;color:var(--cream);margin-bottom:14px}
+.menu-card p{font-size:.92rem;color:var(--stone);margin-bottom:26px}
+.menu-card .btn{width:100%}
+.menu-card .fine{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--stone-2);text-align:center;margin-top:16px}
+
+/* ---------- Reserve band ---------- */
+.reserve{position:relative;min-height:70vh;display:flex;align-items:center;overflow:hidden}
+.reserve-bg{position:absolute;inset:0;z-index:0}
+.reserve-bg img{width:100%;height:100%;object-fit:cover}
+.reserve-bg::after{content:"";position:absolute;inset:0;background:rgba(12,11,10,.66)}
+.reserve-in{position:relative;z-index:2;text-align:center;width:100%}
+.reserve h2{font-size:clamp(2.4rem,6vw,5rem);font-weight:500;color:var(--cream);line-height:1.02}
+.reserve h2 .it{font-style:italic;color:var(--gold)}
+.reserve p{color:var(--stone);max-width:48ch;margin:22px auto 34px;font-size:1.06rem}
+.reserve .r-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+/* ---------- Footer ---------- */
+footer{background:var(--noir);padding:80px 0 36px;border-top:1px solid var(--line)}
+.foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid var(--line)}
+.foot-brand .brand{margin-bottom:22px}
+.foot-brand p{color:var(--stone);font-size:.94rem;max-width:36ch}
+.foot-col h4{font-family:var(--sans);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.foot-col a,.foot-col p{display:block;color:var(--stone);font-size:.94rem;padding:5px 0;transition:color .3s}
+.foot-col a:hover{color:var(--gold)}
+.foot-bot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;padding-top:26px}
+.foot-bot p{font-size:.78rem;letter-spacing:.06em;color:var(--stone-2)}
+.foot-credit b{color:var(--gold);letter-spacing:.05em}
+
+/* ---------- Reveal ---------- */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}.rv.d4{transition-delay:.4s}
+
+/* ---------- Mobile menu ---------- */
+.mmenu{position:fixed;inset:0;z-index:95;background:var(--noir);display:flex;flex-direction:column;justify-content:center;
+  align-items:center;gap:8px;transform:translateY(-100%);transition:transform .6s var(--ease)}
+.mmenu.open{transform:none}
+.mmenu a{font-family:var(--serif);font-size:2.4rem;color:var(--cream);padding:12px 0;transition:color .3s}
+.mmenu a:hover{color:var(--gold)}
+.mmenu .btn{margin-top:24px}
+
+/* ---------- Responsive ---------- */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .burger{display:flex}
+  .nav-cta .btn{display:none}
+  .mani{grid-template-columns:1fr;gap:40px}
+  .mani-img{max-width:440px;order:-1}
+  .rit-grid{grid-template-columns:1fr 1fr}
+  .rit{border-left:none;border-top:1px solid var(--line);padding:32px 24px}
+  .rit:nth-child(odd){border-right:1px solid var(--line)}
+  .menu-wrap{grid-template-columns:1fr}
+  .menu-card{position:static;margin-top:20px}
+  .look-grid{grid-template-columns:repeat(6,1fr);grid-auto-rows:130px}
+  .lk-a{grid-column:span 6;grid-row:span 3}
+  .lk-b,.lk-c,.lk-d,.lk-e,.lk-f{grid-column:span 3;grid-row:span 2}
+  .foot-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .rit-grid{grid-template-columns:1fr}
+  .rit{border-right:none!important}
+  .look-grid{grid-template-columns:repeat(2,1fr)}
+  .lk-a,.lk-b,.lk-c,.lk-d,.lk-e,.lk-f{grid-column:span 2;grid-row:span 2}
+  .foot-top{grid-template-columns:1fr}
+  .mani-stats{gap:26px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important}
+  .rv{opacity:1;transform:none}
+  .hero .eyebrow,.hero h1,.hero .tag,.hero .hero-cta,.scrollcue{opacity:1;animation:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Loader + curtain -->
+<div class="loader">
+  <div style="text-align:center">
+    <svg class="lmono mono" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="46" stroke-width="1.2"/>
+      <circle cx="50" cy="50" r="39" stroke-width="0.5"/>
+      <text x="50" y="65" text-anchor="middle" font-size="46">M</text>
+    </svg>
+    <div class="ltx label" style="letter-spacing:.4em">MARYAM</div>
+  </div>
+</div>
+<div class="curtain"></div>
+
+<div class="cur"></div>
+<div class="cur-ring"></div>
+
+<!-- Header -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="brand" data-hover>
+      <svg class="mono" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="46" stroke-width="1.4"/>
+        <circle cx="50" cy="50" r="39" stroke-width="0.6"/>
+        <text x="50" y="65" text-anchor="middle" font-size="46">M</text>
+        <rect class="dia" x="48.5" y="1" width="3" height="3" transform="rotate(45 50 2.5)"/>
+      </svg>
+      <span class="bt"><span class="bn">MARYAM</span><span class="bs">Berber Atölyesi · Avsallar</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#atelier" data-hover>Atölye</a>
+      <a href="#ritual" data-hover>Ritüel</a>
+      <a href="#lookbook" data-hover>Lookbook</a>
+      <a href="#menu" data-hover>Menü</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#reserve" class="btn btn-solid" data-hover>Randevu</a>
+      <button class="burger" id="burger" aria-label="Menü"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mmenu" id="mmenu">
+  <a href="#atelier">Atölye</a>
+  <a href="#ritual">Ritüel</a>
+  <a href="#lookbook">Lookbook</a>
+  <a href="#menu">Menü</a>
+  <a href="#reserve" class="btn btn-solid">Randevu Al</a>
+</div>
+
+<span id="top"></span>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg"><img src="assets/img-lux/facade.jpg" alt="MARYAM Berber Atölyesi, Avsallar" fetchpriority="high"></div>
+  <div class="wrap hero-in">
+    <div class="eyebrow label"><span><i></i>Avsallar · Alanya<i></i></span></div>
+    <h1>MARYAM</h1>
+    <p class="tag">Bir tıraş değil, bir <span style="color:var(--gold)">ritüel</span>.</p>
+    <div class="hero-cta">
+      <a href="#reserve" class="btn btn-solid" data-hover>Randevu Al</a>
+      <a href="#atelier" class="btn" data-hover>Atölyeyi Keşfet</a>
+    </div>
+  </div>
+  <div class="scrollcue"><span>Kaydır</span><span class="ln"></span></div>
+</section>
+
+<!-- Marquee -->
+<div class="marq" aria-hidden="true">
+  <div class="marq-t" id="marq"></div>
+</div>
+
+<!-- Manifesto / Atelier -->
+<section class="sec" id="atelier">
+  <div class="wrap mani">
+    <div class="mani-img rv">
+      <span class="est">Est. Avsallar</span>
+      <span class="frame"></span>
+      <img src="assets/img-lux/interior-chair.jpg" alt="MARYAM iç mekan, vintage berber koltuğu">
+    </div>
+    <div class="mani-copy">
+      <span class="label rv">Atölye</span>
+      <div class="big rv d1">Modern bir <span class="it">klasik.</span></div>
+      <p class="rv d1">MARYAM'da her koltuk bir sahne, her tıraş bir zanaattır. Yılların ustalığını sıcak havlu, keskin ustura ve zamansız bir zarafetle buluşturuyoruz.</p>
+      <p class="rv d2">Aceleye yer yok. Yalnızca size özel, milimetrik çizgiler ve kusursuz bir bitiş. Avsallar'ın kalbinde, dört dilde ağırlıyoruz.</p>
+      <div class="mani-sign rv d2">— MARYAM</div>
+      <div class="mani-stats rv d3">
+        <div><div class="n">7/7</div><div class="l">Açık</div></div>
+        <div><div class="n">4.9</div><div class="l">Google</div></div>
+        <div><div class="n">4</div><div class="l">Dil · TR·EN·RU·DE</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ritual -->
+<section class="sec ritual" id="ritual">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="label">İmza Ritüelimiz</span>
+      <h2>Dört adımda <span class="it">kusursuzluk</span></h2>
+      <p>Bir MARYAM deneyimi, koltuğa oturmadan başlar ve son dokunuşla mühürlenir.</p>
+    </div>
+    <div class="rit-grid">
+      <div class="rit rv">        <div class="rn">01</div><h3>Danışma</h3><p>Stilinizi ve yüz hatlarınızı birlikte okur, doğru çizgiyi belirleriz.</p></div>
+      <div class="rit rv d1">      <div class="rn">02</div><h3>Sıcak Havlu</h3><p>Cildi yumuşatan, rahatlatan klasik hazırlık. Ritüel burada başlar.</p></div>
+      <div class="rit rv d2">      <div class="rn">03</div><h3>Kesim & Ustura</h3><p>Milimetrik geçişler, keskin çizgiler ve temiz ustura işçiliği.</p></div>
+      <div class="rit rv d3">      <div class="rn">04</div><h3>Bitiş & Bakım</h3><p>Şekillendirme, koku ve son dokunuş. Aynada yeni bir siz.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Lookbook -->
+<section class="sec" id="lookbook">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="label">Lookbook</span>
+      <h2>İşçiliğimizden bir <span class="it">seçki</span></h2>
+      <p>Saç, sakal, örgü ve renk. Her kare, MARYAM imzasını taşır.</p>
+    </div>
+    <div class="look-grid look" id="lookGrid"></div>
+  </div>
+</section>
+
+<!-- Menu -->
+<section class="sec ritual" id="menu">
+  <div class="wrap menu-wrap">
+    <div>
+      <div class="sec-head rv">
+        <span class="label">Hizmet Menüsü</span>
+        <h2>Zarif ve <span class="it">şeffaf</span></h2>
+      </div>
+      <div class="menu-list rv d1" id="menuList"></div>
+      <p class="menu-note">Örnek fiyatlardır. Güncel fiyatlar ve kombinasyonlar için bize yazın.</p>
+    </div>
+    <div class="menu-card rv d2">
+      <svg class="mono" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" stroke-width="1.4"/><circle cx="50" cy="50" r="39" stroke-width="0.6"/><text x="50" y="65" text-anchor="middle" font-size="46">M</text></svg>
+      <h3 class="serif">Koltuğunuzu ayırtın</h3>
+      <p>Sınırlı sayıda randevu. WhatsApp üzerinden saniyeler içinde yerinizi alın.</p>
+      <a href="#" class="btn btn-wa" id="menuWa" data-hover>WhatsApp'tan Randevu</a>
+      <div class="fine">Nakit & Kart · 7 gün açık</div>
+    </div>
+  </div>
+</section>
+
+<!-- Reserve -->
+<section class="reserve" id="reserve">
+  <div class="reserve-bg"><img src="assets/img-lux/interior-row.jpg" alt="MARYAM iç mekan"></div>
+  <div class="wrap reserve-in">
+    <div class="rv"><span class="label">Randevu</span></div>
+    <h2 class="rv d1">Sıra <span class="it">sizde.</span></h2>
+    <p class="rv d2">Zarafet, keskinlik ve gerçek ustalık sizi bekliyor. Avsallar, Zafer Caddesi. Bir MARYAM ritüeli için yerinizi ayırtın.</p>
+    <div class="r-cta rv d3">
+      <a href="#" class="btn btn-solid" id="resWa" data-hover>WhatsApp'tan Randevu</a>
+      <a href="#" class="btn" id="resMap" target="_blank" rel="noopener" data-hover>Yol Tarifi</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#top" class="brand">
+          <svg class="mono" viewBox="0 0 100 100" aria-hidden="true" style="width:44px;height:44px"><circle cx="50" cy="50" r="46" stroke-width="1.4"/><circle cx="50" cy="50" r="39" stroke-width="0.6"/><text x="50" y="65" text-anchor="middle" font-size="46">M</text></svg>
+          <span class="bt"><span class="bn">MARYAM</span><span class="bs">Berber Atölyesi · Avsallar</span></span>
+        </a>
+        <p>Zanaat, zarafet ve keskin bir çizgi. Avsallar'ın kalbinde modern bir klasik.</p>
+      </div>
+      <div class="foot-col">
+        <h4>İletişim</h4>
+        <p>Zafer Cd. No:4D</p>
+        <p>Avsallar, 07470 Alanya</p>
+        <a href="#" id="footPhone">+90 555 555 55 55</a>
+        <a href="https://www.instagram.com/maryam.barbershop/" target="_blank" rel="noopener">@maryam.barbershop</a>
+      </div>
+      <div class="foot-col">
+        <h4>Saatler</h4>
+        <p>Pzt – Cmt · 09:00 – 21:00</p>
+        <p>Pazar · 10:00 – 20:00</p>
+        <a href="#reserve">Randevu Al →</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <p>© <span id="yr">2026</span> MARYAM Berber Atölyesi</p>
+      <a href="https://www.wamocon.com/webdesign/" target="_blank" rel="noopener" class="foot-credit"><span style="color:var(--stone-2)">Website by</span> <b>WAMOCON</b></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+const WA="905555555555"; // TODO: echte WhatsApp-Nummer
+const WA_URL="https://wa.me/"+WA+"?text="+encodeURIComponent("Merhaba MARYAM 💈 Randevu almak istiyorum.");
+const MAPS="https://www.google.com/maps/dir/?api=1&destination=36.6229215,31.7677602";
+
+// Loader
+window.addEventListener("load",()=>setTimeout(()=>document.body.classList.add("ready"),1500));
+setTimeout(()=>document.body.classList.add("ready"),3200); // Fallback
+
+// Links
+$("#menuWa").href=WA_URL; $("#resWa").href=WA_URL; $("#resMap").href=MAPS;
+$("#yr").textContent=new Date().getFullYear();
+
+// Marquee
+const words=["Saç Kesimi","Sakal & Ustura","Sıcak Havlu Tıraş","Saç Örgüsü","Renk & Röfle","Çocuk Kesimi","Bakım & Fön"];
+$("#marq").innerHTML=(()=>{const one=words.map(w=>`<span class="marq-item">${w}</span>`).join("");return one+one;})();
+
+// Lookbook
+const LOOK=[
+  ["before-after.jpg","lk-a","Dönüşüm","Öncesi · Sonrası"],
+  ["braids-plaque.jpg","lk-b","Saç Örgüsü","Cornrow"],
+  ["cut-detail.jpg","lk-c","Keskin Çizgi","Fade"],
+  ["barbers-at-work.jpg","lk-d","Sahne","Atölyede"],
+  ["chair-detail.jpg","lk-e","Vintage","Detay"],
+  ["wash-station.jpg","lk-f","Bakım","Yıkama"]
+];
+$("#lookGrid").innerHTML=LOOK.map(l=>`<figure class="${l[1]} rv" data-src="assets/img-lux/${l[0]}">
+  <img src="assets/img-lux/${l[0]}" alt="MARYAM">
+  <figcaption class="cap"><small>${l[3]}</small>${l[2]}</figcaption></figure>`).join("");
+
+// Menu
+const MENU=[
+  ["Saç Kesimi","Yıkama dahil profesyonel kesim","400 ₺"],
+  ["Sakal & Ustura","Sıcak havlu, kontur, klasik tıraş","200 ₺"],
+  ["Saç + Sakal","Tam bakım kombinasyonu","550 ₺"],
+  ["Saç Örgüsü","Cornrow & modern örgü","500 ₺"],
+  ["Renk & Röfle","Saç/sakal boyama, röfle","1.500 ₺"],
+  ["Çocuk Kesimi","Küçük beyler için","300 ₺"]
+];
+$("#menuList").innerHTML=MENU.map(m=>`<div class="mrow"><div><div class="mn">${m[0]}</div><div class="md">${m[1]}</div></div><span class="dots"></span><span class="mp">${m[2]}</span></div>`).join("");
+
+// Reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}}),{threshold:.12});
+$$(".rv").forEach(el=>io.observe(el));
+
+// Header scrolled
+addEventListener("scroll",()=>$("#header").classList.toggle("scrolled",scrollY>40));
+
+// Mobile menu
+$("#burger").onclick=()=>{$("#burger").classList.toggle("open");$("#mmenu").classList.toggle("open");document.body.classList.toggle("lock");};
+$$("#mmenu a").forEach(a=>a.onclick=()=>{$("#burger").classList.remove("open");$("#mmenu").classList.remove("open");document.body.classList.remove("lock");});
+
+// Custom cursor (desktop)
+if(matchMedia("(hover:hover)").matches){
+  const cur=$(".cur"), ring=$(".cur-ring");
+  let rx=0,ry=0,mx=0,my=0;
+  addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+"px";cur.style.top=my+"px";});
+  (function loop(){rx+=(mx-rx)*.16;ry+=(my-ry)*.16;ring.style.left=rx+"px";ring.style.top=ry+"px";requestAnimationFrame(loop);})();
+  document.addEventListener("mouseover",e=>{if(e.target.closest("a,button,[data-hover],figure"))ring.classList.add("hover");});
+  document.addEventListener("mouseout",e=>{if(e.target.closest("a,button,[data-hover],figure"))ring.classList.remove("hover");});
+}
+
+// Lightbox (reuse simple)
+$$("#lookGrid figure").forEach(f=>f.addEventListener("click",()=>{
+  const o=document.createElement("div");
+  o.style.cssText="position:fixed;inset:0;z-index:200;background:rgba(8,7,6,.95);display:grid;place-items:center;padding:24px;cursor:zoom-out";
+  o.innerHTML=`<img src="${f.dataset.src}" style="max-width:92vw;max-height:88vh;object-fit:contain;box-shadow:0 30px 80px rgba(0,0,0,.6)">`;
+  o.onclick=()=>o.remove();document.body.appendChild(o);
+}));
+</script>
+</body>
+</html>

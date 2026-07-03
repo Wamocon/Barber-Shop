@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================================
+     MARYAM · Berber Atölyesi — Avsallar / Alanya
+     FINALE PREMIUM-SEITE (Atelier-Direktion + volle Engine)
+     Champagner-Gold auf Noir · Serifen-Couture · eigenes Monogramm ·
+     cinematisch gegradete Fotos (assets/img-lux) · Ritual-Storytelling ·
+     4 Sprachen (TR·EN·RU·DE) · WhatsApp-Buchung · KI-Chat · SEO/GEO · feine Motion.
+     ---------------------------------------------------------------------------
+     ALLE Betriebsdaten sind PLATZHALTER im CONFIG-Block unten im Script.
+     Dort in Minuten tauschbar. Vorgaenger-Version: index-v1-backup.html
+     ============================================================================ -->
+
+<title>MARYAM Berber Atölyesi · Avsallar Alanya | Erkek Kuaförü, Sakal, Tıraş, Renk</title>
+<meta name="description" content="MARYAM Berber Atölyesi, Avsallar Zafer Caddesi. Zanaat, zarafet ve keskin bir çizgi. Saç, sakal, tıraş, örgü ve renk. TR·EN·RU·DE hizmet, online randevu, 7 gün açık.">
+<meta name="keywords" content="berber Avsallar, erkek kuaförü Alanya, barber Avsallar, Friseur Avsallar, парикмахерская Авсаллар, sakal tıraşı, saç örgüsü, MARYAM barber, hot towel shave Alanya">
+<meta name="theme-color" content="#0C0B0A">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://maryam-barbershop.example/">
+
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="MARYAM Berber Atölyesi · Avsallar Alanya">
+<meta property="og:description" content="Bir tıraş değil, bir ritüel. Zanaat, zarafet ve keskin bir çizgi. TR·EN·RU·DE · online randevu · 7 gün açık.">
+<meta property="og:image" content="https://maryam-barbershop.example/assets/img-lux/facade.jpg">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:url" content="https://maryam-barbershop.example/">
+<meta property="og:site_name" content="MARYAM Berber Atölyesi">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://maryam-barbershop.example/assets/img-lux/facade.jpg">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%23C6A15B' stroke-width='1.5'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Georgia,serif' font-size='20' fill='%23C6A15B'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   MARYAM · Atelier Design-System (Champagner-Gold / Noir)
+   ============================================================ */
+:root{
+  --noir:#0C0B0A; --noir-2:#131110; --char:#1B1815; --char-2:#221E19; --char-3:#2A241E;
+  --gold:#C6A15B; --gold-2:#E4C784; --gold-deep:#9C7C3E;
+  --gold-soft:rgba(198,161,91,.12); --gold-line:rgba(198,161,91,.30);
+  --cream:#F4EEE2; --stone:#A79E90; --stone-2:#8F8676;
+  --line:rgba(230,220,200,.12); --line-2:rgba(230,220,200,.20);
+  --wa:#25D366; --wa-600:#1EB457;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Jost",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --maxw:1240px; --ease:cubic-bezier(.19,1,.22,1);
+  --shadow:0 30px 80px rgba(0,0,0,.5);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:94px}
+body{background:var(--noir);color:var(--cream);font-family:var(--sans);font-weight:300;
+  line-height:1.7;font-size:16.5px;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body.lock{overflow:hidden;height:100vh}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font-family:inherit;font-size:inherit;color:inherit}
+button{cursor:pointer;border:none;background:none}
+ul{list-style:none}
+::selection{background:var(--gold);color:var(--noir)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:-999px;top:0;z-index:400;background:var(--gold);color:var(--noir);padding:12px 18px;font-family:var(--sans);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
+.skip:focus{left:12px;top:12px}
+.mmenu-lang{display:none;gap:12px;margin-top:30px}
+.mmenu-lang button{font-family:var(--sans);font-size:.78rem;letter-spacing:.18em;color:var(--stone);padding:12px 16px;min-height:44px;border:1px solid var(--line-2);transition:.2s}
+.mmenu-lang button.active,.mmenu-lang button:hover{color:var(--gold);border-color:var(--gold-line)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,54px)}
+
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.03;letter-spacing:.005em;color:var(--cream)}
+.serif{font-family:var(--serif)}
+.it{font-style:italic;color:var(--gold)}
+.label{font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+.rule{width:60px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+
+/* Section shell */
+.sec{padding:clamp(76px,11vw,140px) 0;position:relative}
+.sec-alt{background:var(--noir-2)}
+.sec-head{max-width:720px}
+.sec-head.center{margin:0 auto;text-align:center}
+.sec-head .label{display:inline-block;margin-bottom:22px}
+.sec-head h2{font-size:clamp(2.3rem,5.2vw,4.2rem);font-weight:500}
+.sec-head p{color:var(--stone);margin-top:20px;font-size:1.05rem;max-width:56ch}
+.sec-head.center p{margin-left:auto;margin-right:auto}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:11px;font-family:var(--sans);
+  font-weight:500;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;padding:16px 32px;
+  border:1px solid var(--gold-line);color:var(--gold);position:relative;overflow:hidden;
+  transition:color .5s var(--ease),border-color .5s;background:transparent}
+.btn::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,var(--gold),var(--gold-2));
+  transform:translateY(101%);transition:transform .5s var(--ease);z-index:-1}
+.btn:hover{color:var(--noir);border-color:var(--gold)}
+.btn:hover::before{transform:translateY(0)}
+.btn svg{width:17px;height:17px;flex:none}
+.btn-solid{background:linear-gradient(120deg,var(--gold),var(--gold-2));color:var(--noir);border-color:transparent}
+.btn-solid::before{background:var(--cream)}
+.btn-wa{border-color:rgba(37,211,102,.4);color:#7ee0a3}
+.btn-wa::before{background:var(--wa)}
+.btn-wa:hover{color:#04210f}
+.btn-block{display:flex;width:100%}
+.btn-lg{padding:18px 38px}
+
+/* Monogram */
+.mono{color:var(--gold)}
+.mono circle,.mono line{stroke:currentColor;fill:none}
+.mono text{fill:currentColor;font-family:var(--serif);font-weight:600}
+.mono .dia{fill:currentColor;stroke:none}
+
+/* Loader + curtain */
+.loader{position:fixed;inset:0;z-index:300;background:var(--noir);display:grid;place-items:center;
+  transition:opacity .8s var(--ease),visibility .8s}
+body.ready .loader{opacity:0;visibility:hidden}
+.loader .lmono{width:118px;height:118px}
+.loader .lmono circle{stroke-dasharray:300;stroke-dashoffset:300;animation:draw 1.4s var(--ease) forwards}
+.loader .lmono text{opacity:0;animation:fadeIn .8s .7s forwards}
+.loader .ltx{margin-top:20px;opacity:0;animation:fadeIn .8s 1s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fadeIn{to{opacity:1}}
+.curtain{position:fixed;inset:0;z-index:290;background:var(--noir);transform-origin:top;transform:scaleY(1);
+  transition:transform 1s var(--ease) .1s}
+body.ready .curtain{transform:scaleY(0)}
+
+/* Custom cursor */
+.cur{position:fixed;top:0;left:0;width:7px;height:7px;border-radius:50%;background:var(--gold);pointer-events:none;
+  z-index:250;transform:translate(-50%,-50%);mix-blend-mode:difference}
+.cur-ring{position:fixed;top:0;left:0;width:36px;height:36px;border:1px solid var(--gold-line);border-radius:50%;
+  pointer-events:none;z-index:250;transform:translate(-50%,-50%);transition:width .35s var(--ease),height .35s var(--ease),opacity .3s}
+.cur-ring.hover{width:62px;height:62px;opacity:.6}
+@media(hover:none){.cur,.cur-ring{display:none}}
+
+/* Header */
+header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .5s,border-color .5s;
+  border-bottom:1px solid transparent}
+header.scrolled{background:rgba(12,11,10,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.nav{display:flex;align-items:center;gap:22px;height:78px}
+.brand{display:flex;align-items:center;gap:13px;flex:none}
+.brand .mono{width:42px;height:42px;flex:none}
+.brand .bt{display:flex;flex-direction:column;line-height:1}
+.brand .bn{font-family:var(--serif);font-weight:600;font-size:1.5rem;letter-spacing:.14em;color:var(--cream)}
+.brand .bs{font-family:var(--sans);font-size:.55rem;font-weight:500;letter-spacing:.32em;color:var(--stone-2);text-transform:uppercase;margin-top:4px}
+.nav-links{display:flex;gap:32px;align-items:center;margin:0 auto}
+.nav-links a{font-family:var(--sans);font-size:.74rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);transition:color .3s;position:relative}
+.nav-links a:hover{color:var(--gold)}
+.nav-right{display:flex;align-items:center;gap:14px;flex:none}
+
+/* Language dropdown */
+.lang{position:relative}
+.lang-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-2);border-radius:2px;
+  padding:9px 13px;font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.12em;color:var(--cream);text-transform:uppercase;transition:.3s}
+.lang-btn:hover{border-color:var(--gold-line)}
+.lang-btn .globe{width:15px;height:15px;color:var(--gold)}
+.lang-btn .chev{width:10px;height:10px;opacity:.6;transition:transform .3s}
+.lang.open .chev{transform:rotate(180deg)}
+.lang-menu{position:absolute;top:calc(100% + 10px);right:0;min-width:168px;background:var(--char);border:1px solid var(--line-2);
+  padding:6px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s var(--ease);z-index:120}
+.lang.open .lang-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.lang-menu button{display:flex;align-items:center;gap:11px;width:100%;padding:11px 13px;font-family:var(--sans);
+  font-size:.85rem;font-weight:400;color:var(--stone);text-align:left;transition:.2s}
+.lang-menu button:hover{background:var(--char-2);color:var(--cream)}
+.lang-menu button.active{color:var(--gold)}
+.lang-menu .fl{font-size:1.05rem}
+
+.burger{display:none;flex-direction:column;gap:6px;width:44px;height:44px;align-items:center;justify-content:center}
+.burger span{width:24px;height:1px;background:var(--cream);transition:.3s}
+.burger.open span:nth-child(1){transform:translateY(3.5px) rotate(45deg)}
+.burger.open span:nth-child(2){transform:translateY(-3.5px) rotate(-45deg)}
+
+.mmenu{position:fixed;inset:0;z-index:95;background:var(--noir);display:flex;flex-direction:column;justify-content:center;
+  align-items:center;gap:6px;transform:translateY(-100%);transition:transform .6s var(--ease)}
+.mmenu.open{transform:none}
+.mmenu a{font-family:var(--serif);font-size:2.2rem;color:var(--cream);padding:11px 0;transition:color .3s}
+.mmenu a:hover{color:var(--gold)}
+.mmenu .btn{margin-top:22px}
+
+/* Hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;animation:kb 22s ease-out infinite alternate}
+@keyframes kb{from{transform:scale(1.05)}to{transform:scale(1.15) translateY(-2%)}}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,11,10,.6),rgba(12,11,10,.32) 34%,rgba(12,11,10,.72) 78%,var(--noir))}
+.hero-bg::before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(120% 80% at 50% 42%,transparent 40%,rgba(12,11,10,.5))}
+.hero-in{position:relative;z-index:2;text-align:center;width:100%;padding-top:80px}
+.hero .eyebrow{margin-bottom:24px;opacity:0;animation:up 1s var(--ease) 1.3s forwards}
+.hero .eyebrow span{display:inline-flex;align-items:center;gap:16px}
+.hero .eyebrow i{width:38px;height:1px;background:var(--gold-line)}
+.hero h1{font-family:var(--serif);font-size:clamp(3.4rem,13vw,10.5rem);font-weight:500;letter-spacing:.02em;color:var(--cream);
+  line-height:.9;opacity:0;animation:up 1.2s var(--ease) 1.4s forwards}
+.hero .tag{font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,2.6vw,1.9rem);color:var(--stone);margin-top:20px;
+  opacity:0;animation:up 1s var(--ease) 1.7s forwards}
+.hero .hero-cta{margin-top:38px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;opacity:0;animation:up 1s var(--ease) 1.95s forwards}
+.hero .micro{margin-top:30px;display:flex;gap:20px;justify-content:center;flex-wrap:wrap;opacity:0;animation:up 1s var(--ease) 2.15s forwards;
+  font-family:var(--sans);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--stone-2)}
+.hero .micro span{display:inline-flex;align-items:center;gap:8px}
+.hero .micro .st{color:var(--gold);letter-spacing:1px}
+@keyframes up{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:none}}
+.scrollcue{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0;animation:fadeIn 1s 2.5s forwards}
+.scrollcue .ln{width:1px;height:50px;background:linear-gradient(var(--gold),transparent);position:relative;overflow:hidden}
+.scrollcue .ln::after{content:"";position:absolute;top:-50%;left:0;width:1px;height:50%;background:var(--gold-2);animation:sc 2.2s ease-in-out infinite}
+@keyframes sc{to{top:100%}}
+.scrollcue span{font-family:var(--sans);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--stone-2)}
+
+/* Marquee */
+.marq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:var(--noir-2)}
+.marq-t{display:flex;gap:0;padding:20px 0;white-space:nowrap;width:max-content;animation:mv 40s linear infinite}
+.marq-item{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--stone);display:inline-flex;align-items:center}
+.marq-item::after{content:"✦";color:var(--gold);font-style:normal;font-size:.7rem;margin:0 44px}
+@keyframes mv{to{transform:translateX(-50%)}}
+
+/* Manifesto */
+.mani{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,90px);align-items:center}
+.mani-img{position:relative;aspect-ratio:4/5;overflow:hidden}
+.mani-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.mani-img:hover img{transform:scale(1.05)}
+.mani-img .frame{position:absolute;inset:14px;border:1px solid var(--gold-line);z-index:2;pointer-events:none}
+.mani-img .est{position:absolute;left:-12px;top:50%;transform:rotate(-90deg) translateX(50%);transform-origin:left center;
+  font-family:var(--sans);font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);z-index:3;white-space:nowrap}
+.mani-copy .big{font-family:var(--serif);font-size:clamp(2rem,4vw,3.1rem);font-weight:500;line-height:1.08;margin:18px 0 22px}
+.mani-copy p{color:var(--stone);margin-bottom:18px}
+.mani-sign{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--gold);margin-top:6px}
+.mani-stats{display:flex;gap:40px;margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
+.mani-stats .n{font-family:var(--serif);font-size:2.5rem;font-weight:500;color:var(--gold);line-height:1}
+.mani-stats .l{font-family:var(--sans);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--stone-2);margin-top:8px}
+
+/* Ritual */
+.rit-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:60px}
+.rit{padding:38px 30px;border-left:1px solid var(--line);transition:background .5s}
+.rit:first-child{border-left:none}
+.rit:hover{background:var(--char)}
+.rit .rn{font-family:var(--serif);font-size:3.2rem;font-weight:400;color:var(--gold-deep);line-height:1;transition:color .4s}
+.rit:hover .rn{color:var(--gold-2)}
+.rit h3{font-family:var(--serif);font-size:1.45rem;font-weight:600;margin:18px 0 11px}
+.rit p{font-size:.9rem;color:var(--stone)}
+
+/* Lookbook */
+.look-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:150px;gap:14px;margin-top:56px}
+.look figure{position:relative;overflow:hidden;cursor:pointer}
+.look img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.look figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(12,11,10,.82));opacity:.62;transition:opacity .5s}
+.look figure:hover img{transform:scale(1.07)}
+.look figure:hover::after{opacity:.8}
+.look .cap{position:absolute;left:22px;right:18px;bottom:18px;z-index:2;font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--cream);transition:.5s var(--ease)}
+.look .cap small{display:block;font-family:var(--sans);font-style:normal;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-2);margin-bottom:7px;line-height:1}
+.look figure:hover .cap{transform:translateY(-3px)}
+.lk-a{grid-column:span 5;grid-row:span 4}
+.lk-b{grid-column:span 7;grid-row:span 2}
+.lk-c{grid-column:span 7;grid-row:span 2}
+.lk-d{grid-column:span 4;grid-row:span 2}
+.lk-e{grid-column:span 4;grid-row:span 2}
+.lk-f{grid-column:span 4;grid-row:span 2}
+
+/* Menu / Prices */
+.menu-wrap{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(36px,6vw,80px);align-items:start}
+.menu-list{margin-top:14px}
+.mrow{display:flex;align-items:baseline;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.mrow .mn{font-family:var(--serif);font-size:1.45rem;font-weight:500;color:var(--cream);white-space:nowrap}
+.mrow .md{font-size:.8rem;color:var(--stone-2);margin-top:2px}
+.mrow .dots{flex:1;border-bottom:1px dotted var(--line-2);transform:translateY(-5px);min-width:18px}
+.mrow .mp{font-family:var(--serif);font-size:1.45rem;font-weight:500;color:var(--gold);white-space:nowrap}
+.menu-note{font-size:.85rem;color:var(--stone-2);margin-top:22px;font-style:italic;font-family:var(--serif)}
+.menu-card{background:linear-gradient(180deg,var(--char),var(--noir-2));border:1px solid var(--gold-line);padding:clamp(28px,3vw,42px);position:sticky;top:100px}
+.menu-card .mono{width:50px;height:50px;margin-bottom:20px}
+.menu-card h3{font-size:1.85rem;margin-bottom:12px}
+.menu-card p{font-size:.92rem;color:var(--stone);margin-bottom:24px}
+.menu-card .btn{margin-bottom:14px}
+.menu-card .fine{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--stone-2);text-align:center}
+
+/* Booking */
+.book-wrap{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(30px,4vw,56px);align-items:stretch}
+.book-media{position:relative;overflow:hidden;border:1px solid var(--line-2);min-height:420px}
+.book-media img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.book-media .bm-tag{position:absolute;left:20px;bottom:20px;z-index:2;background:rgba(12,11,10,.66);backdrop-filter:blur(6px);border:1px solid var(--gold-line);padding:14px 18px}
+.book-media .bm-tag b{font-family:var(--serif);font-size:1.2rem;color:var(--cream)}
+.book-media .bm-tag span{display:block;font-size:.78rem;color:var(--stone);margin-top:3px}
+.book-form{background:linear-gradient(180deg,var(--char),var(--noir-2));border:1px solid var(--line-2);padding:clamp(26px,3.4vw,44px)}
+.book-form .label{display:inline-block;margin-bottom:14px}
+.book-form h2{font-size:1.9rem;margin-bottom:8px}
+.book-form .bf-sub{font-size:.92rem;color:var(--stone);margin-bottom:26px}
+.field{margin-bottom:16px}
+.field label{display:block;font-family:var(--sans);font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--stone-2);margin-bottom:8px}
+.field .req{color:var(--gold)}
+.control{width:100%;background:var(--noir);border:1px solid var(--line-2);padding:14px 15px;color:var(--cream);transition:.25s;font-weight:300}
+.control:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-soft)}
+.control::placeholder{color:var(--stone-2)}
+select.control{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23C6A15B' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:38px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.book-form .bf-fine{font-size:.75rem;color:var(--stone-2);text-align:center;margin-top:14px}
+
+/* Reviews */
+.rev-top{display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin-bottom:38px}
+.rev-score{display:flex;align-items:center;gap:18px;border:1px solid var(--gold-line);padding:20px 26px}
+.rev-score .big{font-family:var(--serif);font-size:3.2rem;font-weight:500;color:var(--gold);line-height:1}
+.rev-score .stars{color:var(--gold);font-size:1rem;letter-spacing:2px}
+.rev-score .cnt{font-size:.82rem;color:var(--stone);margin-top:4px}
+.rev-score .gg{display:inline-flex;align-items:center;gap:7px;font-size:.78rem;color:var(--stone-2);margin-top:6px}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{background:var(--char);border:1px solid var(--line);padding:26px;transition:.4s}
+.rev:hover{border-color:var(--gold-line);transform:translateY(-4px)}
+.rev .rh{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.rev .av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-weight:600;font-size:1.2rem;color:var(--noir);flex:none;background:linear-gradient(135deg,var(--gold),var(--gold-2))}
+.rev .rn{font-family:var(--serif);font-weight:600;font-size:1.15rem;color:var(--cream)}
+.rev .rm{font-size:.74rem;color:var(--stone-2)}
+.rev .rstars{color:var(--gold);font-size:.82rem;letter-spacing:1.5px;margin-bottom:10px}
+.rev p{font-size:.94rem;color:var(--stone);line-height:1.6}
+
+/* Location */
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,40px);align-items:stretch}
+.loc-map{overflow:hidden;border:1px solid var(--gold-line);min-height:400px;position:relative}
+.loc-map iframe{width:100%;height:100%;min-height:400px;border:0;filter:grayscale(.5) contrast(1.05) brightness(.9)}
+.loc-info{background:linear-gradient(180deg,var(--char),var(--noir-2));border:1px solid var(--line);padding:clamp(26px,3vw,38px)}
+.loc-item{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.loc-item:last-of-type{border-bottom:none}
+.loc-item .li{width:42px;height:42px;flex:none;display:grid;place-items:center;border:1px solid var(--gold-line)}
+.loc-item .li svg{width:20px;height:20px;color:var(--gold)}
+.loc-item .lt{font-family:var(--sans);font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--stone-2);margin-bottom:5px}
+.loc-item .lv{color:var(--cream);font-weight:300}
+.loc-item .lv a:hover{color:var(--gold)}
+.hours-row{display:flex;justify-content:space-between;font-size:.92rem;padding:3px 0;color:var(--stone)}
+.hours-row.today{color:var(--gold)}
+.loc-info .btn{margin-top:22px}
+
+/* Instagram */
+.ig-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;margin-bottom:30px}
+.ig-handle{display:flex;align-items:center;gap:14px}
+.ig-handle .ig-ic{width:52px;height:52px;display:grid;place-items:center;border:1px solid var(--gold-line);flex:none}
+.ig-handle .ig-ic svg{width:26px;height:26px;color:var(--gold)}
+.ig-handle .ih b{font-family:var(--serif);font-size:1.3rem;color:var(--cream)}
+.ig-handle .ih span{display:block;font-size:.84rem;color:var(--stone)}
+.ig-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.ig-grid a{position:relative;aspect-ratio:1;overflow:hidden;border:1px solid var(--line)}
+.ig-grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.ig-grid a::after{content:"";position:absolute;inset:0;background:rgba(12,11,10,.4);opacity:0;transition:.3s}
+.ig-grid a:hover::after{opacity:1}
+.ig-grid a:hover img{transform:scale(1.08)}
+
+/* Reserve band */
+.reserve{position:relative;min-height:66vh;display:flex;align-items:center;overflow:hidden}
+.reserve-bg{position:absolute;inset:0;z-index:0}
+.reserve-bg img{width:100%;height:100%;object-fit:cover}
+.reserve-bg::after{content:"";position:absolute;inset:0;background:rgba(12,11,10,.66)}
+.reserve-in{position:relative;z-index:2;text-align:center;width:100%}
+.reserve h2{font-size:clamp(2.4rem,6vw,5rem);font-weight:500;line-height:1.02}
+.reserve p{color:var(--stone);max-width:48ch;margin:20px auto 32px;font-size:1.05rem}
+.reserve .r-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+/* Footer */
+footer{background:var(--noir);padding:76px 0 34px;border-top:1px solid var(--line)}
+.foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;padding-bottom:46px;border-bottom:1px solid var(--line)}
+.foot-brand .brand{margin-bottom:20px}
+.foot-brand p{color:var(--stone);font-size:.94rem;max-width:36ch}
+.foot-soc{display:flex;gap:10px;margin-top:18px}
+.foot-soc a{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);color:var(--stone);transition:.3s}
+.foot-soc a:hover{border-color:var(--gold);color:var(--gold)}
+.foot-soc a svg{width:19px;height:19px}
+.foot-col h4{font-family:var(--sans);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.foot-col a,.foot-col li,.foot-col p{display:block;color:var(--stone);font-size:.92rem;padding:5px 0;transition:color .3s}
+.foot-col a:hover{color:var(--gold)}
+.foot-bot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;padding-top:26px;align-items:center}
+.foot-bot p{font-size:.78rem;letter-spacing:.05em;color:var(--stone-2)}
+.foot-credit b{color:var(--gold);letter-spacing:.04em}
+
+/* Floating + mobile bar */
+.fab{position:fixed;right:20px;bottom:20px;z-index:90;display:flex;flex-direction:column;gap:12px}
+.fab a,.fab button{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;box-shadow:var(--shadow);transition:.25s var(--ease);position:relative}
+.fab .f-wa{background:var(--wa);color:#04210f}
+.fab .f-chat{background:linear-gradient(160deg,var(--gold),var(--gold-2));color:var(--noir)}
+.fab a:hover,.fab button:hover{transform:translateY(-4px) scale(1.05)}
+.fab svg{width:26px;height:26px}
+.fab .f-wa::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--wa);animation:pulse 2.4s var(--ease) infinite}
+@keyframes pulse{0%{opacity:.7;transform:scale(1)}80%,100%{opacity:0;transform:scale(1.5)}}
+.mbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:88;background:rgba(12,11,10,.95);backdrop-filter:blur(12px);
+  border-top:1px solid var(--gold-line);padding:9px 10px;grid-template-columns:1fr 1fr 1.2fr;gap:8px}
+.mbar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:9px 4px;
+  font-family:var(--sans);font-size:.68rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--stone)}
+.mbar a svg{width:19px;height:19px}
+.mbar .mb-book{background:linear-gradient(120deg,var(--gold),var(--gold-2));color:var(--noir);flex-direction:row;gap:7px}
+.mbar .mb-wa{color:var(--wa)}
+
+/* Chat */
+.chat{position:fixed;right:20px;bottom:86px;z-index:95;width:min(368px,calc(100vw - 32px));background:var(--char);
+  border:1px solid var(--gold-line);box-shadow:var(--shadow);overflow:hidden;
+  transform:translateY(20px) scale(.96);opacity:0;visibility:hidden;transition:.28s var(--ease);transform-origin:bottom right}
+.chat.open{transform:none;opacity:1;visibility:visible}
+.chat-head{display:flex;align-items:center;gap:12px;padding:16px 18px;background:var(--noir-2);border-bottom:1px solid var(--line)}
+.chat-head .ca{width:40px;height:40px;display:grid;place-items:center;background:linear-gradient(160deg,var(--gold),var(--gold-2));flex:none}
+.chat-head .ca svg{width:21px;height:21px;color:var(--noir)}
+.chat-head .ct b{font-family:var(--serif);font-size:1.15rem;color:var(--cream)}
+.chat-head .ct span{display:flex;align-items:center;gap:6px;font-size:.74rem;color:var(--stone-2)}
+.chat-head .ct span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--wa)}
+.chat-head .cx{margin-left:auto;color:var(--stone);font-size:1.5rem;width:40px;height:40px;display:grid;place-items:center}
+.chat-head .cx:hover{color:var(--gold)}
+.chat-body{padding:18px;height:288px;overflow-y:auto;display:flex;flex-direction:column;gap:12px;background:var(--noir)}
+.msg{max-width:82%;padding:11px 14px;font-size:.9rem;line-height:1.5;animation:pop .3s var(--ease)}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.msg.them{background:var(--char-2);border:1px solid var(--line);color:var(--stone);align-self:flex-start}
+.msg.me{background:linear-gradient(120deg,var(--gold),var(--gold-2));color:var(--noir);align-self:flex-end;font-weight:400}
+.chat-quick{display:flex;flex-wrap:wrap;gap:8px;padding:12px 18px;border-top:1px solid var(--line);background:var(--char)}
+.chat-quick button{font-family:var(--sans);font-size:.76rem;font-weight:400;color:var(--gold);background:var(--gold-soft);border:1px solid var(--gold-line);padding:11px 15px;transition:.2s}
+.chat-quick button:hover{background:var(--gold);color:var(--noir)}
+
+/* Lightbox */
+.lb{position:fixed;inset:0;z-index:200;background:rgba(8,7,6,.95);display:none;align-items:center;justify-content:center;padding:24px}
+.lb.open{display:flex}
+.lb img{max-width:92vw;max-height:86vh;box-shadow:var(--shadow)}
+.lb-x{position:absolute;top:22px;right:26px;width:46px;height:46px;border:1px solid var(--gold-line);color:var(--cream);font-size:1.4rem;display:grid;place-items:center}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;border:1px solid var(--gold-line);color:var(--cream);font-size:1.5rem;display:grid;place-items:center;transition:.2s}
+.lb-nav:hover{background:var(--gold);color:var(--noir)}
+.lb-prev{left:20px}.lb-next{right:20px}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(38px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}.rv.d4{transition-delay:.4s}
+
+/* Responsive */
+@media(max-width:960px){
+  .nav-links{display:none}
+  .burger{display:flex}
+  .nav-right .lang{display:none}
+  .nav-right .btn-solid{display:none}
+  .mmenu-lang{display:flex}
+  .mani{grid-template-columns:1fr;gap:40px}
+  .mani-img{max-width:440px;order:-1}
+  .rit-grid{grid-template-columns:1fr 1fr}
+  .rit{border-left:none;border-top:1px solid var(--line)}
+  .rit:nth-child(odd){border-right:1px solid var(--line)}
+  .menu-wrap{grid-template-columns:1fr}
+  .menu-card{position:static;margin-top:24px}
+  .book-wrap{grid-template-columns:1fr}
+  .book-media{display:none}
+  .rev-grid{grid-template-columns:1fr 1fr}
+  .loc-grid{grid-template-columns:1fr}
+  .ig-grid{grid-template-columns:repeat(4,1fr)}
+  .look-grid{grid-template-columns:repeat(6,1fr);grid-auto-rows:130px}
+  .lk-a{grid-column:span 6;grid-row:span 3}
+  .lk-b,.lk-c,.lk-d,.lk-e,.lk-f{grid-column:span 3;grid-row:span 2}
+  .foot-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  body{padding-bottom:80px}
+  .rit-grid{grid-template-columns:1fr}
+  .rit{border-right:none!important}
+  .rev-grid{grid-template-columns:1fr}
+  .ig-grid{grid-template-columns:repeat(3,1fr)}
+  .look-grid{grid-template-columns:repeat(2,1fr)}
+  .lk-a,.lk-b,.lk-c,.lk-d,.lk-e,.lk-f{grid-column:span 2;grid-row:span 2}
+  .field-row{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr}
+  .fab{bottom:92px;right:14px}
+  .chat{bottom:160px;right:14px}
+  .mbar{display:grid}
+  .mani-stats{gap:24px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important}
+  .rv{opacity:1;transform:none}
+  .hero .eyebrow,.hero h1,.hero .tag,.hero .hero-cta,.hero .micro,.scrollcue{opacity:1;animation:none}
+  .hero-bg img{animation:none}
+}
+</style>
+<noscript><style>.loader,.curtain{display:none!important}.rv{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#atelier" data-i18n="skip">İçeriğe geç</a>
+
+<!-- Loader -->
+<div class="loader">
+  <div style="text-align:center">
+    <svg class="lmono mono" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="46" stroke-width="1.2"/><circle cx="50" cy="50" r="39" stroke-width="0.5"/>
+      <text x="50" y="65" text-anchor="middle" font-size="46">M</text>
+    </svg>
+    <div class="ltx label" style="letter-spacing:.4em">MARYAM</div>
+  </div>
+</div>
+<div class="curtain"></div>
+<div class="cur"></div><div class="cur-ring"></div>
+
+<!-- Header -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="brand" data-hover aria-label="MARYAM">
+      <svg class="mono" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" stroke-width="1.4"/><circle cx="50" cy="50" r="39" stroke-width="0.6"/><text x="50" y="65" text-anchor="middle" font-size="46">M</text></svg>
+      <span class="bt"><span class="bn">MARYAM</span><span class="bs" data-i18n="brand_sub">Berber Atölyesi · Avsallar</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#atelier" data-i18n="nav_atelier">Atölye</a>
+      <a href="#ritual" data-i18n="nav_ritual">Ritüel</a>
+      <a href="#lookbook" data-i18n="nav_lookbook">Lookbook</a>
+      <a href="#menu" data-i18n="nav_menu">Menü</a>
+      <a href="#reviews" data-i18n="nav_reviews">Yorumlar</a>
+      <a href="#location" data-i18n="nav_location">Konum</a>
+      <a href="premium-checkliste.html" data-i18n="nav_checklist">Checkliste</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" id="lang">
+        <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+          <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg>
+          <span id="langTxt">TR</span>
+          <svg class="chev" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+        </button>
+        <div class="lang-menu" id="langMenu" role="menu">
+          <button data-lang="tr"><span class="fl">🇹🇷</span> Türkçe</button>
+          <button data-lang="en"><span class="fl">🇬🇧</span> English</button>
+          <button data-lang="ru"><span class="fl">🇷🇺</span> Русский</button>
+          <button data-lang="de"><span class="fl">🇩🇪</span> Deutsch</button>
+        </div>
+      </div>
+      <a href="#booking" class="btn btn-solid" data-hover data-i18n="nav_cta">Randevu</a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="mmenu"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mmenu" id="mmenu">
+  <a href="#atelier" data-i18n="nav_atelier">Atölye</a>
+  <a href="#ritual" data-i18n="nav_ritual">Ritüel</a>
+  <a href="#lookbook" data-i18n="nav_lookbook">Lookbook</a>
+  <a href="#menu" data-i18n="nav_menu">Menü</a>
+  <a href="#reviews" data-i18n="nav_reviews">Yorumlar</a>
+  <a href="#location" data-i18n="nav_location">Konum</a>
+  <a href="premium-checkliste.html" data-i18n="nav_checklist">Checkliste</a>
+  <a href="#booking" class="btn btn-solid" data-i18n="nav_cta">Randevu Al</a>
+  <div class="mmenu-lang" role="group" aria-label="Language"><button data-lang="tr">TR</button><button data-lang="en">EN</button><button data-lang="ru">RU</button><button data-lang="de">DE</button></div>
+</div>
+
+<span id="top"></span>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg"><img src="assets/img-lux/facade.jpg" alt="MARYAM Berber Atölyesi, Avsallar Zafer Caddesi" fetchpriority="high"></div>
+  <div class="wrap hero-in">
+    <div class="eyebrow label"><span><i></i><span data-i18n="hero_eyebrow">Avsallar · Alanya</span><i></i></span></div>
+    <h1>MARYAM<span class="sr-only"> Berber Atölyesi, Avsallar Alanya</span></h1>
+    <p class="tag" data-i18n="hero_tag">Bir tıraş değil, bir <span class="it">ritüel</span>.</p>
+    <div class="hero-cta">
+      <a href="#booking" class="btn btn-solid btn-lg" data-hover data-i18n="hero_cta1">Randevu Al</a>
+      <a href="#atelier" class="btn btn-lg" data-hover data-i18n="hero_cta2">Atölyeyi Keşfet</a>
+    </div>
+    <div class="micro">
+      <span><span class="st">★</span> <b id="microRating">4.9</b> Google</span>
+      <span data-i18n="hero_micro_open">7 gün açık</span>
+      <span>TR · EN · RU · DE</span>
+    </div>
+  </div>
+  <div class="scrollcue"><span data-i18n="scroll">Kaydır</span><span class="ln"></span></div>
+</section>
+
+<!-- Marquee -->
+<div class="marq" aria-hidden="true"><div class="marq-t" id="marq"></div></div>
+
+<!-- Atelier / Manifesto -->
+<section class="sec" id="atelier">
+  <div class="wrap mani">
+    <div class="mani-img rv">
+      <span class="est" data-i18n="mani_est">Est. Avsallar</span>
+      <span class="frame"></span>
+      <img src="assets/img-lux/interior-chair.jpg" alt="MARYAM iç mekan, vintage berber koltuğu">
+    </div>
+    <div class="mani-copy">
+      <span class="label rv" data-i18n="mani_label">Atölye</span>
+      <h2 class="big rv d1" data-i18n="mani_title">Modern bir <span class="it">klasik.</span></h2>
+      <p class="rv d1" data-i18n="mani_p1">MARYAM'da her koltuk bir sahne, her tıraş bir zanaattır. Yılların ustalığını sıcak havlu, keskin ustura ve zamansız bir zarafetle buluşturuyoruz.</p>
+      <p class="rv d2" data-i18n="mani_p2">Aceleye yer yok. Yalnızca size özel, milimetrik çizgiler ve kusursuz bir bitiş. Avsallar'ın kalbinde, dört dilde ağırlıyoruz.</p>
+      <div class="mani-sign rv d2">— MARYAM</div>
+      <div class="mani-stats rv d3">
+        <div><div class="n">7/7</div><div class="l" data-i18n="stat_open">Açık</div></div>
+        <div><div class="n" id="statRating">4.9</div><div class="l">Google</div></div>
+        <div><div class="n">4</div><div class="l" data-i18n="stat_lang">Dil · TR·EN·RU·DE</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ritual -->
+<section class="sec sec-alt" id="ritual">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="label" data-i18n="rit_label">İmza Ritüelimiz</span>
+      <h2 data-i18n="rit_title">Dört adımda <span class="it">kusursuzluk</span></h2>
+      <p data-i18n="rit_sub">Bir MARYAM deneyimi, koltuğa oturmadan başlar ve son dokunuşla mühürlenir.</p>
+    </div>
+    <div class="rit-grid" id="ritGrid"></div>
+  </div>
+</section>
+
+<!-- Lookbook -->
+<section class="sec" id="lookbook">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="label" data-i18n="look_label">Lookbook</span>
+      <h2 data-i18n="look_title">İşçiliğimizden bir <span class="it">seçki</span></h2>
+      <p data-i18n="look_sub">Saç, sakal, örgü ve renk. Her kare, MARYAM imzasını taşır.</p>
+    </div>
+    <div class="look-grid look" id="lookGrid"></div>
+  </div>
+</section>
+
+<!-- Menu / Prices -->
+<section class="sec sec-alt" id="menu">
+  <div class="wrap menu-wrap">
+    <div>
+      <div class="sec-head rv">
+        <span class="label" data-i18n="menu_label">Hizmet Menüsü</span>
+        <h2 data-i18n="menu_title">Zarif ve <span class="it">şeffaf</span></h2>
+      </div>
+      <div class="menu-list rv d1" id="menuList"></div>
+      <p class="menu-note" data-i18n="menu_note">Örnek fiyatlardır. Ayrıca dövme, ağda ve bakım. Güncel fiyatlar için bize yazın.</p>
+    </div>
+    <div class="menu-card rv d2">
+      <svg class="mono" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" stroke-width="1.4"/><circle cx="50" cy="50" r="39" stroke-width="0.6"/><text x="50" y="65" text-anchor="middle" font-size="46">M</text></svg>
+      <h3 class="serif" data-i18n="menu_card_t">Koltuğunuzu ayırtın</h3>
+      <p data-i18n="menu_card_p">Sınırlı sayıda randevu. WhatsApp üzerinden saniyeler içinde yerinizi alın.</p>
+      <a href="#booking" class="btn btn-solid btn-block" data-hover data-i18n="menu_card_btn">Randevu Al</a>
+      <div class="fine" data-i18n="menu_card_fine">Nakit & Kart · 7 gün açık</div>
+    </div>
+  </div>
+</section>
+
+<!-- Booking -->
+<section class="sec" id="booking">
+  <div class="wrap book-wrap">
+    <div class="book-media rv">
+      <img src="assets/img-lux/interior-row.jpg" alt="MARYAM iç mekan, berber koltukları">
+      <div class="bm-tag"><b>MARYAM</b><span data-i18n="book_tag">Avsallar, Zafer Cd. No:4D</span></div>
+    </div>
+    <div class="book-form rv d1">
+      <span class="label" data-i18n="book_label">Online Randevu</span>
+      <h2 data-i18n="book_title">Randevu talebi gönderin</h2>
+      <p class="bf-sub" data-i18n="book_sub">Formu doldurun, WhatsApp üzerinden anında onaylayalım. 30 saniye sürer.</p>
+      <form id="bookForm">
+        <div class="field">
+          <label for="bkService" data-i18n="book_f_service">Hizmet <span class="req">*</span></label>
+          <select class="control" id="bkService" required></select>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="bkDate" data-i18n="book_f_date">Tarih <span class="req">*</span></label><input type="date" class="control" id="bkDate" required></div>
+          <div class="field"><label for="bkTime" data-i18n="book_f_time">Saat <span class="req">*</span></label><select class="control" id="bkTime" required></select></div>
+        </div>
+        <div class="field"><label for="bkName" data-i18n="book_f_name">Adınız <span class="req">*</span></label><input type="text" class="control" id="bkName" required data-i18n-attr="placeholder" data-i18n-placeholder="book_f_name_ph" placeholder="Adınız Soyadınız"></div>
+        <div class="field"><label for="bkNote" data-i18n="book_f_note">Not (opsiyonel)</label><input type="text" class="control" id="bkNote" data-i18n-attr="placeholder" data-i18n-placeholder="book_f_note_ph" placeholder="Örn. belirli bir usta veya stil"></div>
+        <button type="submit" class="btn btn-wa btn-block btn-lg">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.45-.14-.64.14-.19.29-.73.94-.9 1.13-.16.19-.33.21-.61.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.73-1.63-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.44-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.08-.14-.64-1.55-.88-2.12-.23-.56-.47-.48-.64-.49-.16-.01-.36-.01-.55-.01-.19 0-.51.07-.77.36-.26.29-1.01.99-1.01 2.4 0 1.42 1.03 2.79 1.18 2.98.14.19 2.04 3.12 4.95 4.37.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.7-.7 1.95-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.34z M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2m0 1.8a8.2 8.2 0 016.6 13.1l-.3.4.8 2.9-3-.8-.4.2A8.2 8.2 0 1112 3.8"/></svg>
+          <span data-i18n="book_submit">WhatsApp ile Gönder</span>
+        </button>
+        <p class="bf-fine" data-i18n="book_fine">Göndere bastığınızda WhatsApp açılır, mesaj hazır olur.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="sec sec-alt" id="reviews">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="label" data-i18n="rev_label">Müşteri Yorumları</span>
+      <h2 data-i18n="rev_title">Misafirlerimiz ne <span class="it">diyor</span></h2>
+    </div>
+    <div class="rev-top rv d1">
+      <div class="rev-score">
+        <div class="big" id="revBig">4.9</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="cnt"><span id="revCnt">120</span> <span data-i18n="rev_count_lbl">Google yorumu</span></div>
+          <div class="gg">
+            <svg width="15" height="15" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.5 12.2c0-.7-.06-1.4-.2-2.1H12v4h5.9a5 5 0 01-2.2 3.3v2.7h3.6c2.1-2 3.2-4.9 3.2-8z"/><path fill="#34A853" d="M12 23c2.9 0 5.4-1 7.2-2.6l-3.6-2.7c-1 .7-2.3 1.1-3.6 1.1-2.8 0-5.2-1.9-6-4.4H2.3v2.8A11 11 0 0012 23z"/><path fill="#FBBC05" d="M6 14.3a6.6 6.6 0 010-4.2V7.3H2.3a11 11 0 000 9.8z"/><path fill="#EA4335" d="M12 5.5c1.6 0 3 .5 4.1 1.6l3.1-3.1A11 11 0 002.3 7.3L6 10.1c.9-2.6 3.3-4.6 6-4.6z"/></svg>
+            <span data-i18n="rev_verified">Google doğrulanmış</span>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="btn" id="revWriteBtn" data-hover data-i18n="rev_write">Google'da Yorum Yap</a>
+    </div>
+    <div class="rev-grid" id="revGrid"></div>
+  </div>
+</section>
+
+<!-- Location -->
+<section class="sec" id="location">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="label" data-i18n="loc_label">Konum & İletişim</span>
+      <h2 data-i18n="loc_title">Bizi <span class="it">ziyaret edin</span></h2>
+      <p data-i18n="loc_sub">Avsallar merkezde, Zafer Caddesi üzerinde. Denizden birkaç dakika.</p>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-map rv"><iframe title="MARYAM Konum" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=36.6229215,31.7677602&z=17&hl=tr&output=embed"></iframe></div>
+      <div class="loc-info rv d1">
+        <div class="loc-item">
+          <span class="li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-6.3-7-11a7 7 0 0114 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <div><div class="lt" data-i18n="loc_addr_lbl">Adres</div><div class="lv" id="locAddr">Zafer Cd. No:4D, Avsallar Mah., 07470 Alanya / Antalya</div></div>
+        </div>
+        <div class="loc-item">
+          <span class="li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5c0 8.3 6.7 15 15 15v-3.5l-4-1.5-2 2a11 11 0 01-5-5l2-2L8.5 5H5z"/></svg></span>
+          <div><div class="lt" data-i18n="loc_phone_lbl">Telefon</div><div class="lv"><a href="#" id="locPhone">+90 555 555 55 55</a></div></div>
+        </div>
+        <div class="loc-item">
+          <span class="li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div style="flex:1"><div class="lt" data-i18n="loc_hours_lbl">Çalışma Saatleri</div><div class="lv" id="hoursBox" style="margin-top:6px"></div></div>
+        </div>
+        <a href="#" class="btn btn-solid btn-block" id="dirBtn" target="_blank" rel="noopener" data-hover>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg>
+          <span data-i18n="loc_dir">Yol Tarifi Al</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Instagram -->
+<section class="sec sec-alt" id="instagram">
+  <div class="wrap">
+    <div class="ig-head rv">
+      <div class="ig-handle">
+        <span class="ig-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 1.8.25 2.2.42.6.2 1 .46 1.4.86.4.4.66.8.86 1.4.17.4.36 1 .42 2.2.07 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 1.8-.42 2.2-.2.6-.46 1-.86 1.4-.4.4-.8.66-1.4.86-.4.17-1 .36-2.2.42-1.3.07-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-1.8-.25-2.2-.42-.6-.2-1-.46-1.4-.86-.4-.4-.66-.8-.86-1.4-.17-.4-.36-1-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.25-1.8.42-2.2.2-.6.46-1 .86-1.4.4-.4.8-.66 1.4-.86.4-.17 1-.36 2.2-.42C8.4 2.2 8.8 2.2 12 2.2m0 5.6a4.2 4.2 0 100 8.4 4.2 4.2 0 000-8.4m0 6.93a2.73 2.73 0 110-5.46 2.73 2.73 0 010 5.46m5.35-7.1a.98.98 0 11-1.96 0 .98.98 0 011.96 0"/></svg></span>
+        <div class="ih"><b>@maryam.barbershop</b><span data-i18n="ig_sub">Son işlerimiz ve stil ilhamı</span></div>
+      </div>
+      <a href="https://www.instagram.com/maryam.barbershop/" target="_blank" rel="noopener" class="btn btn-solid" data-hover data-i18n="ig_follow">Instagram'da Takip Et</a>
+    </div>
+    <div class="ig-grid" id="igGrid"></div>
+  </div>
+</section>
+
+<!-- Reserve band -->
+<section class="reserve" id="reserve">
+  <div class="reserve-bg"><img src="assets/img-lux/barbers-at-work.jpg" alt="MARYAM atölyede"></div>
+  <div class="wrap reserve-in">
+    <div class="rv"><span class="label" data-i18n="res_label">Randevu</span></div>
+    <h2 class="rv d1" data-i18n="res_title">Sıra <span class="it">sizde.</span></h2>
+    <p class="rv d2" data-i18n="res_p">Zarafet, keskinlik ve gerçek ustalık sizi bekliyor. Avsallar, Zafer Caddesi. Bir MARYAM ritüeli için yerinizi ayırtın.</p>
+    <div class="r-cta rv d3">
+      <a href="#" class="btn btn-solid btn-lg" id="resWa" data-hover data-i18n="res_cta1">WhatsApp'tan Randevu</a>
+      <a href="#" class="btn btn-lg" id="resMap" target="_blank" rel="noopener" data-hover data-i18n="res_cta2">Yol Tarifi</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#top" class="brand">
+          <svg class="mono" viewBox="0 0 100 100" aria-hidden="true" style="width:44px;height:44px"><circle cx="50" cy="50" r="46" stroke-width="1.4"/><circle cx="50" cy="50" r="39" stroke-width="0.6"/><text x="50" y="65" text-anchor="middle" font-size="46">M</text></svg>
+          <span class="bt"><span class="bn">MARYAM</span><span class="bs" data-i18n="brand_sub">Berber Atölyesi · Avsallar</span></span>
+        </a>
+        <p data-i18n="foot_about">Zanaat, zarafet ve keskin bir çizgi. Avsallar'ın kalbinde modern bir klasik. Dört dilde hizmet.</p>
+        <div class="foot-soc">
+          <a href="https://www.instagram.com/maryam.barbershop/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 1.8.25 2.2.42.6.2 1 .46 1.4.86.4.4.66.8.86 1.4.17.4.36 1 .42 2.2.07 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 1.8-.42 2.2-.2.6-.46 1-.86 1.4-.4.4-.8.66-1.4.86-.4.17-1 .36-2.2.42-1.3.07-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-1.8-.25-2.2-.42-.6-.2-1-.46-1.4-.86-.4-.4-.66-.8-.86-1.4-.17-.4-.36-1-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.25-1.8.42-2.2.2-.6.46-1 .86-1.4.4-.4.8-.66 1.4-.86.4-.17 1-.36 2.2-.42C8.4 2.2 8.8 2.2 12 2.2m0 5.6a4.2 4.2 0 100 8.4 4.2 4.2 0 000-8.4m0 6.93a2.73 2.73 0 110-5.46 2.73 2.73 0 010 5.46m5.35-7.1a.98.98 0 11-1.96 0 .98.98 0 011.96 0"/></svg></a>
+          <a href="#" id="footWa" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.45-.14-.64.14-.19.29-.73.94-.9 1.13-.16.19-.33.21-.61.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.73-1.63-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.44-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.08-.14-.64-1.55-.88-2.12-.23-.56-.47-.48-.64-.49-.16-.01-.36-.01-.55-.01-.19 0-.51.07-.77.36-.26.29-1.01.99-1.01 2.4 0 1.42 1.03 2.79 1.18 2.98.14.19 2.04 3.12 4.95 4.37.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.7-.7 1.95-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.34z"/></svg></a>
+          <a href="#" id="footMap" target="_blank" rel="noopener" aria-label="Google Maps"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-6.3-7-11a7 7 0 0114 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="foot_menu">Menü</h4>
+        <a href="#atelier" data-i18n="nav_atelier">Atölye</a>
+        <a href="#lookbook" data-i18n="nav_lookbook">Lookbook</a>
+        <a href="#menu" data-i18n="nav_menu">Hizmetler</a>
+        <a href="#reviews" data-i18n="nav_reviews">Yorumlar</a>
+        <a href="#location" data-i18n="nav_location">Konum</a>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="foot_contact">İletişim</h4>
+        <a href="#" id="footPhone">+90 555 555 55 55</a>
+        <a href="https://www.instagram.com/maryam.barbershop/" target="_blank" rel="noopener">@maryam.barbershop</a>
+        <p style="margin-top:8px" data-i18n="foot_addr">Zafer Cd. No:4D<br>Avsallar, 07470 Alanya</p>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <p>© <span id="yr">2026</span> MARYAM Berber Atölyesi · <span data-i18n="foot_rights">Tüm hakları saklıdır</span></p>
+      <a href="https://www.wamocon.com/webdesign/" target="_blank" rel="noopener" class="foot-credit"><span style="color:var(--stone-2)" data-i18n="foot_by">Website by</span> <b>WAMOCON</b></a>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating + mobile bar + chat + lightbox -->
+<div class="fab">
+  <button class="f-chat" id="chatOpen" aria-label="Chat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 01-11.9 7.6L3 21l1.9-6.1A8.4 8.4 0 1121 11.5z"/><circle cx="8.5" cy="11.5" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="11.5" r="1" fill="currentColor" stroke="none"/><circle cx="15.5" cy="11.5" r="1" fill="currentColor" stroke="none"/></svg></button>
+  <a class="f-wa" id="fabWa" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.45-.14-.64.14-.19.29-.73.94-.9 1.13-.16.19-.33.21-.61.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.73-1.63-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.44-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.08-.14-.64-1.55-.88-2.12-.23-.56-.47-.48-.64-.49-.16-.01-.36-.01-.55-.01-.19 0-.51.07-.77.36-.26.29-1.01.99-1.01 2.4 0 1.42 1.03 2.79 1.18 2.98.14.19 2.04 3.12 4.95 4.37.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.7-.7 1.95-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.34z M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2"/></svg></a>
+</div>
+
+<nav class="mbar">
+  <a href="#" id="mbarCall"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5c0 8.3 6.7 15 15 15v-3.5l-4-1.5-2 2a11 11 0 01-5-5l2-2L8.5 5H5z"/></svg><span data-i18n="mbar_call">Ara</span></a>
+  <a href="#" id="mbarWa" class="mb-wa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.45-.14-.64.14-.19.29-.73.94-.9 1.13-.16.19-.33.21-.61.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.73-1.63-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.44-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.08-.14-.64-1.55-.88-2.12-.23-.56-.47-.48-.64-.49-.16-.01-.36-.01-.55-.01-.19 0-.51.07-.77.36-.26.29-1.01.99-1.01 2.4 0 1.42 1.03 2.79 1.18 2.98.14.19 2.04 3.12 4.95 4.37.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.7-.7 1.95-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.34z"/></svg><span>WhatsApp</span></a>
+  <a href="#booking" class="mb-book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 9h18M8 3v4M16 3v4"/></svg><span data-i18n="mbar_book">Randevu Al</span></a>
+</nav>
+
+<div class="chat" id="chatBox" role="dialog" aria-modal="true" aria-label="MARYAM">
+  <div class="chat-head">
+    <span class="ca"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 01-11.9 7.6L3 21l1.9-6.1A8.4 8.4 0 1121 11.5z"/></svg></span>
+    <div class="ct"><b data-i18n="chat_title">MARYAM Asistan</b><span data-i18n="chat_status">Genellikle hemen yanıtlar</span></div>
+    <button class="cx" id="chatClose" aria-label="Kapat">×</button>
+  </div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-quick" id="chatQuick"></div>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Lookbook">
+  <button class="lb-x" id="lbX" aria-label="Kapat">×</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Prev">‹</button>
+  <img id="lbImg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next">›</button>
+</div>
+
+<script type="application/ld+json" id="ldjson"></script>
+
+<script>
+/* ============================================================================
+   ⬇⬇⬇  HIER ECHTDATEN EINTRAGEN  ⬇⬇⬇   (alles an einer Stelle)
+   ============================================================================ */
+const CONFIG = {
+  brand:"MARYAM", brandFull:"MARYAM Berber Atölyesi",
+  site:"https://maryam-barbershop.example/",  // TODO: echte Domain (auch <link canonical>, og:url, og:image, twitter:image oben anpassen)
+  phone:"+90 555 555 55 55",              // TODO: echte Telefonnummer (Anzeige)
+  phoneDial:"+905555555555",              // TODO: echte Nummer zum Anrufen (nur +Ziffern)
+  whatsapp:"905555555555",                // TODO: echte WhatsApp-Nummer (Vorwahl+Nummer, kein +/0)
+  instagram:"https://www.instagram.com/maryam.barbershop/",
+  address:"Zafer Cd. No:4D, Avsallar Mah., 07470 Alanya / Antalya",
+  mapsPlace:"https://www.google.com/maps/search/?api=1&query=MARYAM+Barber+Shop+Avsallar",
+  directions:"https://www.google.com/maps/dir/?api=1&destination=36.6229215,31.7677602",
+  reviewUrl:"https://www.google.com/maps/search/?api=1&query=MARYAM+Barber+Shop+Avsallar", // TODO: exakter "Rezension schreiben"-Link
+  lat:36.6229215, lng:31.7677602,
+  rating:"4.9", reviewCount:"120",         // TODO: echte Google-Werte
+  hours:[["mon","09:00 – 21:00"],["tue","09:00 – 21:00"],["wed","09:00 – 21:00"],["thu","09:00 – 21:00"],["fri","09:00 – 21:00"],["sat","09:00 – 21:00"],["sun","10:00 – 20:00"]],
+  openTime:"09:00", closeTime:"21:00",
+  prices:{ haircut:"400 ₺", beard:"200 ₺", combo:"550 ₺", shave:"350 ₺", kids:"300 ₺", braids:"500 ₺", color:"1.500 ₺", wash:"200 ₺" }
+};
+/* ============================================================================
+   ⬆⬆⬆  ENDE ECHTDATEN  ⬆⬆⬆
+   ============================================================================ */
+
+const SVC_KEYS = ["haircut","beard","combo","shave","kids","braids","color","wash"];
+
+/* Cinematisch gegradete Fotos fuer das Lookbook (Datei, Rasterklasse, Caption-Key-Index) */
+const LOOK = [
+  ["before-after.jpg","lk-a",0],
+  ["braids-plaque.jpg","lk-b",1],
+  ["cut-detail.jpg","lk-c",2],
+  ["barbers-at-work.jpg","lk-d",3],
+  ["braids-kids.jpg","lk-e",4],
+  ["chair-detail.jpg","lk-f",5]
+];
+const IG_IMAGES = ["before-after.jpg","cut-detail.jpg","braids-plaque.jpg","braids-kids.jpg","barbers-at-work.jpg","wash-station.jpg"];
+
+const I18N = {
+ tr:{ _name:"TR",
+  brand_sub:"Berber Atölyesi · Avsallar",
+  skip:"İçeriğe geç", doc_title:"MARYAM Berber Atölyesi · Avsallar Alanya | Saç, Sakal, Tıraş, Renk", doc_desc:"Avsallar Zafer Caddesi'nde MARYAM Berber Atölyesi. Zanaat, zarafet ve keskin bir çizgi. Online randevu, 7 gün açık, TR·EN·RU·DE.",
+  nav_atelier:"Atölye", nav_ritual:"Ritüel", nav_lookbook:"Lookbook", nav_menu:"Menü", nav_reviews:"Yorumlar", nav_location:"Konum", nav_checklist:"Kontrol Listesi", nav_cta:"Randevu",
+  hero_eyebrow:"Avsallar · Alanya", hero_tag:'Bir tıraş değil, bir <span class="it">ritüel</span>.',
+  hero_cta1:"Randevu Al", hero_cta2:"Atölyeyi Keşfet", hero_micro_open:"7 gün açık", scroll:"Kaydır",
+  marq:["Saç Kesimi","Sakal & Ustura","Sıcak Havlu Tıraşı","Saç Örgüsü","Renk & Röfle","Çocuk Kesimi","Bakım & Fön"],
+  mani_est:"Est. Avsallar", mani_label:"Atölye", mani_title:'Modern bir <span class="it">klasik.</span>',
+  mani_p1:"MARYAM'da her koltuk bir sahne, her tıraş bir zanaattır. Yılların ustalığını sıcak havlu, keskin ustura ve zamansız bir zarafetle buluşturuyoruz.",
+  mani_p2:"Aceleye yer yok. Yalnızca size özel, milimetrik çizgiler ve kusursuz bir bitiş. Avsallar'ın kalbinde, dört dilde ağırlıyoruz.",
+  stat_open:"Açık", stat_lang:"Dil · TR·EN·RU·DE",
+  rit_label:"İmza Ritüelimiz", rit_title:'Dört adımda <span class="it">kusursuzluk</span>',
+  rit_sub:"Bir MARYAM deneyimi, koltuğa oturmadan başlar ve son dokunuşla mühürlenir.",
+  rit:[["Danışma","Stilinizi ve yüz hatlarınızı birlikte okur, doğru çizgiyi belirleriz."],["Sıcak Havlu","Cildi yumuşatan, rahatlatan klasik hazırlık. Ritüel burada başlar."],["Kesim & Ustura","Milimetrik geçişler, keskin çizgiler ve temiz ustura işçiliği."],["Bitiş & Bakım","Şekillendirme, koku ve son dokunuş. Aynada yeni bir siz."]],
+  look_label:"Lookbook", look_title:'İşçiliğimizden bir <span class="it">seçki</span>', look_sub:"Saç, sakal, örgü ve renk. Her kare, MARYAM imzasını taşır.",
+  look_caps:[["Öncesi · Sonrası","Dönüşüm"],["Örgü","İmza"],["Fade","Keskin Çizgi"],["Atölyede","Sahne"],["Cornrow","Saç Örgüsü"],["Vintage","Detay"]],
+  menu_label:"Hizmet Menüsü", menu_title:'Zarif ve <span class="it">şeffaf</span>',
+  menu_note:"Örnek fiyatlardır. Ayrıca dövme, ağda ve bakım. Güncel fiyatlar için bize yazın.",
+  menu_card_t:"Koltuğunuzu ayırtın", menu_card_p:"Sınırlı sayıda randevu. WhatsApp üzerinden saniyeler içinde yerinizi alın.",
+  menu_card_btn:"Randevu Al", menu_card_fine:"Nakit & Kart · 7 gün açık",
+  svc:[["Saç Kesimi","Yıkama dahil profesyonel kesim"],["Sakal & Ustura","Sıcak havlu, kontur, klasik tıraş"],["Saç + Sakal","Tam bakım kombinasyonu"],["Sıcak Havlu Tıraşı","Klasik ustura deneyimi"],["Çocuk Kesimi","Küçük beyler için"],["Saç Örgüsü","Cornrow & modern örgü"],["Renk & Röfle","Saç/sakal boyama, röfle"],["Yıkama & Fön","Yıkama, masaj ve şekillendirme"]],
+  price_ask:"Fiyat sorunuz", price_from:"başlangıç",
+  book_label:"Online Randevu", book_title:"Randevu talebi gönderin", book_sub:"Formu doldurun, WhatsApp üzerinden anında onaylayalım. 30 saniye sürer.",
+  book_tag:"Avsallar, Zafer Cd. No:4D",
+  book_f_service:"Hizmet", book_f_date:"Tarih", book_f_time:"Saat", book_f_name:"Adınız", book_f_name_ph:"Adınız Soyadınız", book_f_note:"Not (isteğe bağlı)", book_f_note_ph:"Örn. belirli bir usta veya stil",
+  book_submit:"WhatsApp ile Gönder", book_fine:"'Gönder'e bastığınızda WhatsApp açılır ve mesajınız hazır olur.",
+  book_wa_head:"Yeni randevu talebi", book_wa_service:"Hizmet", book_wa_date:"Tarih", book_wa_time:"Saat", book_wa_name:"Ad", book_wa_note:"Not",
+  book_alert:"Lütfen hizmet, tarih, saat ve adınızı doldurun.",
+  rev_label:"Müşteri Yorumları", rev_title:'Misafirlerimiz ne <span class="it">diyor</span>', rev_count_lbl:"Google yorumu", rev_verified:"Google onaylı", rev_write:"Google'da Yorum Yap",
+  reviews:[["Mehmet Y.","Yerel misafir","Avsallar'ın en iyi berberi. Saç ve sakal kusursuz, ortam çok şık. Kesinlikle tavsiye ederim.","2 hafta önce"],["Andreas K.","🇩🇪 Almanya","Kusursuz bir kesim ve çok güler yüzlü. Almanca konuşuyorlar, tatilde altın değerinde. Çok temiz.","1 ay önce"],["Ольга П.","🇷🇺 Rusya","Harika bir barbershop! Usta ne istediğimi hemen anladı, kesim süper. Rusça konuşuyorlar. Yine geleceğiz.","3 hafta önce"],["James R.","🇬🇧 İngiltere","Avsallar'ın açık ara en iyisi. Muhteşem fade, sıcak havlu tıraşı ve güzel bir kahve. Tekrar WhatsApp'tan aldım.","1 ay önce"],["Kerim A.","Yerel misafir","Oğlumun saçını ilk defa ağlamadan kestirdik. Ustalar çok sabırlı ve güler yüzlü.","2 ay önce"],["Marie L.","🇩🇪 Almanya","Oğluma harika örgüler, süper atmosfer ve uygun fiyatlar. Her tatilde tekrar geliyoruz.","2 ay önce"]],
+  loc_label:"Konum & İletişim", loc_title:'Bizi <span class="it">ziyaret edin</span>', loc_sub:"Avsallar'ın merkezinde, Zafer Caddesi üzerinde. Denizden birkaç dakika.",
+  loc_addr_lbl:"Adres", loc_phone_lbl:"Telefon", loc_hours_lbl:"Çalışma Saatleri", loc_dir:"Yol Tarifi Al",
+  ig_sub:"Son işlerimiz ve stil ilhamı", ig_follow:"Instagram'da Takip Et",
+  res_label:"Randevu", res_title:'Sıra <span class="it">sizde.</span>', res_p:"Zarafet, keskinlik ve gerçek ustalık sizi bekliyor. Avsallar, Zafer Caddesi. Bir MARYAM ritüeli için yerinizi ayırtın.",
+  res_cta1:"WhatsApp'tan Randevu", res_cta2:"Yol Tarifi",
+  foot_about:"Zanaat, zarafet ve keskin bir çizgi. Avsallar'ın kalbinde modern bir klasik. Dört dilde hizmet.",
+  foot_menu:"Menü", foot_contact:"İletişim", foot_addr:"Zafer Cd. No:4D<br>Avsallar, 07470 Alanya", foot_rights:"Tüm hakları saklıdır", foot_by:"Web tasarımı",
+  mbar_call:"Ara", mbar_book:"Randevu Al",
+  days:["Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi","Pazar"], days_short:["Pzt","Sal","Çar","Per","Cum","Cmt","Paz"], closed:"Kapalı", today_lbl:"Bugün",
+  chat_title:"MARYAM Asistanı", chat_status:"Genellikle hemen yanıtlar",
+  chat_greet:"Merhaba! 👋 MARYAM'a hoş geldiniz. Size nasıl yardımcı olabilirim?",
+  chat_q:["Randevu almak istiyorum","Fiyatlar","Çalışma saatleri","Neredesiniz?"],
+  chat_a_book:"Harika! Randevu için sizi hemen WhatsApp'a bağlıyorum, birkaç saniyede onaylayalım. 💈",
+  chat_a_price:"Örnek fiyatlar: Saç kesimi {haircut}, sakal {beard}, saç+sakal {combo}. Tüm menü 'Menü' bölümünde. 💇‍♂️",
+  chat_a_hours:"Haftanın 7 günü açığız. Bugün: {today}. Tüm saatler 'Konum' bölümünde.",
+  chat_a_loc:"Avsallar, Zafer Cd. No:4D (merkez). 'Yol Tarifi Al' ile navigasyon açılır. 📍",
+  chat_cta_wa:"WhatsApp'ı Aç"
+ },
+ en:{ _name:"EN",
+  brand_sub:"Barber Atelier · Avsallar",
+  skip:"Skip to content", doc_title:"MARYAM Barber Atelier · Avsallar Alanya | Haircut, Beard, Shave, Colour", doc_desc:"MARYAM Barber Atelier on Zafer Street, Avsallar. Craft, elegance and a sharp line. Online booking, open 7 days, TR·EN·RU·DE.",
+  nav_atelier:"Atelier", nav_ritual:"Ritual", nav_lookbook:"Lookbook", nav_menu:"Menu", nav_reviews:"Reviews", nav_location:"Location", nav_checklist:"Checklist", nav_cta:"Book",
+  hero_eyebrow:"Avsallar · Alanya", hero_tag:'Not a shave, a <span class="it">ritual</span>.',
+  hero_cta1:"Book Now", hero_cta2:"Discover the Atelier", hero_micro_open:"Open 7 days", scroll:"Scroll",
+  marq:["Haircut","Beard & Razor","Hot Towel Shave","Braids","Colour & Highlights","Kids Cut","Care & Blow-dry"],
+  mani_est:"Est. Avsallar", mani_label:"Atelier", mani_title:'A modern <span class="it">classic.</span>',
+  mani_p1:"At MARYAM, every chair is a stage and every shave a craft. We unite years of mastery with the hot towel, the sharp razor and timeless elegance.",
+  mani_p2:"No rush. Only sharp lines, made for you, and a flawless finish. In the heart of Avsallar, we welcome you in four languages.",
+  stat_open:"Open", stat_lang:"Languages · TR·EN·RU·DE",
+  rit_label:"Our Signature Ritual", rit_title:'Four steps to <span class="it">perfection</span>',
+  rit_sub:"A MARYAM experience begins before you sit down and is sealed with the final touch.",
+  rit:[["Consultation","Together, we read your style and features to define the right line."],["Hot Towel","The classic warm-up that softens the skin. The ritual begins here."],["Cut & Razor","Millimetre transitions, sharp lines and clean razor work."],["Finish & Care","Styling, fragrance and the final touch. A new you in the mirror."]],
+  look_label:"Lookbook", look_title:'A selection of our <span class="it">craft</span>', look_sub:"Hair, beard, braids and colour. Every frame carries the MARYAM signature.",
+  look_caps:[["Before · After","Transformation"],["Braids","Signature"],["Fade","Sharp Line"],["In the Atelier","On Stage"],["Cornrow","Braids"],["Vintage","Detail"]],
+  menu_label:"Service Menu", menu_title:'Elegant and <span class="it">transparent</span>',
+  menu_note:"Sample prices. We also offer tattoos, waxing and grooming. Message us for current pricing.",
+  menu_card_t:"Reserve your seat", menu_card_p:"Limited appointments. Take your spot in seconds over WhatsApp.",
+  menu_card_btn:"Book Now", menu_card_fine:"Cash & Card · Open 7 days",
+  svc:[["Haircut","Professional cut, wash included"],["Beard & Razor","Hot towel, contour, classic shave"],["Hair + Beard","The full grooming combo"],["Hot Towel Shave","The classic razor experience"],["Kids Cut","For the little gentlemen"],["Braids","Cornrows & modern braids"],["Colour & Highlights","Hair/beard colour, highlights"],["Wash & Blow-dry","Wash, massage and styling"]],
+  price_ask:"On request", price_from:"from",
+  book_label:"Online Booking", book_title:"Send a booking request", book_sub:"Fill in the form and we'll confirm instantly over WhatsApp. Takes 30 seconds.",
+  book_tag:"Avsallar, Zafer St. No:4D",
+  book_f_service:"Service", book_f_date:"Date", book_f_time:"Time", book_f_name:"Your name", book_f_name_ph:"Your full name", book_f_note:"Note (optional)", book_f_note_ph:"e.g. a specific barber or style",
+  book_submit:"Send via WhatsApp", book_fine:"When you tap Send, WhatsApp opens with your message ready.",
+  book_wa_head:"New booking request", book_wa_service:"Service", book_wa_date:"Date", book_wa_time:"Time", book_wa_name:"Name", book_wa_note:"Note",
+  book_alert:"Please fill in service, date, time and your name.",
+  rev_label:"Reviews", rev_title:'What our guests <span class="it">say</span>', rev_count_lbl:"Google reviews", rev_verified:"Google verified", rev_write:"Review us on Google",
+  reviews:[["Mehmet Y.","Local guest","The best barber in Avsallar. Hair and beard flawless, the place looks great. Highly recommended.","2 weeks ago"],["Andreas K.","🇩🇪 Germany","Perfect haircut and very friendly. They speak German, which is worth its weight in gold on holiday. Very clean.","1 month ago"],["Olga P.","🇷🇺 Russia","Great barbershop! The barber understood at once, the cut is superb. They speak Russian. We'll be back.","3 weeks ago"],["James R.","🇬🇧 UK","Best barber in Avsallar by far. Great fade, hot towel shave and a proper coffee. Booked again via WhatsApp.","1 month ago"],["Kerim A.","Local guest","First time my son got his hair cut without crying. The barbers are patient and friendly.","2 months ago"],["Marie L.","🇩🇪 Germany","Lovely braids for my son, super atmosphere and fair prices. We come back every holiday.","2 months ago"]],
+  loc_label:"Location & Contact", loc_title:'<span class="it">Visit</span> us', loc_sub:"Central Avsallar, on Zafer Street. A few minutes from the sea.",
+  loc_addr_lbl:"Address", loc_phone_lbl:"Phone", loc_hours_lbl:"Opening Hours", loc_dir:"Get Directions",
+  ig_sub:"Our latest work and style inspiration", ig_follow:"Follow on Instagram",
+  res_label:"Booking", res_title:'Your <span class="it">turn.</span>', res_p:"Elegance, precision and real craftsmanship await you. Avsallar, Zafer Street. Reserve your spot for a MARYAM ritual.",
+  res_cta1:"Book on WhatsApp", res_cta2:"Directions",
+  foot_about:"Craft, elegance and a sharp line. A modern classic in the heart of Avsallar. Service in four languages.",
+  foot_menu:"Menu", foot_contact:"Contact", foot_addr:"Zafer St. No:4D<br>Avsallar, 07470 Alanya", foot_rights:"All rights reserved", foot_by:"Website by",
+  mbar_call:"Call", mbar_book:"Book Now",
+  days:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], days_short:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"], closed:"Closed", today_lbl:"Today",
+  chat_title:"MARYAM Assistant", chat_status:"Usually replies instantly",
+  chat_greet:"Hello! 👋 Welcome to MARYAM. How can I help you?",
+  chat_q:["I want to book","Prices","Opening hours","Where are you?"],
+  chat_a_book:"Great! I'll connect you to WhatsApp to book, confirmed in seconds. 💈",
+  chat_a_price:"Sample prices: Haircut {haircut}, beard {beard}, hair+beard {combo}. Full menu in the 'Menu' section. 💇‍♂️",
+  chat_a_hours:"We're open 7 days a week. Today: {today}. All hours in the 'Location' section.",
+  chat_a_loc:"Avsallar, Zafer St. No:4D (central). Tap 'Get Directions' to open navigation. 📍",
+  chat_cta_wa:"Open WhatsApp"
+ },
+ ru:{ _name:"RU",
+  brand_sub:"Барбер-ателье · Авсаллар",
+  skip:"Перейти к содержимому", doc_title:"MARYAM Барбер-ателье · Авсаллар Аланья | Стрижка, борода, бритьё", doc_desc:"Барбер-ателье MARYAM на улице Zafer, Авсаллар. Ремесло, элегантность и чёткая линия. Онлайн-запись, без выходных, TR·EN·RU·DE.",
+  nav_atelier:"Ателье", nav_ritual:"Ритуал", nav_lookbook:"Лукбук", nav_menu:"Меню", nav_reviews:"Отзывы", nav_location:"Контакты", nav_checklist:"Чеклист", nav_cta:"Запись",
+  hero_eyebrow:"Авсаллар · Аланья", hero_tag:'Не стрижка, а <span class="it">ритуал</span>.',
+  hero_cta1:"Записаться", hero_cta2:"Открыть для себя ателье", hero_micro_open:"Открыто без выходных", scroll:"Листайте",
+  marq:["Стрижка","Борода и бритьё","Бритьё горячим полотенцем","Косы","Окрашивание","Детская стрижка","Уход и укладка"],
+  mani_est:"Est. Авсаллар", mani_label:"Ателье", mani_title:'Современная <span class="it">классика.</span>',
+  mani_p1:"В MARYAM каждое кресло — сцена, а каждое бритьё — ремесло. Мы соединяем годы мастерства с горячим полотенцем, острой бритвой и вневременной элегантностью.",
+  mani_p2:"Без спешки. Только выверенные линии специально для вас и безупречный финал. В сердце Авсаллара мы принимаем на четырёх языках.",
+  stat_open:"Открыто", stat_lang:"Языка · TR·EN·RU·DE",
+  rit_label:"Наш фирменный ритуал", rit_title:'Четыре шага к <span class="it">совершенству</span>',
+  rit_sub:"Опыт MARYAM начинается ещё до кресла и завершается финальным штрихом.",
+  rit:[["Консультация","Вместе изучаем ваш стиль и черты лица, определяем правильную линию."],["Горячее полотенце","Классическая подготовка, смягчающая кожу. Ритуал начинается здесь."],["Стрижка и бритва","Миллиметровые переходы, чёткие линии и чистая работа бритвой."],["Финиш и уход","Укладка, аромат и финальный штрих. Новый образ в зеркале."]],
+  look_label:"Лукбук", look_title:'Избранное из наших <span class="it">работ</span>', look_sub:"Волосы, борода, косы и цвет. Каждый кадр несёт подпись MARYAM.",
+  look_caps:[["До · После","Преображение"],["Косы","Подпись"],["Фейд","Чёткая линия"],["В ателье","На сцене"],["Косички","Плетение"],["Винтаж","Деталь"]],
+  menu_label:"Меню услуг", menu_title:'Изящно и <span class="it">прозрачно</span>',
+  menu_note:"Ориентировочные цены. Также тату, депиляция и уход. Актуальные цены уточняйте у нас.",
+  menu_card_t:"Забронируйте кресло", menu_card_p:"Ограниченное число записей. Займите место за секунды в WhatsApp.",
+  menu_card_btn:"Записаться", menu_card_fine:"Наличные и карта · Без выходных",
+  svc:[["Стрижка","Профессиональная стрижка, мойка включена"],["Борода и бритва","Горячее полотенце, контур, классическое бритьё"],["Волосы + борода","Полный комплекс ухода"],["Бритьё горячим полотенцем","Классический ритуал бритья"],["Детская стрижка","Для маленьких джентльменов"],["Косы","Косички и современные плетения"],["Окрашивание","Окрашивание волос/бороды, мелирование"],["Мойка и укладка","Мойка, массаж и укладка"]],
+  price_ask:"По запросу", price_from:"от",
+  book_label:"Онлайн-запись", book_title:"Отправьте заявку", book_sub:"Заполните форму, подтвердим сразу в WhatsApp. Займёт 30 секунд.",
+  book_tag:"Авсаллар, ул. Zafer No:4D",
+  book_f_service:"Услуга", book_f_date:"Дата", book_f_time:"Время", book_f_name:"Ваше имя", book_f_name_ph:"Имя и фамилия", book_f_note:"Примечание (по желанию)", book_f_note_ph:"напр. конкретный мастер или стиль",
+  book_submit:"Отправить в WhatsApp", book_fine:"После отправки откроется WhatsApp с готовым сообщением.",
+  book_wa_head:"Новая заявка на запись", book_wa_service:"Услуга", book_wa_date:"Дата", book_wa_time:"Время", book_wa_name:"Имя", book_wa_note:"Примечание",
+  book_alert:"Пожалуйста, укажите услугу, дату, время и имя.",
+  rev_label:"Отзывы", rev_title:'Что говорят наши <span class="it">гости</span>', rev_count_lbl:"отзывов Google", rev_verified:"Проверено Google", rev_write:"Оставить отзыв в Google",
+  reviews:[["Мехмет Й.","Местный гость","Лучший барбер в Авсалларе. Волосы и борода идеальны, интерьер супер. Очень рекомендую.","2 недели назад"],["Andreas K.","🇩🇪 Германия","Идеальная стрижка и очень дружелюбно. Говорят по-немецки, на отдыхе бесценно. Очень чисто.","1 месяц назад"],["Ольга П.","🇷🇺 Россия","Отличный барбершоп! Мастер понял с полуслова, стрижка супер. Говорят по-русски. Обязательно вернёмся.","3 недели назад"],["James R.","🇬🇧 Великобритания","Лучший барбер в Авсалларе. Отличный фейд, бритьё горячим полотенцем и хороший кофе. Записался снова через WhatsApp.","1 месяц назад"],["Керим А.","Местный гость","Впервые подстригли сына без слёз. Мастера терпеливые и приветливые.","2 месяца назад"],["Marie L.","🇩🇪 Германия","Прекрасные косички для сына, супер атмосфера и честные цены. Возвращаемся каждый отпуск.","2 месяца назад"]],
+  loc_label:"Контакты", loc_title:'Как нас <span class="it">найти</span>', loc_sub:"Центр Авсаллара, улица Zafer. В нескольких минутах от моря.",
+  loc_addr_lbl:"Адрес", loc_phone_lbl:"Телефон", loc_hours_lbl:"Часы работы", loc_dir:"Построить маршрут",
+  ig_sub:"Наши последние работы и вдохновение", ig_follow:"Подписаться в Instagram",
+  res_label:"Запись", res_title:'Ваш <span class="it">черёд.</span>', res_p:"Элегантность, точность и настоящее мастерство ждут вас. Авсаллар, улица Zafer. Забронируйте место для ритуала MARYAM.",
+  res_cta1:"Запись в WhatsApp", res_cta2:"Маршрут",
+  foot_about:"Ремесло, элегантность и чёткая линия. Современная классика в сердце Авсаллара. На четырёх языках.",
+  foot_menu:"Меню", foot_contact:"Контакты", foot_addr:"ул. Zafer No:4D<br>Авсаллар, 07470 Аланья", foot_rights:"Все права защищены", foot_by:"Сайт от",
+  mbar_call:"Позвонить", mbar_book:"Записаться",
+  days:["Понедельник","Вторник","Среда","Четверг","Пятница","Суббота","Воскресенье"], days_short:["Пн","Вт","Ср","Чт","Пт","Сб","Вс"], closed:"Закрыто", today_lbl:"Сегодня",
+  chat_title:"Ассистент MARYAM", chat_status:"Обычно отвечает сразу",
+  chat_greet:"Здравствуйте! 👋 Добро пожаловать в MARYAM. Чем могу помочь?",
+  chat_q:["Хочу записаться","Цены","Часы работы","Где вы?"],
+  chat_a_book:"Отлично! Соединяю вас с WhatsApp для записи, подтвердим за секунды. 💈",
+  chat_a_price:"Примерные цены: стрижка {haircut}, борода {beard}, волосы+борода {combo}. Полное меню в разделе «Меню». 💇‍♂️",
+  chat_a_hours:"Мы работаем 7 дней в неделю. Сегодня: {today}. Часы работы указаны в разделе «Контакты».",
+  chat_a_loc:"Авсаллар, ул. Zafer No:4D (центр). Нажмите «Построить маршрут». 📍",
+  chat_cta_wa:"Открыть WhatsApp"
+ },
+ de:{ _name:"DE",
+  brand_sub:"Barber-Atelier · Avsallar",
+  skip:"Zum Inhalt springen", doc_title:"MARYAM Barber-Atelier · Avsallar Alanya | Haarschnitt, Bart, Rasur", doc_desc:"MARYAM Barber-Atelier an der Zafer Caddesi, Avsallar. Handwerk, Eleganz und eine klare Linie. Online-Termin, 7 Tage geöffnet, TR·EN·RU·DE.",
+  nav_atelier:"Atelier", nav_ritual:"Ritual", nav_lookbook:"Lookbook", nav_menu:"Menü", nav_reviews:"Bewertungen", nav_location:"Standort", nav_checklist:"Checkliste", nav_cta:"Termin",
+  hero_eyebrow:"Avsallar · Alanya", hero_tag:'Keine bloße Rasur, ein <span class="it">Ritual</span>.',
+  hero_cta1:"Termin buchen", hero_cta2:"Atelier entdecken", hero_micro_open:"7 Tage geöffnet", scroll:"Scrollen",
+  marq:["Haarschnitt","Bart & Rasur","Heißhandtuch-Rasur","Braids","Coloration","Kinderschnitt","Pflege & Föhnen"],
+  mani_est:"Est. Avsallar", mani_label:"Atelier", mani_title:'Ein moderner <span class="it">Klassiker.</span>',
+  mani_p1:"Bei MARYAM ist jeder Stuhl eine Bühne und jede Rasur ein Handwerk. Wir vereinen langjährige Meisterschaft mit heißem Handtuch, scharfer Klinge und zeitloser Eleganz.",
+  mani_p2:"Keine Eile. Nur präzise Linien, eigens für dich, und ein makelloses Finish. Im Herzen von Avsallar empfangen wir dich in vier Sprachen.",
+  stat_open:"Geöffnet", stat_lang:"Sprachen · TR·EN·RU·DE",
+  rit_label:"Unser Signature-Ritual", rit_title:'Vier Schritte zur <span class="it">Perfektion</span>',
+  rit_sub:"Ein MARYAM-Erlebnis beginnt, bevor du Platz nimmst, und wird mit dem letzten Schliff besiegelt.",
+  rit:[["Beratung","Gemeinsam erfassen wir deinen Stil und deine Gesichtszüge und bestimmen die richtige Linie."],["Heißes Handtuch","Die klassische Vorbereitung für geschmeidige Haut. Hier beginnt das Ritual."],["Schnitt & Klinge","Millimetergenaue Übergänge, klare Linien und saubere Klingenführung."],["Finish & Pflege","Styling, Duft und der letzte Schliff. Ein neues Du im Spiegel."]],
+  look_label:"Lookbook", look_title:'Eine Auswahl unseres <span class="it">Handwerks</span>', look_sub:"Haar, Bart, Braids und Farbe. Jedes Bild trägt die MARYAM-Signatur.",
+  look_caps:[["Vorher · Nachher","Verwandlung"],["Braids","Signatur"],["Fade","Klare Linie"],["Im Atelier","Auf der Bühne"],["Cornrow","Flechtwerk"],["Vintage","Detail"]],
+  menu_label:"Leistungsmenü", menu_title:'Elegant und <span class="it">transparent</span>',
+  menu_note:"Beispielpreise. Außerdem Tattoo, Waxing und Pflege. Für aktuelle Preise schreib uns gern.",
+  menu_card_t:"Sichere dir deinen Platz", menu_card_p:"Begrenzte Termine. In Sekunden per WhatsApp reserviert.",
+  menu_card_btn:"Termin buchen", menu_card_fine:"Bar & Karte · 7 Tage geöffnet",
+  svc:[["Haarschnitt","Professioneller Schnitt, Waschen inklusive"],["Bart & Rasur","Heißes Handtuch, Kontur, klassische Rasur"],["Haar + Bart","Die komplette Rundum-Pflege"],["Heißhandtuch-Rasur","Das klassische Rasiermesser-Erlebnis"],["Kinderschnitt","Für die kleinen Herren"],["Braids","Cornrows & moderne Flechtstyles"],["Coloration","Haar-/Bartfärbung, Strähnen"],["Waschen & Föhnen","Waschen, Massage und Styling"]],
+  price_ask:"Auf Anfrage", price_from:"ab",
+  book_label:"Online-Termin", book_title:"Terminanfrage senden", book_sub:"Füll das Formular aus, wir bestätigen sofort per WhatsApp. Dauert nur 30 Sekunden.",
+  book_tag:"Avsallar, Zafer Cd. No:4D",
+  book_f_service:"Leistung", book_f_date:"Datum", book_f_time:"Uhrzeit", book_f_name:"Dein Name", book_f_name_ph:"Vor- und Nachname", book_f_note:"Notiz (optional)", book_f_note_ph:"z.B. bestimmter Barbier oder Style",
+  book_submit:"Per WhatsApp senden", book_fine:"Beim Senden öffnet sich WhatsApp mit fertiger Nachricht.",
+  book_wa_head:"Neue Terminanfrage", book_wa_service:"Leistung", book_wa_date:"Datum", book_wa_time:"Uhrzeit", book_wa_name:"Name", book_wa_note:"Notiz",
+  book_alert:"Bitte Leistung, Datum, Uhrzeit und Namen ausfüllen.",
+  rev_label:"Bewertungen", rev_title:'Was unsere Gäste <span class="it">sagen</span>', rev_count_lbl:"Google-Bewertungen", rev_verified:"Von Google verifiziert", rev_write:"Bei Google bewerten",
+  reviews:[["Mehmet Y.","Lokaler Gast","Der beste Barbier in Avsallar. Haar und Bart makellos, das Ambiente top. Klare Empfehlung.","vor 2 Wochen"],["Andreas K.","🇩🇪 Deutschland","Perfekter Haarschnitt und sehr freundlich. Man spricht Deutsch, im Urlaub Gold wert. Sehr sauber.","vor 1 Monat"],["Olga P.","🇷🇺 Russland","Toller Barbershop! Der Barbier verstand sofort, der Schnitt ist super. Man spricht Russisch. Wir kommen wieder.","vor 3 Wochen"],["James R.","🇬🇧 England","Mit Abstand der beste Barbier in Avsallar. Toller Fade, Rasur mit heißem Handtuch und ein guter Kaffee. Wieder per WhatsApp gebucht.","vor 1 Monat"],["Kerim A.","Lokaler Gast","Zum ersten Mal wurden meinem Sohn ohne Tränen die Haare geschnitten. Die Barbiere sind geduldig und freundlich.","vor 2 Monaten"],["Marie L.","🇩🇪 Deutschland","Tolle Braids für meinen Sohn, super Atmosphäre und faire Preise. Wir kommen jeden Urlaub wieder.","vor 2 Monaten"]],
+  loc_label:"Standort & Kontakt", loc_title:'<span class="it">Besuche</span> uns', loc_sub:"Zentral in Avsallar, an der Zafer Caddesi. Wenige Minuten vom Meer.",
+  loc_addr_lbl:"Adresse", loc_phone_lbl:"Telefon", loc_hours_lbl:"Öffnungszeiten", loc_dir:"Route berechnen",
+  ig_sub:"Unsere neuesten Arbeiten und Style-Inspiration", ig_follow:"Auf Instagram folgen",
+  res_label:"Termin", res_title:'Du bist <span class="it">dran.</span>', res_p:"Eleganz, Präzision und echtes Handwerk erwarten dich. Avsallar, Zafer Caddesi. Sichere dir deinen Platz für ein MARYAM-Ritual.",
+  res_cta1:"Termin per WhatsApp", res_cta2:"Route",
+  foot_about:"Handwerk, Eleganz und eine klare Linie. Ein moderner Klassiker im Herzen von Avsallar. Service in vier Sprachen.",
+  foot_menu:"Menü", foot_contact:"Kontakt", foot_addr:"Zafer Cd. No:4D<br>Avsallar, 07470 Alanya", foot_rights:"Alle Rechte vorbehalten", foot_by:"Website von",
+  mbar_call:"Anrufen", mbar_book:"Termin",
+  days:["Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag","Sonntag"], days_short:["Mo","Di","Mi","Do","Fr","Sa","So"], closed:"Geschlossen", today_lbl:"Heute",
+  chat_title:"MARYAM-Assistent", chat_status:"Antwortet meist sofort",
+  chat_greet:"Hallo! 👋 Willkommen bei MARYAM. Wie kann ich helfen?",
+  chat_q:["Ich möchte einen Termin","Preise","Öffnungszeiten","Wo seid ihr?"],
+  chat_a_book:"Super! Für den Termin verbinde ich dich mit WhatsApp, in Sekunden bestätigt. 💈",
+  chat_a_price:"Beispielpreise: Haarschnitt {haircut}, Bart {beard}, Haar+Bart {combo}. Das ganze Menü findest du im Bereich 'Menü'. 💇‍♂️",
+  chat_a_hours:"Wir haben 7 Tage die Woche geöffnet. Heute: {today}. Alle Zeiten im Bereich 'Standort'.",
+  chat_a_loc:"Avsallar, Zafer Cd. No:4D (zentral). Tippe auf 'Route berechnen'. 📍",
+  chat_cta_wa:"WhatsApp öffnen"
+ }
+};
+
+/* ---------------- Engine ---------------- */
+let LANG="tr";
+const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function priceOf(k){const p=CONFIG.prices[k];if(!p)return"";return p==="ask"?I18N[LANG].price_ask:p;}
+function todayIdx(){return (new Date().getDay()+6)%7;}
+function todayIso(){const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
+
+function renderDynamic(){
+  const t=I18N[LANG];
+  // Marquee
+  const one=t.marq.map(w=>`<span class="marq-item">${esc(w)}</span>`).join("");
+  $("#marq").innerHTML=one+one;
+  // Ritual
+  $("#ritGrid").innerHTML=t.rit.map((r,i)=>`<div class="rit rv ${'d'+(i%4)}"><div class="rn">0${i+1}</div><h3>${esc(r[0])}</h3><p>${esc(r[1])}</p></div>`).join("");
+  // Lookbook
+  $("#lookGrid").innerHTML=LOOK.map(l=>{const c=t.look_caps[l[2]];return `<figure class="${l[1]} rv" data-src="assets/img-lux/${l[0]}"><img src="assets/img-lux/${l[0]}" alt="MARYAM · ${esc(c[1])}" loading="lazy"><figcaption class="cap"><small>${esc(c[0])}</small>${esc(c[1])}</figcaption></figure>`;}).join("");
+  bindLook();
+  // Menu list
+  $("#menuList").innerHTML=t.svc.map((s,i)=>{const pr=priceOf(SVC_KEYS[i]);return `<div class="mrow"><div><div class="mn">${esc(s[0])}</div><div class="md">${esc(s[1])}</div></div><span class="dots"></span><span class="mp">${esc(pr)}</span></div>`;}).join("");
+  // Booking selects
+  $("#bkService").innerHTML=t.svc.map(s=>`<option value="${esc(s[0])}">${esc(s[0])}</option>`).join("");
+  const timeSel=$("#bkTime");timeSel.innerHTML="";
+  const oh=parseInt(CONFIG.openTime),ch=parseInt(CONFIG.closeTime);
+  for(let h=oh;h<ch;h++){["00","30"].forEach(m=>{const v=(h<10?"0":"")+h+":"+m;timeSel.innerHTML+=`<option>${v}</option>`;});}
+  // Reviews
+  $("#revGrid").innerHTML=t.reviews.map((r,i)=>`<div class="rev rv ${'d'+(i%3)}"><div class="rh"><div class="av">${esc(r[0][0])}</div><div><div class="rn">${esc(r[0])}</div><div class="rm">${esc(r[1])} · ${esc(r[3])}</div></div></div><div class="rstars">★★★★★</div><p>${esc(r[2])}</p></div>`).join("");
+  // Hours
+  const ti=todayIdx();
+  $("#hoursBox").innerHTML=CONFIG.hours.map((h,i)=>{const v=h[1]==="closed"?t.closed:h[1];return `<div class="hours-row ${i===ti?'today':''}"><span>${t.days[i]}${i===ti?' · '+t.today_lbl:''}</span><span>${esc(v)}</span></div>`;}).join("");
+  // Static i18n text nodes (innerHTML allows the <span class="it"> accents)
+  $$("[data-i18n]").forEach(el=>{const k=el.getAttribute("data-i18n");if(t[k]!=null)el.innerHTML=t[k];});
+  $$("[data-i18n-attr]").forEach(el=>{const a=el.getAttribute("data-i18n-attr");const k=el.getAttribute("data-i18n-"+a);if(t[k]!=null)el.setAttribute(a,t[k]);});
+  document.documentElement.lang=LANG;
+  $("#langTxt").textContent=t._name;
+  $$("[data-lang]").forEach(b=>b.classList.toggle("active",b.dataset.lang===LANG));
+  reobserve();
+}
+
+function renderStatic(){
+  $("#microRating").textContent=CONFIG.rating; $("#statRating").textContent=CONFIG.rating;
+  $("#revBig").textContent=CONFIG.rating; $("#revCnt").textContent=CONFIG.reviewCount;
+  $("#locAddr").textContent=CONFIG.address;
+  $("#locPhone").textContent=CONFIG.phone; $("#locPhone").href="tel:"+CONFIG.phoneDial;
+  $("#footPhone").textContent=CONFIG.phone; $("#footPhone").href="tel:"+CONFIG.phoneDial;
+  $("#dirBtn").href=CONFIG.directions; $("#resMap").href=CONFIG.directions;
+  $("#footMap").href=CONFIG.mapsPlace; $("#revWriteBtn").href=CONFIG.reviewUrl;
+  $("#mbarCall").href="tel:"+CONFIG.phoneDial;
+  const wa="https://wa.me/"+CONFIG.whatsapp;
+  $("#fabWa").href=wa; $("#footWa").href=wa; $("#mbarWa").href=wa; $("#resWa").href=wa;
+  $("#yr").textContent=String(new Date().getFullYear());
+  $("#igGrid").innerHTML=IG_IMAGES.map(f=>{const s=f.replace(/\.jpg$/,"").replace(/-/g," ");return `<a href="${CONFIG.instagram}" target="_blank" rel="noopener" aria-label="Instagram @maryam.barbershop"><img src="assets/img-lux/${f}" alt="MARYAM ${s} · @maryam.barbershop" loading="lazy"></a>`;}).join("");
+  $("#bkDate").min=todayIso(); if(!$("#bkDate").value)$("#bkDate").value=todayIso();
+  buildLd();
+}
+
+function buildLd(){
+  const map={mon:"Monday",tue:"Tuesday",wed:"Wednesday",thu:"Thursday",fri:"Friday",sat:"Saturday",sun:"Sunday"};
+  const specs=CONFIG.hours.filter(h=>h[1]!=="closed").map(h=>{const p=h[1].replace(/\s/g,"").split("–");return {"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/"+map[h[0]],"opens":p[0],"closes":p[1]};});
+  const base=CONFIG.site;
+  const revs=I18N.tr.reviews.map(r=>({"@type":"Review","author":{"@type":"Person","name":r[0]},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":r[2]}));
+  const ld={"@context":"https://schema.org","@type":"HairSalon","name":CONFIG.brandFull,
+    "description":"Modern barber atelier in Avsallar, Alanya. Haircut, beard, shave, braids, color. TR/EN/RU/DE.",
+    "image":[base+"assets/img-lux/facade.jpg",base+"assets/img-lux/interior-row.jpg"],
+    "url":base,"telephone":CONFIG.phoneDial,"priceRange":"₺₺",
+    "address":{"@type":"PostalAddress","streetAddress":"Zafer Cd. No:4D","addressLocality":"Avsallar, Alanya","addressRegion":"Antalya","postalCode":"07470","addressCountry":"TR"},
+    "geo":{"@type":"GeoCoordinates","latitude":CONFIG.lat,"longitude":CONFIG.lng},
+    "openingHoursSpecification":specs,"sameAs":[CONFIG.instagram],
+    "aggregateRating":{"@type":"AggregateRating","ratingValue":CONFIG.rating,"reviewCount":CONFIG.reviewCount},
+    "review":revs};
+  $("#ldjson").textContent=JSON.stringify(ld);
+}
+
+/* Lightbox */
+let lbIdx=0;
+function bindLook(){$$("#lookGrid figure").forEach((f,i)=>f.addEventListener("click",()=>openLb(i)));}
+function openLb(i){lbIdx=(i+LOOK.length)%LOOK.length;$("#lbImg").src="assets/img-lux/"+LOOK[lbIdx][0];$("#lbImg").alt="MARYAM · "+I18N[LANG].look_caps[LOOK[lbIdx][2]][1];$("#lb").classList.add("open");}
+$("#lbX").onclick=()=>$("#lb").classList.remove("open");
+$("#lb").onclick=e=>{if(e.target.id==="lb")$("#lb").classList.remove("open");};
+$("#lbPrev").onclick=()=>openLb(lbIdx-1); $("#lbNext").onclick=()=>openLb(lbIdx+1);
+document.addEventListener("keydown",e=>{if(!$("#lb").classList.contains("open"))return;if(e.key==="Escape")$("#lb").classList.remove("open");if(e.key==="ArrowLeft")openLb(lbIdx-1);if(e.key==="ArrowRight")openLb(lbIdx+1);});
+
+/* Booking -> WhatsApp */
+$("#bookForm").addEventListener("submit",e=>{
+  e.preventDefault();const t=I18N[LANG];
+  const service=$("#bkService").value,date=$("#bkDate").value,time=$("#bkTime").value,name=$("#bkName").value.trim(),note=$("#bkNote").value.trim();
+  if(!service||!date||!time||!name){alert(t.book_alert);return;}
+  if(date<todayIso()){$("#bkDate").min=todayIso();alert(t.book_alert);return;}
+  let msg="💈 "+t.book_wa_head+" · "+CONFIG.brandFull+"\n\n";
+  msg+=t.book_wa_service+": "+service+"\n"+t.book_wa_date+": "+date+"\n"+t.book_wa_time+": "+time+"\n"+t.book_wa_name+": "+name+"\n";
+  if(note)msg+=t.book_wa_note+": "+note+"\n";
+  window.open("https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(msg),"_blank");
+});
+
+/* Chat */
+const chatBody=$("#chatBody"),chatQuick=$("#chatQuick");let chatInit=false;
+function chatMsg(x,w){const d=document.createElement("div");d.className="msg "+w;d.innerHTML=x;chatBody.appendChild(d);chatBody.scrollTop=chatBody.scrollHeight;}
+function chatBuildQuick(){const t=I18N[LANG];chatQuick.innerHTML="";t.chat_q.forEach((q,i)=>{const b=document.createElement("button");b.textContent=q;b.onclick=()=>chatAnswer(i,q);chatQuick.appendChild(b);});}
+function openChatBox(){const box=$("#chatBox");const willOpen=!box.classList.contains("open");box.classList.toggle("open");if(willOpen&&!chatInit){chatMsg(I18N[LANG].chat_greet,"them");chatBuildQuick();chatInit=true;}}
+$("#chatOpen").onclick=openChatBox; $("#chatClose").onclick=()=>$("#chatBox").classList.remove("open");
+function chatAnswer(i,label){
+  const t=I18N[LANG];chatMsg(esc(label),"me");
+  setTimeout(()=>{
+    if(i===0){chatMsg(t.chat_a_book,"them");setTimeout(()=>{const b=document.createElement("div");b.className="msg them";b.innerHTML='<a class="btn btn-wa" style="padding:9px 16px" href="https://wa.me/'+CONFIG.whatsapp+'" target="_blank" rel="noopener">'+t.chat_cta_wa+'</a>';chatBody.appendChild(b);chatBody.scrollTop=chatBody.scrollHeight;},500);return;}
+    let a;
+    if(i===1)a=t.chat_a_price.replace("{haircut}",priceOf("haircut")).replace("{beard}",priceOf("beard")).replace("{combo}",priceOf("combo"));
+    else if(i===2)a=t.chat_a_hours.replace("{today}",CONFIG.hours[todayIdx()][1]==="closed"?t.closed:CONFIG.hours[todayIdx()][1]);
+    else a=t.chat_a_loc;
+    chatMsg(a,"them");
+  },420);
+}
+
+/* Language */
+function setLang(l){if(!I18N[l])l="tr";LANG=l;try{localStorage.setItem("maryam_lang",l);}catch(e){}
+  if(I18N[l].doc_title)document.title=I18N[l].doc_title;
+  const md=document.querySelector('meta[name="description"]');if(md&&I18N[l].doc_desc)md.setAttribute("content",I18N[l].doc_desc);
+  renderDynamic();if(chatInit){chatBody.innerHTML="";chatMsg(I18N[LANG].chat_greet,"them");chatBuildQuick();}}
+$("#langBtn").onclick=e=>{e.stopPropagation();$("#lang").classList.toggle("open");$("#langBtn").setAttribute("aria-expanded",$("#lang").classList.contains("open"));};
+$$("[data-lang]").forEach(b=>b.onclick=()=>{setLang(b.dataset.lang);$("#lang").classList.remove("open");$("#burger").classList.remove("open");$("#mmenu").classList.remove("open");document.body.classList.remove("lock");$("#burger").setAttribute("aria-expanded","false");});
+document.addEventListener("click",()=>$("#lang").classList.remove("open"));
+
+/* Nav / mobile */
+$("#burger").onclick=()=>{const o=$("#burger").classList.toggle("open");$("#mmenu").classList.toggle("open");document.body.classList.toggle("lock");$("#burger").setAttribute("aria-expanded",o);};
+$$("#mmenu a").forEach(a=>a.onclick=()=>{$("#burger").classList.remove("open");$("#mmenu").classList.remove("open");document.body.classList.remove("lock");$("#burger").setAttribute("aria-expanded","false");});
+addEventListener("scroll",()=>$("#header").classList.toggle("scrolled",scrollY>40));
+
+/* Reveal */
+let io;
+function reobserve(){if(io)io.disconnect();io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}}),{threshold:.12});$$(".rv").forEach(el=>io.observe(el));}
+
+/* Cursor */
+if(matchMedia("(hover:hover)").matches){
+  const cur=$(".cur"),ring=$(".cur-ring");let rx=0,ry=0,mx=0,my=0;
+  addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+"px";cur.style.top=my+"px";});
+  (function loop(){rx+=(mx-rx)*.16;ry+=(my-ry)*.16;ring.style.left=rx+"px";ring.style.top=ry+"px";requestAnimationFrame(loop);})();
+  document.addEventListener("mouseover",e=>{if(e.target.closest("a,button,[data-hover],figure"))ring.classList.add("hover");});
+  document.addEventListener("mouseout",e=>{if(e.target.closest("a,button,[data-hover],figure"))ring.classList.remove("hover");});
+}
+
+/* Loader */
+addEventListener("load",()=>setTimeout(()=>document.body.classList.add("ready"),1400));
+setTimeout(()=>document.body.classList.add("ready"),3200);
+
+/* Init */
+(function init(){
+  let saved=null;try{saved=localStorage.getItem("maryam_lang");}catch(e){}
+  if(!saved){const n=(navigator.language||"tr").slice(0,2).toLowerCase();saved=["tr","en","ru","de"].includes(n)?n:"tr";}
+  LANG=saved;
+  renderStatic();
+  renderDynamic();
+})();
+</script>
+</body>
+</html>

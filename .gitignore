@@ -1,0 +1,24 @@
+# ============================================================
+# Private / interne Arbeitsdateien — NIEMALS auf die
+# öffentliche GitHub-Pages-Seite deployen.
+# (Der Workflow lädt das ganze Repo hoch, path: '.')
+# ============================================================
+
+# Lead-Listen & CRM / Marktdaten (enthalten Kontaktdaten)
+Leads_BarberShop*.xlsx
+Alanya_Barber_Market_KIMI_DE.xlsx
+*.xlsx
+
+# Excel-/Office-Sperrdateien
+~$*
+
+# Interne Prompt-Vorlagen
+Prompt set/
+
+# Roh-Quellen (Google-Foto-Links etc.)
+Avsallar, Zafer Cd. no4D, 07470 AlanyaAntalya/
+
+# Betriebssystem / Editor
+Thumbs.db
+.DS_Store
+desktop.ini

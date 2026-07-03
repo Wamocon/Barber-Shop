@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MARYAM · Premium-Paket Projekt-Checkliste</title>
+<meta name="description" content="Projekt-Checkliste für das WAMOCON Premium-Paket der MARYAM Berber Atölyesi. Status aller Aktivitäten: erledigt, offen, optional.">
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#0C0B0A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%23C6A15B' stroke-width='1.5'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Georgia,serif' font-size='20' fill='%23C6A15B'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noir:#0C0B0A; --noir-2:#131110; --char:#1B1815; --char-2:#221E19;
+  --gold:#C6A15B; --gold-2:#E4C784; --gold-deep:#9C7C3E; --gold-soft:rgba(198,161,91,.12); --gold-line:rgba(198,161,91,.30);
+  --cream:#F4EEE2; --stone:#A79E90; --stone-2:#8F8676;
+  --line:rgba(230,220,200,.12); --line-2:rgba(230,220,200,.20);
+  --green:#5F9E6B; --amber:#E0A63C; --grey:#6E6A62;
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:"Jost",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.19,1,.22,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:90px}
+body{background:var(--noir);color:var(--cream);font-family:var(--sans);font-weight:300;line-height:1.7;font-size:16px;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--gold);color:var(--noir)}
+.wrap{max-width:960px;margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05;color:var(--cream)}
+.label{font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.mono{color:var(--gold)}.mono circle{stroke:currentColor;fill:none}.mono text{fill:currentColor;font-family:var(--serif);font-weight:600}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(12,11,10,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:70px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .mono{width:40px;height:40px;flex:none}
+.brand .bn{font-family:var(--serif);font-weight:600;font-size:1.4rem;letter-spacing:.14em;color:var(--cream)}
+.brand .bs{font-size:.54rem;letter-spacing:.3em;text-transform:uppercase;color:var(--stone-2);margin-top:3px}
+.brand .bt{display:flex;flex-direction:column;line-height:1}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-weight:500;font-size:.74rem;letter-spacing:.16em;
+  text-transform:uppercase;padding:13px 22px;border:1px solid var(--gold-line);color:var(--gold);transition:.4s var(--ease);white-space:nowrap}
+.btn:hover{background:linear-gradient(120deg,var(--gold),var(--gold-2));color:var(--noir);border-color:transparent}
+.btn svg{width:15px;height:15px}
+
+/* Intro */
+.intro{padding:clamp(48px,8vw,80px) 0 20px;text-align:center}
+.intro .label{display:inline-block;margin-bottom:18px}
+.intro h1{font-size:clamp(2.4rem,6vw,4rem);margin-bottom:16px}
+.intro h1 .it{font-style:italic;color:var(--gold)}
+.intro p{color:var(--stone);max-width:60ch;margin:0 auto;font-size:1.02rem}
+.intro .pkg{display:inline-flex;align-items:baseline;gap:10px;margin-top:22px;border:1px solid var(--gold-line);padding:12px 22px;flex-wrap:wrap;justify-content:center}
+.intro .pkg b{font-family:var(--serif);font-size:1.5rem;color:var(--gold);white-space:nowrap}
+.intro .pkg span{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--stone-2)}
+
+/* Progress */
+.prog{background:linear-gradient(180deg,var(--char),var(--noir-2));border:1px solid var(--gold-line);padding:clamp(24px,3vw,34px);margin:44px 0}
+.prog-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:18px}
+.prog-top .pt{font-family:var(--serif);font-size:1.5rem;color:var(--cream)}
+.prog-top .pv{font-family:var(--serif);font-size:2.4rem;color:var(--gold);font-weight:600;line-height:1}
+.bar{height:10px;background:var(--char-2);border:1px solid var(--line);overflow:hidden;position:relative}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold-deep),var(--gold-2));transition:width 1.2s var(--ease)}
+.prog-legend{display:flex;flex-wrap:wrap;gap:20px;margin-top:20px;font-size:.86rem;color:var(--stone)}
+.prog-legend .lg{display:inline-flex;align-items:center;gap:9px}
+.dot{width:11px;height:11px;border-radius:50%;flex:none}
+.dot.done{background:var(--green)}.dot.pending{background:var(--amber)}.dot.upgrade{background:var(--grey)}
+.prog-legend b{color:var(--cream);font-weight:500}
+
+/* Group */
+.group{margin:38px 0}
+.group-h{display:flex;align-items:baseline;gap:14px;padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.group-h .gn{font-family:var(--serif);font-size:1rem;color:var(--gold-deep);font-weight:600}
+.group-h h2{font-size:1.6rem}
+.group-h .gc{margin-left:auto;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--stone-2)}
+
+/* Checklist item */
+.ci{display:flex;gap:16px;align-items:flex-start;padding:16px 4px;border-bottom:1px solid var(--line)}
+.ci:last-child{border-bottom:none}
+.ci .box{width:26px;height:26px;flex:none;border-radius:50%;display:grid;place-items:center;font-size:.9rem;margin-top:1px}
+.ci[data-status="done"] .box{background:var(--green);color:#08210c}
+.ci[data-status="pending"] .box{background:transparent;border:1.5px solid var(--amber);color:var(--amber)}
+.ci[data-status="upgrade"] .box{background:transparent;border:1.5px dashed var(--grey);color:var(--stone-2)}
+.ci .ct{flex:1}
+.ci .cti{font-family:var(--sans);font-weight:500;font-size:1rem;color:var(--cream)}
+.ci[data-status="done"] .cti{color:var(--stone)}
+.ci .cd{font-size:.86rem;color:var(--stone-2);margin-top:3px}
+.ci .badge{display:inline-block;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:4px 9px;margin-top:8px;border:1px solid}
+.ci[data-status="done"] .badge{color:var(--green);border-color:rgba(95,158,107,.4)}
+.ci[data-status="pending"] .badge{color:var(--amber);border-color:rgba(224,166,60,.4)}
+.ci[data-status="upgrade"] .badge{color:var(--stone-2);border-color:var(--line-2)}
+
+/* Callout: what's missing */
+.missing{background:linear-gradient(160deg,rgba(224,166,60,.09),var(--noir-2));border:1px solid rgba(224,166,60,.35);padding:clamp(22px,3vw,32px);margin:44px 0}
+.missing h3{font-size:1.5rem;color:var(--cream);margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.missing h3 .d{color:var(--amber)}
+.missing p{color:var(--stone);font-size:.92rem;margin-bottom:16px}
+.missing ul{list-style:none;display:grid;gap:9px}
+.missing li{display:flex;gap:11px;font-size:.94rem;color:var(--cream)}
+.missing li::before{content:"→";color:var(--amber)}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding:44px 0;margin-top:50px;text-align:center}
+footer .fb{display:flex;flex-direction:column;align-items:center;gap:14px}
+footer p{font-size:.8rem;color:var(--stone-2)}
+footer .credit b{color:var(--gold)}
+
+@media(max-width:560px){
+  .brand .bs{display:none}
+  .group-h{flex-wrap:wrap}
+  .group-h .gc{margin-left:0;width:100%;order:3}
+  .prog-top .pv{font-size:2rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="MARYAM">
+      <svg class="mono" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" stroke-width="1.4"/><circle cx="50" cy="50" r="39" stroke-width="0.6"/><text x="50" y="65" text-anchor="middle" font-size="46">M</text></svg>
+      <span class="bt"><span class="bn">MARYAM</span><span class="bs">Premium-Paket · Projektstatus</span></span>
+    </a>
+    <a href="index.html" class="btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 6l-6 6 6 6"/></svg> Zur Website</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="intro">
+    <span class="label">WAMOCON · Webdesign</span>
+    <h1>Projekt-<span class="it">Checkliste</span></h1>
+    <p>Alle Aktivitäten des Premium-Pakets für die MARYAM Berber Atölyesi auf einen Blick. Grün = erledigt. Bernstein = wartet noch auf deinen Input (z.&nbsp;B. Kundendaten). Grau = optionales Upgrade.</p>
+    <div class="pkg"><b>25.000 ₺</b><span>Premium-Paket · „Für große Salons"</span></div>
+  </section>
+
+  <section class="prog" aria-label="Fortschritt">
+    <div class="prog-top">
+      <span class="pt">Fortschritt der Kern-Aufgaben</span>
+      <span class="pv"><span id="pct">0</span>%</span>
+    </div>
+    <div class="bar"><i id="pfill"></i></div>
+    <div class="prog-legend">
+      <span class="lg"><span class="dot done"></span><b id="cDone">0</b>&nbsp;erledigt</span>
+      <span class="lg"><span class="dot pending"></span><b id="cPending">0</b>&nbsp;offen (Input nötig)</span>
+      <span class="lg"><span class="dot upgrade"></span><b id="cUpgrade">0</b>&nbsp;optionales Upgrade</span>
+    </div>
+  </section>
+
+  <!-- Callout -->
+  <section class="missing">
+    <h3><span class="d">◆</span> Was noch fehlt, damit die Seite live gehen kann</h3>
+    <p>Fast alles ist gebaut und getestet. Zum Go-Live brauche ich nur noch diese Angaben von dir bzw. vom Kunden:</p>
+    <ul>
+      <li>Betriebsdaten: Telefon/WhatsApp-Nummer, Öffnungszeiten, Preisliste je Service</li>
+      <li>Echte Google-Bewertung (Sterne, Anzahl) und 4–6 echte Rezensionstexte</li>
+      <li>Domain-Entscheidung (z.&nbsp;B. maryambarber.com) für SEO-Links</li>
+      <li>Optional: Logo-Datei, Team-Namen, ein professionelles Foto-Shooting</li>
+    </ul>
+  </section>
+
+  <!-- Groups -->
+  <section class="group">
+    <div class="group-h"><span class="gn">01</span><h2>Analyse & Konzept</h2><span class="gc">K4 · Marktforschung</span></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">Tiefenanalyse des Betriebs</div><div class="cd">Google Maps, Instagram und veröffentlichte Fotos vollständig ausgewertet.</div><span class="badge">Erledigt</span></div></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">Echten Markennamen „MARYAM" identifiziert</div><div class="cd">Aus Fassaden-Schild und Innen-Plakette gewonnen (Google listet nur „Barber Shop").</div><span class="badge">Erledigt</span></div></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">Services, Zielgruppe & Wettbewerb erfasst</div><div class="cd">Herren, Kinder, Braids, Coloration, Tattoo; internationale Touristen (TR/EN/RU/DE).</div><span class="badge">Erledigt</span></div></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">Premium-Paket-Umfang definiert</div><div class="cd">Gegen das WAMOCON-Angebot (25.000 ₺) abgeglichen.</div><span class="badge">Erledigt</span></div></div>
+  </section>
+
+  <section class="group">
+    <div class="group-h"><span class="gn">02</span><h2>Marke & Design</h2><span class="gc">Atelier-Direktion</span></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">Premium-Designsprache (Gold auf Noir, Serifen-Couture)</div><div class="cd">Recherche-basiert (Barberstown, Awwwards): Luxus statt Standard-Template.</div><span class="badge">Erledigt</span></div></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">Eigenes MARYAM-Monogramm</div><div class="cd">Markenzeichen statt bloßem Schriftzug.</div><span class="badge">Erledigt</span></div></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">11 Fotos cinematisch gegradet (Lookbook)</div><div class="cd">Aus Schnappschüssen wird ein zusammenhängendes Mode-Lookbook.</div><span class="badge">Erledigt</span></div></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">Voll responsives Layout (Desktop, Tablet, Handy)</div><div class="cd">Getestet über alle gängigen Bildschirmgrößen.</div><span class="badge">Erledigt</span></div></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">Feine Motion (Intro, Ken-Burns-Hero, Reveal)</div><div class="cd">Subtile Bewegung für den „Wow"-Effekt.</div><span class="badge">Erledigt</span></div></div>
+    <div class="ci" data-status="upgrade"><span class="box">◇</span><div class="ct"><div class="cti">Professionelles Foto-Shooting</div><div class="cd">Ersetzt die Handyfotos durch Studioqualität. Optional, steigert die Wirkung.</div><span class="badge">Optional</span></div></div>
+  </section>
+
+  <section class="group">
+    <div class="group-h"><span class="gn">03</span><h2>Seitenstruktur & Inhalte</h2><span class="gc">11 Sektionen</span></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">Alle Sektionen aufgebaut</div><div class="cd">Hero, Atelier, Ritual, Lookbook, Menü, Buchung, Reviews, Standort, Instagram, Reserve, Footer.</div><span class="badge">Erledigt</span></div></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">Fotogalerie / Lookbook mit Lightbox</div><span class="badge">Erledigt</span></div></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">„İmza Ritüelimiz" Storytelling (01–04)</div><div class="cd">Verkauft das Erlebnis, nicht nur die Dienstleistung.</div><span class="badge">Erledigt</span></div></div>
+    <div class="ci" data-status="pending"><span class="box">!</span><div class="ct"><div class="cti">„Meet the Masters" Barbier-Porträts</div><div class="cd">Braucht Porträtfotos und Namen der Barbiere vom Kunden.</div><span class="badge">Wartet auf Input</span></div></div>
+  </section>
+
+  <section class="group">
+    <div class="group-h"><span class="gn">04</span><h2>Mehrsprachigkeit</h2><span class="gc">TR · EN · RU · DE</span></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">4 Sprachen mit Auto-Erkennung & Umschalter</div><div class="cd">Desktop und Mobil; Sprachwahl wird gespeichert.</div><span class="badge">Erledigt</span></div></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">Muttersprachliche Text-Prüfung</div><div class="cd">7-Agenten-Review, alle vier Sprachen von Muttersprachlern poliert.</div><span class="badge">Erledigt</span></div></div>
+  </section>
+
+  <section class="group">
+    <div class="group-h"><span class="gn">05</span><h2>Online-Buchung</h2><span class="gc">WhatsApp</span></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">WhatsApp-Terminanfrage-Formular</div><div class="cd">Service, Datum, Zeit, Name → fertige WhatsApp-Nachricht.</div><span class="badge">Erledigt</span></div></div>
+    <div class="ci" data-status="pending"><span class="box">!</span><div class="ct"><div class="cti">Echte WhatsApp-Nummer eintragen</div><div class="cd">Aktuell Platzhalter. Nummer vom Kunden nötig.</div><span class="badge">Wartet auf Input</span></div></div>
+    <div class="ci" data-status="upgrade"><span class="box">◇</span><div class="ct"><div class="cti">Echte Buchungsplattform (Fresha/Booksy)</div><div class="cd">Kalender mit Live-Verfügbarkeit statt WhatsApp. Optional.</div><span class="badge">Optional</span></div></div>
+  </section>
+
+  <section class="group">
+    <div class="group-h"><span class="gn">06</span><h2>KI-Chat-Assistent</h2><span class="gc">24/7</span></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">Mehrsprachiges Chat-Widget mit Flows</div><div class="cd">Begrüßung, Schnellantworten (Termin, Preise, Zeiten, Standort).</div><span class="badge">Erledigt</span></div></div>
+    <div class="ci" data-status="upgrade"><span class="box">◇</span><div class="ct"><div class="cti">Anschluss an echtes KI-Modell (LLM)</div><div class="cd">Freie Konversation statt fester Flows. Optional.</div><span class="badge">Optional</span></div></div>
+  </section>
+
+  <section class="group">
+    <div class="group-h"><span class="gn">07</span><h2>SEO + GEO & Barrierefreiheit</h2><span class="gc">Erweitert</span></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">Meta / OpenGraph / Twitter-Tags</div><span class="badge">Erledigt</span></div></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">LocalBusiness-JSON-LD</div><div class="cd">Geo-Koordinaten, Öffnungszeiten, Bewertungen, Rezensions-Nodes.</div><span class="badge">Erledigt</span></div></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">Barrierefreiheit (Labels, Fokus, Kontrast, ARIA)</div><div class="cd">Nach WCAG-AA nachgebessert.</div><span class="badge">Erledigt</span></div></div>
+    <div class="ci" data-status="pending"><span class="box">!</span><div class="ct"><div class="cti">Echte Domain eintragen</div><div class="cd">In canonical, OpenGraph und CONFIG.site (aktuell Platzhalter).</div><span class="badge">Wartet auf Input</span></div></div>
+    <div class="ci" data-status="pending"><span class="box">!</span><div class="ct"><div class="cti">Google-Unternehmensprofil verknüpfen & optimieren</div><div class="cd">Name „MARYAM", Kategorie, Fotos, Website-Link setzen.</div><span class="badge">Wartet auf Input</span></div></div>
+    <div class="ci" data-status="upgrade"><span class="box">◇</span><div class="ct"><div class="cti">Monatlicher SEO-Bericht</div><div class="cd">Premium-Leistung, läuft nach Go-Live.</div><span class="badge">Laufend</span></div></div>
+  </section>
+
+  <section class="group">
+    <div class="group-h"><span class="gn">08</span><h2>Instagram-Integration</h2></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">Verlinkung + Teaser-Grid (@maryam.barbershop)</div><span class="badge">Erledigt</span></div></div>
+    <div class="ci" data-status="upgrade"><span class="box">◇</span><div class="ct"><div class="cti">Live-Feed-Einbindung</div><div class="cd">Automatischer Feed der neuesten Posts. Optional.</div><span class="badge">Optional</span></div></div>
+  </section>
+
+  <section class="group">
+    <div class="group-h"><span class="gn">09</span><h2>Bewertungs-Management</h2></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">Reviews-Sektion + Google-Score-Anzeige</div><div class="cd">Mehrsprachige Bewertungskarten, Sterne, „Von Google verifiziert".</div><span class="badge">Erledigt</span></div></div>
+    <div class="ci" data-status="pending"><span class="box">!</span><div class="ct"><div class="cti">Echte Google-Bewertungen & Rating eintragen</div><div class="cd">Aktuell Beispieltexte. Echte Sterne, Anzahl und Rezensionen nötig.</div><span class="badge">Wartet auf Input</span></div></div>
+  </section>
+
+  <section class="group">
+    <div class="group-h"><span class="gn">10</span><h2>Betriebsdaten (Kundendaten)</h2><span class="gc">Vom Kunden benötigt</span></div>
+    <div class="ci" data-status="pending"><span class="box">!</span><div class="ct"><div class="cti">Telefon / WhatsApp-Nummer</div><span class="badge">Wartet auf Input</span></div></div>
+    <div class="ci" data-status="pending"><span class="box">!</span><div class="ct"><div class="cti">Öffnungszeiten</div><span class="badge">Wartet auf Input</span></div></div>
+    <div class="ci" data-status="pending"><span class="box">!</span><div class="ct"><div class="cti">Preisliste je Service</div><span class="badge">Wartet auf Input</span></div></div>
+    <div class="ci" data-status="pending"><span class="box">!</span><div class="ct"><div class="cti">Logo-Datei & Team-Namen</div><div class="cd">Optional, verfeinert Marke und „Meet the Masters".</div><span class="badge">Wartet auf Input</span></div></div>
+  </section>
+
+  <section class="group">
+    <div class="group-h"><span class="gn">11</span><h2>Qualitätssicherung</h2></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">Multi-Agent-Review (7 Dimensionen)</div><div class="cd">Sprache ×4, JS, Responsive, SEO/A11y. ~50 Verbesserungen eingearbeitet.</div><span class="badge">Erledigt</span></div></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">JS-Syntax & i18n-Parität geprüft</div><div class="cd">Alle Sprachen gleich vollständig.</div><span class="badge">Erledigt</span></div></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">Abnahmetest über alle Geräte</div><div class="cd">Desktop + alle gängigen Handygrößen, 0 Konsolenfehler.</div><span class="badge">Erledigt</span></div></div>
+  </section>
+
+  <section class="group">
+    <div class="group-h"><span class="gn">12</span><h2>Go-Live & Betrieb</h2></div>
+    <div class="ci" data-status="done"><span class="box">✓</span><div class="ct"><div class="cti">Auslieferung als HTML + Assets</div><div class="cd">Inkl. v1-Sicherung (index-v1-backup.html).</div><span class="badge">Erledigt</span></div></div>
+    <div class="ci" data-status="pending"><span class="box">!</span><div class="ct"><div class="cti">GitHub-Pages-Deployment</div><div class="cd">Auf Freigabe: committen + pushen → Live-Link.</div><span class="badge">Wartet auf Input</span></div></div>
+    <div class="ci" data-status="pending"><span class="box">!</span><div class="ct"><div class="cti">Domain verbinden</div><span class="badge">Wartet auf Input</span></div></div>
+    <div class="ci" data-status="upgrade"><span class="box">◇</span><div class="ct"><div class="cti">VIP-Priority-Support</div><div class="cd">Premium-Leistung, läuft nach Go-Live.</div><span class="badge">Laufend</span></div></div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap fb">
+    <a href="index.html" class="btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 6l-6 6 6 6"/></svg> Zur MARYAM-Website</a>
+    <p class="credit">MARYAM Berber Atölyesi · Premium-Paket · <b>WAMOCON</b> Webdesign</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.ci'));
+  var by=function(s){return items.filter(function(i){return i.dataset.status===s;}).length;};
+  var done=by('done'), pending=by('pending'), upgrade=by('upgrade');
+  var core=done+pending, pct=core? Math.round(done/core*100):0;
+  document.getElementById('cDone').textContent=done;
+  document.getElementById('cPending').textContent=pending;
+  document.getElementById('cUpgrade').textContent=upgrade;
+  var pctEl=document.getElementById('pct'), fill=document.getElementById('pfill');
+  setTimeout(function(){ fill.style.width=pct+'%'; },250);
+  var n=0; var t=setInterval(function(){ n++; if(n>=pct){n=pct;clearInterval(t);} pctEl.textContent=n; }, 16);
+})();
+</script>
+</body>
+</html>
