@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MARYAM · İşletme Bilgileri</title>
-<meta name="description" content="MARYAM Berber Atölyesi için işletme bilgilerini girin: telefon, çalışma saatleri, fiyatlar ve daha fazlası.">
+<meta name="description" content="MARYAM Berber Atölyesi için işletme bilgilerini girin.">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#0C0B0A">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%23C6A15B' stroke-width='1.5'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Georgia,serif' font-size='20' fill='%23C6A15B'%3EM%3C/text%3E%3C/svg%3E">
@@ -29,20 +29,38 @@ a{color:inherit;text-decoration:none}
 h1,h2{font-family:var(--serif);font-weight:500;color:var(--cream)}
 .label{font-family:var(--sans);font-size:.7rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
 .mono{color:var(--gold)}.mono circle{stroke:currentColor;fill:none}.mono text{fill:currentColor;font-family:var(--serif);font-weight:600}
+.it{font-style:italic;color:var(--gold)}
 
 header{position:sticky;top:0;z-index:40;background:rgba(12,11,10,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-.brand{display:flex;align-items:center;gap:11px}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:10px}
+.brand{display:flex;align-items:center;gap:11px;flex:none}
 .brand .mono{width:36px;height:36px}
 .brand .bn{font-family:var(--serif);font-weight:600;font-size:1.25rem;letter-spacing:.14em}
-.back{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);display:inline-flex;align-items:center;gap:7px}
+.hr{display:flex;align-items:center;gap:10px}
+.back{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);display:inline-flex;align-items:center;gap:6px}
 .back:hover{color:var(--gold)} .back svg{width:14px;height:14px}
+
+/* Language dropdown */
+.lang{position:relative}
+.lang-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line-2);padding:8px 11px;font-family:var(--sans);
+  font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);transition:.3s;cursor:pointer;background:none}
+.lang-btn:hover{border-color:var(--gold-line)}
+.lang-btn .globe{width:14px;height:14px;color:var(--gold)}
+.lang-btn .chev{width:9px;height:9px;opacity:.6;transition:transform .3s}
+.lang.open .chev{transform:rotate(180deg)}
+.lang-menu{position:absolute;top:calc(100% + 8px);right:0;min-width:152px;background:var(--char);border:1px solid var(--line-2);
+  padding:6px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:.2s var(--ease);z-index:60}
+.lang.open .lang-menu{opacity:1;visibility:visible;transform:none}
+.lang-menu button{display:flex;align-items:center;gap:10px;width:100%;padding:10px 12px;font-family:var(--sans);font-size:.85rem;
+  color:var(--stone);text-align:left;background:none;border:none;cursor:pointer;transition:.15s}
+.lang-menu button:hover{background:var(--char-2);color:var(--cream)}
+.lang-menu button.active{color:var(--gold)}
+.lang-menu .fl{font-size:1.05rem}
 
 .intro{padding:clamp(30px,7vw,52px) 0 8px;text-align:center}
 .intro .label{display:inline-block;margin-bottom:14px}
 .intro h1{font-size:clamp(2rem,7vw,3rem);margin-bottom:12px}
-.intro h1 .it{font-style:italic;color:var(--gold)}
-.intro p{color:var(--stone);font-size:.98rem;max-width:44ch;margin:0 auto}
+.intro p{color:var(--stone);font-size:.98rem;max-width:46ch;margin:0 auto}
 
 form{padding:30px 0}
 .card{background:linear-gradient(180deg,var(--char),var(--noir-2));border:1px solid var(--line);padding:clamp(18px,4vw,26px);margin-bottom:16px}
@@ -52,7 +70,7 @@ form{padding:30px 0}
 .field{margin-bottom:15px}
 .field:last-child{margin-bottom:0}
 .field label{display:block;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-bottom:7px}
-.control{width:100%;background:var(--noir);border:1px solid var(--line-2);padding:14px 15px;color:var(--cream);font-weight:300;font-size:16px;transition:.25s}
+.control{width:100%;background:var(--noir);border:1px solid var(--line-2);padding:14px 15px;color:var(--cream);font-weight:300;font-size:16px;transition:.25s;font-family:var(--sans)}
 .control:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-soft)}
 .control::placeholder{color:var(--stone-2)}
 textarea.control{min-height:80px;resize:vertical}
@@ -64,12 +82,10 @@ textarea.control{min-height:80px;resize:vertical}
 .price .control{padding-right:34px}
 .check{display:flex;align-items:center;gap:10px;margin-top:10px;font-size:.9rem;color:var(--stone);cursor:pointer}
 .check input{width:20px;height:20px;accent-color:var(--gold)}
-.note-photo{font-size:.82rem;color:var(--stone-2);margin-top:14px;padding-top:14px;border-top:1px solid var(--line);display:flex;gap:9px}
-.note-photo svg{width:17px;height:17px;color:var(--gold);flex:none}
+.note-photo{font-size:.82rem;color:var(--stone-2);margin-top:14px;padding-top:14px;border-top:1px solid var(--line);display:flex;gap:9px;align-items:flex-start}
+.note-photo svg{width:17px;height:17px;color:var(--gold);flex:none;margin-top:2px}
 
-/* Sticky submit */
-.subbar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(12,11,10,.96);backdrop-filter:blur(12px);
-  border-top:1px solid var(--gold-line);padding:12px clamp(18px,5vw,28px)}
+.subbar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(12,11,10,.96);backdrop-filter:blur(12px);border-top:1px solid var(--gold-line);padding:12px clamp(18px,5vw,28px)}
 .subbar .inner{max-width:640px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:10px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--sans);font-weight:500;font-size:.86rem;
   letter-spacing:.08em;padding:16px 20px;border:1px solid var(--gold-line);color:var(--gold);transition:.3s;cursor:pointer;background:transparent;text-transform:uppercase}
@@ -78,15 +94,15 @@ textarea.control{min-height:80px;resize:vertical}
 .btn-wa:hover{background:var(--wa-600)}
 .btn-copy:hover{background:var(--gold);color:var(--noir);border-color:transparent}
 
-/* Toast */
 .toast{position:fixed;left:50%;bottom:96px;transform:translate(-50%,20px);z-index:60;background:var(--char);border:1px solid var(--gold-line);
-  color:var(--cream);padding:13px 22px;font-size:.9rem;opacity:0;visibility:hidden;transition:.3s var(--ease)}
+  color:var(--cream);padding:13px 22px;font-size:.9rem;opacity:0;visibility:hidden;transition:.3s var(--ease);max-width:calc(100vw - 32px);text-align:center}
 .toast.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
 .toast b{color:var(--gold)}
 
 footer{text-align:center;padding:30px 0;color:var(--stone-2);font-size:.78rem}
 footer b{color:var(--gold)}
-@media(max-width:480px){ .subbar .inner{grid-template-columns:1fr} .btn-copy .txt{display:inline} }
+@media(max-width:430px){ .back .txt{display:none} }
+@media(max-width:480px){ .subbar .inner{grid-template-columns:1fr} }
 </style>
 </head>
 <body>
@@ -94,78 +110,91 @@ footer b{color:var(--gold)}
 <header>
   <div class="wrap nav">
     <a href="index.html" class="brand"><svg class="mono" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" stroke-width="1.4"/><circle cx="50" cy="50" r="39" stroke-width="0.6"/><text x="50" y="65" text-anchor="middle" font-size="46">M</text></svg><span class="bn">MARYAM</span></a>
-    <a href="premium-checkliste.html" class="back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 6l-6 6 6 6"/></svg> Geri</a>
+    <div class="hr">
+      <div class="lang" id="lang">
+        <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+          <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg>
+          <span id="langTxt">TR</span>
+          <svg class="chev" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+        </button>
+        <div class="lang-menu" id="langMenu" role="menu">
+          <button data-lang="tr"><span class="fl">🇹🇷</span> Türkçe</button>
+          <button data-lang="en"><span class="fl">🇬🇧</span> English</button>
+          <button data-lang="ru"><span class="fl">🇷🇺</span> Русский</button>
+          <button data-lang="de"><span class="fl">🇩🇪</span> Deutsch</button>
+        </div>
+      </div>
+      <a href="premium-checkliste.html" class="back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 6l-6 6 6 6"/></svg><span class="txt" data-i18n="back">Geri</span></a>
+    </div>
   </div>
 </header>
 
 <main class="wrap">
   <div class="intro">
-    <span class="label">MARYAM Berber Atölyesi</span>
-    <h1>İşletme <span class="it">Bilgileri</span></h1>
-    <p>Web sitenizi tamamlamak için eksik bilgileri doldurun ve WhatsApp'tan bize gönderin. Sadece 2 dakika sürer.</p>
+    <span class="label" data-i18n="eyebrow">MARYAM Berber Atölyesi</span>
+    <h1 data-i18n="title">İşletme <span class="it">Bilgileri</span></h1>
+    <p data-i18n="intro">Web sitenizi tamamlamak için eksik bilgileri doldurun ve WhatsApp'tan bize gönderin. Sadece 2 dakika sürer.</p>
   </div>
 
   <form id="f" autocomplete="on">
-
     <div class="card">
-      <h2><span class="n">01</span> İletişim</h2>
-      <div class="hint">Müşterilerin size ulaşacağı bilgiler.</div>
-      <div class="field"><label>İşletme Adı</label><input class="control" id="bizName" value="MARYAM Barber Shop"></div>
-      <div class="field"><label>Telefon</label><input class="control" id="phone" type="tel" inputmode="tel" placeholder="0532 000 00 00"></div>
-      <div class="field"><label>WhatsApp Numarası</label><input class="control" id="wa" type="tel" inputmode="tel" placeholder="0532 000 00 00"></div>
-      <div class="field"><label>E-posta (opsiyonel)</label><input class="control" id="email" type="email" inputmode="email" placeholder="ornek@maryam.com"></div>
-      <div class="field"><label>Instagram</label><input class="control" id="insta" value="@maryam.barbershop"></div>
-      <div class="field"><label>Adres</label><input class="control" id="address" value="Zafer Cd. No:4D, Avsallar, 07470 Alanya"></div>
+      <h2><span class="n">01</span> <span data-i18n="s1">İletişim</span></h2>
+      <div class="hint" data-i18n="s1h">Müşterilerin size ulaşacağı bilgiler.</div>
+      <div class="field"><label data-i18n="l_biz">İşletme Adı</label><input class="control" id="bizName" value="MARYAM Barber Shop"></div>
+      <div class="field"><label data-i18n="l_phone">Telefon</label><input class="control" id="phone" type="tel" inputmode="tel" placeholder="0532 000 00 00"></div>
+      <div class="field"><label data-i18n="l_wa">WhatsApp Numarası</label><input class="control" id="wa" type="tel" inputmode="tel" placeholder="0532 000 00 00"></div>
+      <div class="field"><label data-i18n="l_email">E-posta (opsiyonel)</label><input class="control" id="email" type="email" inputmode="email" data-i18n-ph="ph_email" placeholder="ornek@maryam.com"></div>
+      <div class="field"><label data-i18n="l_insta">Instagram</label><input class="control" id="insta" value="@maryam.barbershop"></div>
+      <div class="field"><label data-i18n="l_address">Adres</label><input class="control" id="address" value="Zafer Cd. No:4D, Avsallar, 07470 Alanya"></div>
     </div>
 
     <div class="card">
-      <h2><span class="n">02</span> Çalışma Saatleri</h2>
-      <div class="hint">Hafta içi/Cumartesi ve Pazar için ayrı ayrı.</div>
+      <h2><span class="n">02</span> <span data-i18n="s2">Çalışma Saatleri</span></h2>
+      <div class="hint" data-i18n="s2h">Hafta içi/Cumartesi ve Pazar için ayrı ayrı.</div>
       <div class="field">
-        <label>Pazartesi – Cumartesi</label>
+        <label data-i18n="l_weekdays">Pazartesi – Cumartesi</label>
         <div class="row3"><input class="control" id="hWeekOpen" type="time" value="09:00"><span class="sep">–</span><input class="control" id="hWeekClose" type="time" value="21:00"></div>
       </div>
       <div class="field">
-        <label>Pazar</label>
+        <label data-i18n="l_sunday">Pazar</label>
         <div class="row3"><input class="control" id="hSunOpen" type="time" value="10:00"><span class="sep">–</span><input class="control" id="hSunClose" type="time" value="20:00"></div>
-        <label class="check"><input type="checkbox" id="sunClosed"> Pazar kapalı</label>
+        <label class="check"><input type="checkbox" id="sunClosed"> <span data-i18n="l_sun_closed">Pazar kapalı</span></label>
       </div>
     </div>
 
     <div class="card">
-      <h2><span class="n">03</span> Fiyat Listesi</h2>
-      <div class="hint">Boş bırakabilirsiniz, sonra da ekleyebiliriz.</div>
+      <h2><span class="n">03</span> <span data-i18n="s3">Fiyat Listesi</span></h2>
+      <div class="hint" data-i18n="s3h">Boş bırakabilirsiniz, sonra da ekleyebiliriz.</div>
       <div class="row">
-        <div class="field"><label>Saç Kesimi</label><div class="price"><input class="control" data-price="Saç Kesimi" type="number" inputmode="numeric" min="0" placeholder="400"><span class="cur">₺</span></div></div>
-        <div class="field"><label>Sakal &amp; Ustura</label><div class="price"><input class="control" data-price="Sakal & Ustura" type="number" inputmode="numeric" min="0" placeholder="200"><span class="cur">₺</span></div></div>
-        <div class="field"><label>Saç + Sakal</label><div class="price"><input class="control" data-price="Saç + Sakal" type="number" inputmode="numeric" min="0" placeholder="550"><span class="cur">₺</span></div></div>
-        <div class="field"><label>Sıcak Havlu Tıraşı</label><div class="price"><input class="control" data-price="Sıcak Havlu Tıraşı" type="number" inputmode="numeric" min="0" placeholder="350"><span class="cur">₺</span></div></div>
-        <div class="field"><label>Çocuk Kesimi</label><div class="price"><input class="control" data-price="Çocuk Kesimi" type="number" inputmode="numeric" min="0" placeholder="300"><span class="cur">₺</span></div></div>
-        <div class="field"><label>Saç Örgüsü</label><div class="price"><input class="control" data-price="Saç Örgüsü" type="number" inputmode="numeric" min="0" placeholder="500"><span class="cur">₺</span></div></div>
-        <div class="field"><label>Renk &amp; Röfle</label><div class="price"><input class="control" data-price="Renk & Röfle" type="number" inputmode="numeric" min="0" placeholder="1500"><span class="cur">₺</span></div></div>
-        <div class="field"><label>Yıkama &amp; Fön</label><div class="price"><input class="control" data-price="Yıkama & Fön" type="number" inputmode="numeric" min="0" placeholder="200"><span class="cur">₺</span></div></div>
+        <div class="field"><label data-svclabel="0">Saç Kesimi</label><div class="price"><input class="control" data-svc="0" type="number" inputmode="numeric" min="0" placeholder="400"><span class="cur">₺</span></div></div>
+        <div class="field"><label data-svclabel="1">Sakal &amp; Ustura</label><div class="price"><input class="control" data-svc="1" type="number" inputmode="numeric" min="0" placeholder="200"><span class="cur">₺</span></div></div>
+        <div class="field"><label data-svclabel="2">Saç + Sakal</label><div class="price"><input class="control" data-svc="2" type="number" inputmode="numeric" min="0" placeholder="550"><span class="cur">₺</span></div></div>
+        <div class="field"><label data-svclabel="3">Sıcak Havlu Tıraşı</label><div class="price"><input class="control" data-svc="3" type="number" inputmode="numeric" min="0" placeholder="350"><span class="cur">₺</span></div></div>
+        <div class="field"><label data-svclabel="4">Çocuk Kesimi</label><div class="price"><input class="control" data-svc="4" type="number" inputmode="numeric" min="0" placeholder="300"><span class="cur">₺</span></div></div>
+        <div class="field"><label data-svclabel="5">Saç Örgüsü</label><div class="price"><input class="control" data-svc="5" type="number" inputmode="numeric" min="0" placeholder="500"><span class="cur">₺</span></div></div>
+        <div class="field"><label data-svclabel="6">Renk &amp; Röfle</label><div class="price"><input class="control" data-svc="6" type="number" inputmode="numeric" min="0" placeholder="1500"><span class="cur">₺</span></div></div>
+        <div class="field"><label data-svclabel="7">Yıkama &amp; Fön</label><div class="price"><input class="control" data-svc="7" type="number" inputmode="numeric" min="0" placeholder="200"><span class="cur">₺</span></div></div>
       </div>
     </div>
 
     <div class="card">
-      <h2><span class="n">04</span> Google Değerlendirmesi</h2>
-      <div class="hint">Google işletme puanınız ve yorum sayınız.</div>
+      <h2><span class="n">04</span> <span data-i18n="s4">Google Değerlendirmesi</span></h2>
+      <div class="hint" data-i18n="s4h">Google işletme puanınız ve yorum sayınız.</div>
       <div class="row">
-        <div class="field"><label>Puan (örn. 4.9)</label><input class="control" id="gRating" type="number" inputmode="decimal" step="0.1" min="1" max="5" placeholder="4.9"></div>
-        <div class="field"><label>Yorum Sayısı</label><input class="control" id="gCount" type="number" inputmode="numeric" min="0" placeholder="120"></div>
+        <div class="field"><label data-i18n="l_grating">Puan (örn. 4.9)</label><input class="control" id="gRating" type="number" inputmode="decimal" step="0.1" min="1" max="5" placeholder="4.9"></div>
+        <div class="field"><label data-i18n="l_gcount">Yorum Sayısı</label><input class="control" id="gCount" type="number" inputmode="numeric" min="0" placeholder="120"></div>
       </div>
-      <div class="field"><label>Google İşletme Linki (opsiyonel)</label><input class="control" id="gLink" type="url" inputmode="url" placeholder="https://maps.app.goo.gl/..."></div>
+      <div class="field"><label data-i18n="l_glink">Google İşletme Linki (opsiyonel)</label><input class="control" id="gLink" type="url" inputmode="url" placeholder="https://maps.app.goo.gl/..."></div>
     </div>
 
     <div class="card">
-      <h2><span class="n">05</span> Ekip &amp; Diğer</h2>
-      <div class="hint">Opsiyonel bilgiler.</div>
-      <div class="field"><label>Berber / Ekip İsimleri</label><input class="control" id="team" placeholder="Örn. Mehmet, Ali, ..."></div>
-      <div class="field"><label>Alan Adı İsteği (Domain)</label><input class="control" id="domain" placeholder="Örn. maryambarber.com"></div>
-      <div class="field"><label>Notlar / İstekler</label><textarea class="control" id="notes" placeholder="Eklemek istedikleriniz..."></textarea></div>
-      <div class="note-photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 7h3l2-2h6l2 2h3v12H4z"/><circle cx="12" cy="13" r="3.2"/></svg><span>Logo ve fotoğraflarınızı gönderdikten sonra WhatsApp'tan iletebilirsiniz.</span></div>
+      <h2><span class="n">05</span> <span data-i18n="s5">Ekip &amp; Diğer</span></h2>
+      <div class="hint" data-i18n="s5h">Opsiyonel bilgiler.</div>
+      <div class="field"><label data-i18n="l_team">Berber / Ekip İsimleri</label><input class="control" id="team" data-i18n-ph="ph_team" placeholder="Örn. Mehmet, Ali, ..."></div>
+      <div class="field"><label data-i18n="l_domain">Alan Adı İsteği (Domain)</label><input class="control" id="domain" data-i18n-ph="ph_domain" placeholder="Örn. maryambarber.com"></div>
+      <div class="field"><label data-i18n="l_notes">Notlar / İstekler</label><textarea class="control" id="notes" data-i18n-ph="ph_notes" placeholder="Eklemek istedikleriniz..."></textarea></div>
+      <div class="note-photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 7h3l2-2h6l2 2h3v12H4z"/><circle cx="12" cy="13" r="3.2"/></svg><span data-i18n="note_photo">Logo ve fotoğraflarınızı gönderdikten sonra WhatsApp'tan iletebilirsiniz.</span></div>
     </div>
-
   </form>
 </main>
 
@@ -173,91 +202,188 @@ footer b{color:var(--gold)}
   <div class="inner">
     <button class="btn btn-wa" id="sendWa" type="button">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.45-.14-.64.14-.19.29-.73.94-.9 1.13-.16.19-.33.21-.61.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.73-1.63-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.44-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.08-.14-.64-1.55-.88-2.12-.23-.56-.47-.48-.64-.49-.16-.01-.36-.01-.55-.01-.19 0-.51.07-.77.36-.26.29-1.01.99-1.01 2.4 0 1.42 1.03 2.79 1.18 2.98.14.19 2.04 3.12 4.95 4.37.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.7-.7 1.95-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.34z M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2"/></svg>
-      WhatsApp ile Gönder
+      <span data-i18n="btn_send">WhatsApp ile Gönder</span>
     </button>
     <button class="btn btn-copy" id="copyBtn" type="button">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="9" y="9" width="12" height="12" rx="1.5"/><path d="M5 15V4a1 1 0 011-1h9"/></svg>
-      <span class="txt">Kopyala</span>
+      <span data-i18n="btn_copy">Kopyala</span>
     </button>
   </div>
 </div>
 
 <div class="toast" id="toast"></div>
-
 <footer>MARYAM Berber Atölyesi · <b>WAMOCON</b> Webdesign</footer>
 
 <script>
 /* ============================================================
-   Ziel-WhatsApp-Nummer für den Eingang der Daten (WAMOCON).
-   Nur +Ländervorwahl + Nummer, keine 0/+ .  TODO bei Bedarf ändern.
+   Ziel-WhatsApp-Nummer (WAMOCON). Nur Ländervorwahl+Nummer, kein +/0.
    ============================================================ */
 var INTAKE_WA = "4917632838729";
 
-var $ = function(s){ return document.querySelector(s); };
+var I18N = {
+ tr:{ _name:"TR", back:"Geri", eyebrow:"MARYAM Berber Atölyesi",
+  title:'İşletme <span class="it">Bilgileri</span>',
+  intro:"Web sitenizi tamamlamak için eksik bilgileri doldurun ve WhatsApp'tan bize gönderin. Sadece 2 dakika sürer.",
+  s1:"İletişim", s1h:"Müşterilerin size ulaşacağı bilgiler.",
+  s2:"Çalışma Saatleri", s2h:"Hafta içi/Cumartesi ve Pazar için ayrı ayrı.",
+  s3:"Fiyat Listesi", s3h:"Boş bırakabilirsiniz, sonra da ekleyebiliriz.",
+  s4:"Google Değerlendirmesi", s4h:"Google işletme puanınız ve yorum sayınız.",
+  s5:"Ekip & Diğer", s5h:"Opsiyonel bilgiler.",
+  l_biz:"İşletme Adı", l_phone:"Telefon", l_wa:"WhatsApp Numarası", l_email:"E-posta (opsiyonel)", l_insta:"Instagram", l_address:"Adres",
+  l_weekdays:"Pazartesi – Cumartesi", l_sunday:"Pazar", l_sun_closed:"Pazar kapalı",
+  l_grating:"Puan (örn. 4.9)", l_gcount:"Yorum Sayısı", l_glink:"Google İşletme Linki (opsiyonel)",
+  l_team:"Berber / Ekip İsimleri", l_domain:"Alan Adı İsteği (Domain)", l_notes:"Notlar / İstekler",
+  ph_email:"ornek@maryam.com", ph_team:"Örn. Mehmet, Ali, ...", ph_domain:"Örn. maryambarber.com", ph_notes:"Eklemek istedikleriniz...",
+  note_photo:"Logo ve fotoğraflarınızı gönderdikten sonra WhatsApp'tan iletebilirsiniz.",
+  btn_send:"WhatsApp ile Gönder", btn_copy:"Kopyala",
+  t_need:"Lütfen en az telefon veya WhatsApp girin.", t_open:"WhatsApp açılıyor… <b>Gönder</b>'e basmayı unutmayın.", t_copied:"Bilgiler <b>kopyalandı</b>.",
+  svc:["Saç Kesimi","Sakal & Ustura","Saç + Sakal","Sıcak Havlu Tıraşı","Çocuk Kesimi","Saç Örgüsü","Renk & Röfle","Yıkama & Fön"],
+  m_contact:"İletişim", m_hours:"Çalışma Saatleri", m_prices:"Fiyatlar", m_google:"Google", m_other:"Diğer",
+  m_biz:"İşletme", m_phone:"Telefon", m_wa:"WhatsApp", m_email:"E-posta", m_insta:"Instagram", m_address:"Adres",
+  m_week:"Pzt–Cmt", m_sun:"Pazar", m_closed:"Kapalı", m_rating:"Puan", m_count:"Yorum sayısı", m_glink:"Google linki",
+  m_team:"Ekip", m_domain:"Domain", m_note:"Not" },
+
+ en:{ _name:"EN", back:"Back", eyebrow:"MARYAM Barber Atelier",
+  title:'Business <span class="it">Details</span>',
+  intro:"Fill in the missing details to complete your website and send them to us via WhatsApp. Takes just 2 minutes.",
+  s1:"Contact", s1h:"How customers reach you.",
+  s2:"Opening Hours", s2h:"Separately for weekdays/Saturday and Sunday.",
+  s3:"Price List", s3h:"You can leave fields blank; we can add them later.",
+  s4:"Google Rating", s4h:"Your Google rating and number of reviews.",
+  s5:"Team & Other", s5h:"Optional details.",
+  l_biz:"Business Name", l_phone:"Phone", l_wa:"WhatsApp Number", l_email:"Email (optional)", l_insta:"Instagram", l_address:"Address",
+  l_weekdays:"Monday – Saturday", l_sunday:"Sunday", l_sun_closed:"Closed on Sunday",
+  l_grating:"Rating (e.g. 4.9)", l_gcount:"Number of Reviews", l_glink:"Google Business Link (optional)",
+  l_team:"Barber / Team Names", l_domain:"Desired Domain", l_notes:"Notes / Requests",
+  ph_email:"example@maryam.com", ph_team:"e.g. Mehmet, Ali, ...", ph_domain:"e.g. maryambarber.com", ph_notes:"Anything you'd like to add...",
+  note_photo:"You can send your logo and photos via WhatsApp afterwards.",
+  btn_send:"Send via WhatsApp", btn_copy:"Copy",
+  t_need:"Please enter at least a phone or WhatsApp number.", t_open:"WhatsApp is opening… don't forget to tap <b>Send</b>.", t_copied:"Details <b>copied</b>.",
+  svc:["Haircut","Beard & Razor","Hair + Beard","Hot Towel Shave","Kids Cut","Braids","Colour & Highlights","Wash & Blow-dry"],
+  m_contact:"Contact", m_hours:"Opening Hours", m_prices:"Prices", m_google:"Google", m_other:"Other",
+  m_biz:"Business", m_phone:"Phone", m_wa:"WhatsApp", m_email:"Email", m_insta:"Instagram", m_address:"Address",
+  m_week:"Mon–Sat", m_sun:"Sunday", m_closed:"Closed", m_rating:"Rating", m_count:"Reviews", m_glink:"Google link",
+  m_team:"Team", m_domain:"Domain", m_note:"Note" },
+
+ ru:{ _name:"RU", back:"Назад", eyebrow:"MARYAM Барбер-ателье",
+  title:'Данные <span class="it">бизнеса</span>',
+  intro:"Заполните недостающие данные, чтобы завершить ваш сайт, и отправьте их нам в WhatsApp. Займёт всего 2 минуты.",
+  s1:"Контакты", s1h:"Как клиенты свяжутся с вами.",
+  s2:"Часы работы", s2h:"Отдельно для будних/субботы и воскресенья.",
+  s3:"Прайс-лист", s3h:"Можно оставить пустым, добавим позже.",
+  s4:"Оценка Google", s4h:"Ваша оценка в Google и число отзывов.",
+  s5:"Команда и прочее", s5h:"Необязательные данные.",
+  l_biz:"Название", l_phone:"Телефон", l_wa:"Номер WhatsApp", l_email:"E-mail (необязательно)", l_insta:"Instagram", l_address:"Адрес",
+  l_weekdays:"Понедельник – Суббота", l_sunday:"Воскресенье", l_sun_closed:"Воскресенье выходной",
+  l_grating:"Оценка (напр. 4.9)", l_gcount:"Число отзывов", l_glink:"Ссылка Google (необязательно)",
+  l_team:"Имена мастеров", l_domain:"Желаемый домен", l_notes:"Заметки / пожелания",
+  ph_email:"primer@maryam.com", ph_team:"напр. Мехмет, Али, ...", ph_domain:"напр. maryambarber.com", ph_notes:"Что хотите добавить...",
+  note_photo:"Логотип и фотографии можно отправить позже в WhatsApp.",
+  btn_send:"Отправить в WhatsApp", btn_copy:"Копировать",
+  t_need:"Укажите хотя бы телефон или WhatsApp.", t_open:"Открывается WhatsApp… не забудьте нажать <b>Отправить</b>.", t_copied:"Данные <b>скопированы</b>.",
+  svc:["Стрижка","Борода и бритва","Волосы + борода","Бритьё горячим полотенцем","Детская стрижка","Косы","Окрашивание","Мойка и укладка"],
+  m_contact:"Контакты", m_hours:"Часы работы", m_prices:"Цены", m_google:"Google", m_other:"Прочее",
+  m_biz:"Бизнес", m_phone:"Телефон", m_wa:"WhatsApp", m_email:"E-mail", m_insta:"Instagram", m_address:"Адрес",
+  m_week:"Пн–Сб", m_sun:"Воскресенье", m_closed:"Закрыто", m_rating:"Оценка", m_count:"Отзывы", m_glink:"Ссылка Google",
+  m_team:"Команда", m_domain:"Домен", m_note:"Заметка" },
+
+ de:{ _name:"DE", back:"Zurück", eyebrow:"MARYAM Barber-Atelier",
+  title:'Ihre <span class="it">Angaben</span>',
+  intro:"Füllen Sie die fehlenden Angaben aus, um Ihre Website zu vervollständigen, und senden Sie sie uns per WhatsApp. Dauert nur 2 Minuten.",
+  s1:"Kontakt", s1h:"Wie Kunden Sie erreichen.",
+  s2:"Öffnungszeiten", s2h:"Getrennt für Wochentage/Samstag und Sonntag.",
+  s3:"Preisliste", s3h:"Felder können leer bleiben, wir ergänzen später.",
+  s4:"Google-Bewertung", s4h:"Ihre Google-Bewertung und Anzahl der Rezensionen.",
+  s5:"Team & Sonstiges", s5h:"Optionale Angaben.",
+  l_biz:"Firmenname", l_phone:"Telefon", l_wa:"WhatsApp-Nummer", l_email:"E-Mail (optional)", l_insta:"Instagram", l_address:"Adresse",
+  l_weekdays:"Montag – Samstag", l_sunday:"Sonntag", l_sun_closed:"Sonntag geschlossen",
+  l_grating:"Bewertung (z. B. 4,9)", l_gcount:"Anzahl Bewertungen", l_glink:"Google-Unternehmenslink (optional)",
+  l_team:"Barbier- / Team-Namen", l_domain:"Wunsch-Domain", l_notes:"Notizen / Wünsche",
+  ph_email:"beispiel@maryam.com", ph_team:"z. B. Mehmet, Ali, ...", ph_domain:"z. B. maryambarber.com", ph_notes:"Was Sie ergänzen möchten...",
+  note_photo:"Logo und Fotos können Sie danach per WhatsApp senden.",
+  btn_send:"Per WhatsApp senden", btn_copy:"Kopieren",
+  t_need:"Bitte mindestens Telefon oder WhatsApp angeben.", t_open:"WhatsApp öffnet sich… nicht vergessen, auf <b>Senden</b> zu tippen.", t_copied:"Angaben <b>kopiert</b>.",
+  svc:["Haarschnitt","Bart & Rasur","Haar + Bart","Heißhandtuch-Rasur","Kinderschnitt","Braids","Coloration","Waschen & Föhnen"],
+  m_contact:"Kontakt", m_hours:"Öffnungszeiten", m_prices:"Preise", m_google:"Google", m_other:"Sonstiges",
+  m_biz:"Firma", m_phone:"Telefon", m_wa:"WhatsApp", m_email:"E-Mail", m_insta:"Instagram", m_address:"Adresse",
+  m_week:"Mo–Sa", m_sun:"Sonntag", m_closed:"Geschlossen", m_rating:"Bewertung", m_count:"Bewertungen", m_glink:"Google-Link",
+  m_team:"Team", m_domain:"Domain", m_note:"Notiz" }
+};
+
+var LANG = "tr";
+function $(s){ return document.querySelector(s); }
+function $$(s){ return document.querySelectorAll(s); }
 function val(id){ var e=document.getElementById(id); return e ? e.value.trim() : ""; }
 
+function applyLang(){
+  var t = I18N[LANG];
+  $$("[data-i18n]").forEach(function(el){ var k=el.getAttribute("data-i18n"); if(t[k]!=null) el.innerHTML=t[k]; });
+  $$("[data-i18n-ph]").forEach(function(el){ var k=el.getAttribute("data-i18n-ph"); if(t[k]!=null) el.setAttribute("placeholder",t[k]); });
+  $$("[data-svclabel]").forEach(function(el){ el.textContent = t.svc[+el.getAttribute("data-svclabel")]; });
+  document.documentElement.lang = LANG;
+  document.title = "MARYAM · " + t.eyebrow;
+  $("#langTxt").textContent = t._name;
+  $$("#langMenu button").forEach(function(b){ b.classList.toggle("active", b.dataset.lang===LANG); });
+}
+
 function buildSummary(){
-  var L = [];
-  L.push("📋 MARYAM · Neue Kundendaten / İşletme Bilgileri");
+  var t = I18N[LANG]; var L = [];
+  L.push("📋 MARYAM · Kundendaten (Web)");
   L.push("");
-  // İletişim
-  var c = [];
-  if(val("bizName")) c.push("İşletme: " + val("bizName"));
-  if(val("phone"))   c.push("Telefon: " + val("phone"));
-  if(val("wa"))      c.push("WhatsApp: " + val("wa"));
-  if(val("email"))   c.push("E-posta: " + val("email"));
-  if(val("insta"))   c.push("Instagram: " + val("insta"));
-  if(val("address")) c.push("Adres: " + val("address"));
-  if(c.length){ L.push("— İletişim —"); L = L.concat(c); L.push(""); }
-  // Saatler
-  var h = [];
-  h.push("Pzt–Cmt: " + (val("hWeekOpen")||"?") + "–" + (val("hWeekClose")||"?"));
-  if(document.getElementById("sunClosed").checked){ h.push("Pazar: Kapalı"); }
-  else { h.push("Pazar: " + (val("hSunOpen")||"?") + "–" + (val("hSunClose")||"?")); }
-  L.push("— Çalışma Saatleri —"); L = L.concat(h); L.push("");
-  // Fiyatlar
-  var pr = [];
-  [].forEach.call(document.querySelectorAll("[data-price]"), function(inp){
-    if(inp.value.trim()) pr.push(inp.getAttribute("data-price") + ": " + inp.value.trim() + " ₺");
-  });
-  if(pr.length){ L.push("— Fiyatlar —"); L = L.concat(pr); L.push(""); }
-  // Google
-  var g = [];
-  if(val("gRating")) g.push("Puan: " + val("gRating"));
-  if(val("gCount"))  g.push("Yorum sayısı: " + val("gCount"));
-  if(val("gLink"))   g.push("Google linki: " + val("gLink"));
-  if(g.length){ L.push("— Google —"); L = L.concat(g); L.push(""); }
-  // Diğer
-  var o = [];
-  if(val("team"))   o.push("Ekip: " + val("team"));
-  if(val("domain")) o.push("Domain: " + val("domain"));
-  if(val("notes"))  o.push("Not: " + val("notes"));
-  if(o.length){ L.push("— Diğer —"); L = L.concat(o); }
-  return L.join("\n").replace(/\n{3,}/g, "\n\n").trim();
+  var c=[];
+  if(val("bizName")) c.push(t.m_biz+": "+val("bizName"));
+  if(val("phone"))   c.push(t.m_phone+": "+val("phone"));
+  if(val("wa"))      c.push(t.m_wa+": "+val("wa"));
+  if(val("email"))   c.push(t.m_email+": "+val("email"));
+  if(val("insta"))   c.push(t.m_insta+": "+val("insta"));
+  if(val("address")) c.push(t.m_address+": "+val("address"));
+  if(c.length){ L.push("— "+t.m_contact+" —"); L=L.concat(c); L.push(""); }
+
+  var h=[];
+  h.push(t.m_week+": "+(val("hWeekOpen")||"?")+"–"+(val("hWeekClose")||"?"));
+  if($("#sunClosed").checked) h.push(t.m_sun+": "+t.m_closed);
+  else h.push(t.m_sun+": "+(val("hSunOpen")||"?")+"–"+(val("hSunClose")||"?"));
+  L.push("— "+t.m_hours+" —"); L=L.concat(h); L.push("");
+
+  var pr=[];
+  $$("[data-svc]").forEach(function(inp){ if(inp.value.trim()) pr.push(t.svc[+inp.getAttribute("data-svc")]+": "+inp.value.trim()+" ₺"); });
+  if(pr.length){ L.push("— "+t.m_prices+" —"); L=L.concat(pr); L.push(""); }
+
+  var g=[];
+  if(val("gRating")) g.push(t.m_rating+": "+val("gRating"));
+  if(val("gCount"))  g.push(t.m_count+": "+val("gCount"));
+  if(val("gLink"))   g.push(t.m_glink+": "+val("gLink"));
+  if(g.length){ L.push("— "+t.m_google+" —"); L=L.concat(g); L.push(""); }
+
+  var o=[];
+  if(val("team"))   o.push(t.m_team+": "+val("team"));
+  if(val("domain")) o.push(t.m_domain+": "+val("domain"));
+  if(val("notes"))  o.push(t.m_note+": "+val("notes"));
+  if(o.length){ L.push("— "+t.m_other+" —"); L=L.concat(o); }
+
+  return L.join("\n").replace(/\n{3,}/g,"\n\n").trim();
 }
 
 function hasAny(){
   if(val("phone")||val("wa")||val("email")) return true;
   var any=false;
-  [].forEach.call(document.querySelectorAll("[data-price]"), function(i){ if(i.value.trim()) any=true; });
+  $$("[data-svc]").forEach(function(i){ if(i.value.trim()) any=true; });
   if(val("gRating")||val("gCount")||val("team")||val("domain")||val("notes")) any=true;
   return any;
 }
-function toast(msg){ var t=$("#toast"); t.innerHTML=msg; t.classList.add("show"); setTimeout(function(){ t.classList.remove("show"); }, 2600); }
+var toastT;
+function toast(msg){ var el=$("#toast"); el.innerHTML=msg; el.classList.add("show"); clearTimeout(toastT); toastT=setTimeout(function(){ el.classList.remove("show"); }, 2800); }
 
 $("#sendWa").addEventListener("click", function(){
-  if(!hasAny()){ toast("Lütfen en az telefon veya WhatsApp girin."); return; }
-  var msg = buildSummary();
-  window.open("https://wa.me/" + INTAKE_WA + "?text=" + encodeURIComponent(msg), "_blank");
-  toast("WhatsApp açılıyor… <b>Gönder</b>'e basmayı unutmayın.");
+  if(!hasAny()){ toast(I18N[LANG].t_need); return; }
+  window.open("https://wa.me/"+INTAKE_WA+"?text="+encodeURIComponent(buildSummary()), "_blank");
+  toast(I18N[LANG].t_open);
 });
-
 $("#copyBtn").addEventListener("click", function(){
-  var msg = buildSummary();
-  function done(){ toast("Bilgiler <b>kopyalandı</b>."); }
-  if(navigator.clipboard && navigator.clipboard.writeText){
-    navigator.clipboard.writeText(msg).then(done, function(){ fallbackCopy(msg); done(); });
-  } else { fallbackCopy(msg); done(); }
+  var msg=buildSummary();
+  function done(){ toast(I18N[LANG].t_copied); }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(msg).then(done, function(){ fallbackCopy(msg); done(); }); }
+  else { fallbackCopy(msg); done(); }
 });
 function fallbackCopy(txt){
   var ta=document.createElement("textarea"); ta.value=txt; ta.style.position="fixed"; ta.style.opacity="0";
@@ -265,6 +391,19 @@ function fallbackCopy(txt){
   try{ document.execCommand("copy"); }catch(e){}
   document.body.removeChild(ta);
 }
+
+/* Language dropdown */
+function setLang(l){ if(!I18N[l]) l="tr"; LANG=l; try{ localStorage.setItem("maryam_lang",l); }catch(e){} applyLang(); }
+$("#langBtn").addEventListener("click", function(e){ e.stopPropagation(); $("#lang").classList.toggle("open"); $("#langBtn").setAttribute("aria-expanded", $("#lang").classList.contains("open")); });
+$$("#langMenu button").forEach(function(b){ b.addEventListener("click", function(){ setLang(b.dataset.lang); $("#lang").classList.remove("open"); }); });
+document.addEventListener("click", function(){ $("#lang").classList.remove("open"); });
+
+/* Init: same stored key as the main site, else auto-detect */
+(function init(){
+  var saved=null; try{ saved=localStorage.getItem("maryam_lang"); }catch(e){}
+  if(!saved){ var n=(navigator.language||"tr").slice(0,2).toLowerCase(); saved=["tr","en","ru","de"].indexOf(n)>-1 ? n : "tr"; }
+  LANG=saved; applyLang();
+})();
 </script>
 </body>
 </html>
